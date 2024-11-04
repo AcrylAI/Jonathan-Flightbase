@@ -1,6 +1,6 @@
 ![Jonathan BI_시그니처_가로](https://github.com/user-attachments/assets/26ad0352-c1c7-4789-8e49-13814c1c49f8)
 # Jonathan-Flightbase
-A platform optimized for developing and operating machine learning (MLOps) and large language model operations (LLMOps). Designed to streamline and accelerate AI service deployment, it provides specialized tools for resource management, efficient model training, and automated model deployment and operations.
+Jonathan Flightbase is an MLOps/LLMOps platform designed for efficient AI development and operations. It streamlines resource management, model training, and deployment automation, with support for adaptive personality in intelligent agents.
 
 ### How to Run Codes
 (ex)
