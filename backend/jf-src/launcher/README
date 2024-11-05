@@ -1,0 +1,3 @@
+A very limited shell for login shell.
+
+This shell only can run few commands which the binaries are in the BASE_PATH.

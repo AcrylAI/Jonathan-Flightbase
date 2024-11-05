@@ -1,0 +1,4 @@
+This is a reimplementation of the original launcher in C++ with some extra features. 
+
+The VERBOSE mode is probably broken. 
+send me an email at jasonkim@iacryl.com if something isn't working as intended.

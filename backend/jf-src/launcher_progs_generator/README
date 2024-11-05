@@ -1,0 +1,25 @@
+Author: Calvin
+Date: 2020-02-14
+
+
+Follow the instructions.
+
+1. Build with command like below. First param is a path where the
+   binary file locates, and second param is the command to run, and
+   third param is output binary filename, and existence of fourth 
+   param means disable dynamic argument.
+
+     ./builder.sh /usr/bin "docker images" test 1    # dynamic argument disabled
+     ./builder.sh /usr/bin "docker images" test 0    # dynamic argument disabled
+     ./builder.sh /usr/bin "docker images" test      # dynamic argument enabled
+     ./builder.sh /usr/bin "docker images" my_prog   # output filename will be my_prog
+     ./builder.sh /usr/bin "docker images"           # by default, output filename is test
+     ./builder.sh "docker images"                    # by default, path is /usr/bin
+
+2. Test it works by running output binary like below.
+
+     ./test
+
+3. Rename and move the output file with sudo.
+
+4. Enjoy using it.

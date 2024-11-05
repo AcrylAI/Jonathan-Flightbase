@@ -1,0 +1,13 @@
+80 : HTTP (외부 오픈)
+443 : HTTPS (외부 오픈)
+3306 : DB (옵션, 디버깅용)
+5000 : docker repo (내부망용)
+6000 : api Worker Port (내부망용)
+29000 ~ : mpi Port (내부망용)
+30000 : ingress http - (외부 오픈) -> 80, 443 안으로 넣을 수 있음 
+30001 : ingress https (http | https 동시에 안쓰면 필요 없음)
+30000 ~ 32767 : ssh Port (외부 오픈) (SSH 사용 시 필요)
+
+56788 : api Master Port http (내부망용, 디버깅용)
+56789 : api Master Port https - (외부 오픈) -> 80, 443 안으로 넣을 수 있음
+
