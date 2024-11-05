@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# example of shell script 
+$PROGGEN_SRC/builder.sh /jfbcore/installer/setting/launcher-binary-build test.sh "$LAUNCHER_HOME/test-sh"

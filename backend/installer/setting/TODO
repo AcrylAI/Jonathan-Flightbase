@@ -1,0 +1,30 @@
+1.
+
+master의 jfbcore가
+
+ex) /data/jfbcore -> /jfbcore 
+
+로 된 경우 
+
+worker에서 마운트 할 때
+
+/jfbcore로 보이는게 아니라 /data/jfbcore 로 보임
+
+worker가 master jfbcore 경로를 받아올 수 있는 파라미터 추가 필요
+
+2. 
+
+launcher 생성 시 login shell 삭제 부분 때문에 worker에서 실행 시 master도 shell 삭제가 되버림.
+
+bin 생성하면서 shell 지우는 부분을 launcher create 부분에서 하도록 이전
+
+
+3. 
+settings.conf 에
+
+MASTER_IP 지정 및
+현재 NODE IP 지정하는 부분 필요?
+
+KEY 자체가 MASTER_IP MASTER_NAME 이라서 WORKER 기준에서는 뭘 써야하는가 애매함
+
+--> Worker 정보에 대해 선언할 필요는 없어보임?

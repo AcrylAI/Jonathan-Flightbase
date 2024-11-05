@@ -1,0 +1,19 @@
+Package List
+1. Docker
+2. NVIDIA-Driver
+3. Nvidia-Docker
+4. Kubernetes
+5. NFS
+6. OFED (optional)
+7. MFS (optional)
+Setting list
+1. Docker path - daemon
+2. Docker insecure repo list - daemon
+3. Docker-Repositry path - sh
+4. Kubernetes plugin - kube yaml
+5. Launcher build
+6. NFS master (master only) - exports
+7. NFS client (worker only) - fstab
+8. Mariadb start
+9. SSL key create - openssl
+10. Docker Default image load - tar

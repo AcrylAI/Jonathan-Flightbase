@@ -1,0 +1,14 @@
+# DOCKER
+service docker status
+docker data root path
+docker repository status
+docker repository data root path
+docker repository ip:port (only master)
+docker repository connection test
+
+# Launcher
+launcher user exist
+launcher ssh connect check
+launcher binary working test (sshpass need)
+
+
