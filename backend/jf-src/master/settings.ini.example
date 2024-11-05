@@ -1,0 +1,136 @@
+[Flask Settings]
+HOST_IP = '@MASTER_IP@'
+FLASK_SERVER_NAME = '0.0.0.0:56788'
+FLASK_SERVER_IP = '0.0.0.0'
+FLASK_SERVER_PORT = '56788'
+FLASK_DEBUG = False
+
+[Flask-Restplus Settings]
+RESTPLUS_SWAGGER_UI_DOC_EXPANSION = 'list'
+RESTPLUS_VALIDATE = True
+RESTPLUS_MASK_SWAGGER = False
+RESTPLUS_ERROR_404_HELP = False
+
+[Maria DB Settings]
+JF_DB_HOST = '@MASTER_IP@'
+JF_DB_PORT = '@JFB_DB_DOCKER_PORT@'
+JF_DB_UNIX_SOCKET = '/jf-src/master/conf/db/mysqld.sock'
+JF_DB_USER = 'root'
+JF_DB_PW = '@JFB_DB_ROOT_PASSWORD@'
+JF_DB_NAME = '@JFB_DB_DATABASE@'
+JF_DUMMY_DB_NAME = 'jfb_dummy'
+JF_DB_CHARSET = 'utf8'
+JF_DB_DOCKER = '@JFB_DB_DOCKER_NAME@'
+JF_DB_ATTEMP_TO_CREATE = True # Attempt to create (DB TABLE and DUMMPY TABE) at every startup. can be slow.
+
+[Worker]
+JF_WORKER_PORT = 6000
+JF_WORKER_IP = '0.0.0.0'
+JF_WORKER_CONNECT_TIMEOUT = 2 # Request Timeout 
+JF_WORKER_FLASK_LOG = False # True -> docker logs JF-worker - 192.168.0.61 - - [07/Apr/2022 06:37:27] "GET /worker/cpu_usage HTTP/1.1" 200 -
+
+[Docker image (*.tar/Dockerfile) upload base path]
+BASE_IMAGE_PATH = '/jf-data/images' # in docker
+BASE_DOCKERFILE_PATH = '/jf-data/images' # in docker
+HOST_BASE_IMAGE_PATH = '@JF_DATA_DIR@/images' # in host
+HOST_BASE_DOCKERFILE_PATH = '@JF_DATA_DIR@/images' # in host
+JF_DEFAULT_IMAGE = '@JF_DEFAULT_IMAGE@'
+JF_CPU_DEFAULT_IMAGE = '@JF_CPU_IMAGE@'
+JF_GPU_TF2_IMAGE = '@JF_TF2_IMAGE@'
+JF_GPU_TORCH_IMAGE = '@JF_TORCH_IMAGE@'
+
+JF_DEFAULT_IMAGE_NAME="jf-default"
+JF_CPU_DEFAULT_IMAGE_NAME="[jf]cpu"
+JF_GPU_TF2_IMAGE_NAME="[jf]gpu_tf2"
+JF_GPU_TORCH_IMAGE_NAME="[jf]gpu_torch"
+
+[Docker Registry URL]
+#DOCKER_REGISTRY_URL = '192.168.1.13:5000/' # Should be an empty string or finished with slash(`/')
+DOCKER_REGISTRY_URL = '@MASTER_IP@:@DOCKER_REPOSITORY_PORT@/' # Should be an empty string or finished with slash(`/')
+DOCKER_REGISTRY_PROTOCOL = "https://" # "http://" | "https://"
+
+[Docker build Server]
+DOCKER_BUILD_SERVER_IP = None # None = HOST_IP
+
+[Others]
+ENABLE_LOG_FUNCTION_CALL = True
+NO_INIT_SCHEDULER = False
+RUNNING_API_WITHOUT_SYSTEM_CHECK = False # True = Force running
+NODE_DB_IP_AUTO_CHAGE_TO_KUBER_INTERNAL_IP = False # True = If DB IP and KUBER INTERNAL IP are different, change to KUBER INTERNAL IP
+NODE_DB_NAME_AUTO_CHAGE_TO_KUBER_NODE_NAME = False # True = If DB NAME and KUBER NODE NAME are different, change to KUBER NODE NAME
+IMAGE_LIBRARY_INIT = True # image.py
+
+#[Dataset] FB에서 다운로드 지원여부
+DATASET_DOWNLOAD_ALLOW= True
+
+[Ingress option (jupyter, service)]
+EXTERNAL_HOST = None # ex) flightbase.iacryl.com or None (then use local ip)
+EXTERNAL_HOST_REDIRECT = False # Redirect = True ( EXTERNAL_HOST ) , False ( EXTERNAL_HOST:nginx_port )
+INGRESS_PROTOCOL = 'http' # http, https ( for communication with front protocol )
+
+[Login option]
+NO_TOKEN_VALIDATION_CHECK = False # Allow Multiple Login, Ignore Token expired etc..
+TOKEN_EXPIRED_TIME = 3600 * 8 # 마지막 API 요청 이후로 부터 선언한 시간이 지나도록 사용이 없으면 TOKEN 자동 만료 (초)
+TOKEN_UPDATE_TIME = 600 # 새 TOKEN 으로 업데이트 하는 주기 (초)
+MAX_NUM_OF_LOGINS = 5
+
+[Login method]
+LOGIN_METHOD =  "jfb" # jfb(default), jonathan, kisti
+LOGIN_VALIDATION_CHECK_API = "" # jonathan("http://api.acryl.ai/accounts/profile"), kisti("http://150.183.158.176:8481")
+JF_DB_MAX_CONNECTIONS = 500 # DB max Connection variable setting
+
+[User resource limit]
+USER_DOCKER_IMAGE_LIMIT = None
+USER_DATASET_LIMIT = None
+USER_TRAINING_LIMIT = None
+USER_DEPLOYMENT_LIMIT = None
+
+[Kuber Settings]
+KUBER_CONFIG_PATH = "@LAUNCHER_HOME@/.kube/config"
+KUBER_NETWORK_ATTACHMENT_DEFINITION_USE = True # Multiple network interface use on Pod
+
+[Kuber Resource Limit]
+NO_USE_NODES = None # Node name or Node ip ex) "192.168.1.16,192.168.1.15"
+CPU_POD_RUN_ON_ONLY_CPU_NODES = False # True | False
+CPU_NODES = None # Node name or Node ip  ex)  "jf-node-06,jf-node-05"
+# CPU 전용 NODES를 지정하면 해당 CPU NODES 안에서 돌도록 | node에 labels을 통해서 nodeselector 이용하거나
+
+[SSH BANNER and MOTD]
+SSH_BANNER_FILE_PATH = None # BANNER FILE PATH(Base ON /jfbcore/ .... ) (None = Default Banner)
+SSH_MOTD_FILE_PATH = None # MOTD FILE PATH (None = Default MOTD) 
+
+#[Launcher Settings] # API and Launcher must be on the same server (Cannot be changed). ini file shared by all connected servers.
+LAUNCHER_ID = "@LAUNCHER_UNAME@"
+LAUNCHER_PW = '@LAUNCHER_PASSWORD@'
+LAUNCHER_PRIVATE_KEY = '@LAUNCHER_HOME@/.ssh/jf_launcher_id_rsa' # /etc/jfb/global_param.conf
+LAUNCHER_DEFAULT_ADDR = "127.0.0.1" 
+LAUNCHER_SSH_PORT = 22 
+LAUNCHER_KEY_LOGIN = False # 
+
+[Deployment]
+DEPLOYMENT_RESPONSE_TIMEOUT = 1000 #(s) Deplyoment API <> USER UI, Deployment API <> MASTER API (For dna)
+DEPLOYMENT_API_MODE = "prefix" # "prefix" | "port" (TYPE.py - DEPLOYMENT_PREFIX_MODE, DEPLOYMENT_PORT_MODE)
+
+[HPS]
+HYPERPARAM_SEARCH_RUN_FILE = "python3 /hps_runfile/search_ver3-inter/search.py" # "/hps_runfile/hps_u" # /hps_runfile = /jfbcore/jf-bin/hps
+
+
+[TEMP-DNA]
+DNA_WS_ADDR = "http://129.254.70.148:8085" # ETRI SERVER
+INFERENCE_GPU_DEFAULT = 0
+KISTI_OTP_ROOT_USER_ID = "r865a06" # Root 로 로그인 시 어느 아이디의 OTP를 사용할것인지 
+
+[LOG-DATA]
+GPU_HISTORY_DATA="/jf-data/log/gpu_history_data.json"
+CPU_HISTORY_DATA="/jf-data/log/cpu_history_data.json"
+RAM_HISTORY_DATA="/jf-data/log/ram_history_data.json"
+
+[TRAINING-TOOL]
+JUPYTER_AUTO_INSTALL=True
+
+[FS-SETTING]
+FILESYSTEM_OPTION = "Unknown" # Unknown, MFS, NFS, Local
+MAIN_DATA_STORAGE_PATH = "/jfbcore"
+
+[DGTP-SETTING]
+SUPERSET_ADD_USER=False
