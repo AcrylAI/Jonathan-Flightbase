@@ -1,0 +1,10 @@
+2021-07-21 기준
+사용 도커 종류
+
+1. jf_default:latest (old/cuda11-gpu-tf2.2-py3-latest) - 추후 지원 x
+
+2. jf_api_image:latest (API-CPU or API-GPU 서버 환경에 따라)
+3. jf_ml_gpu_tf2_image:latest (TRAINING-GPU-TF2)
+4. jf_ml_gpu_torch_image:latest (TRAINING-GPU-TORCH)
+5. jf_ml_cpu_tf2_torch_image:latest (TRAINING-TF2-TORCH)
+

@@ -1,0 +1,4 @@
+RUN pip install Werkzeug==0.16.0 flask==1.1.2 flask_cors==3.0.9 flask_restful==0.3.8 flask_restplus==0.13.0 \
+                paramiko==2.7.2 cherrypy==18.6.0 kubernetes==12.0.1 pymysql==0.10.1 pycrypto==2.6.1 uwsgi==2.0.19.1 \
+                gunicorn==19.9.0 pyinstaller==4.0 \
+                PyGithub==1.54 Pillow==8.0.1

@@ -1,0 +1,16 @@
+ENV NUMPY_VERSION=1.20.1 # python3.8 ( or 1.19.5 )
+
+RUN pip install mecab-python3==1.0.3 konlpy==0.5.2 numpy==${NUMPY_VERSION} konlpy==0.5.2
+RUN bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
+
+RUN pip install sklearn==0.0 scikit-image==0.17.2 pandas==1.0.3 tensorlayer==2.2.2 \
+            tqdm==4.46.0 nltk==3.5 opencv-python==4.4.0.46 PyGithub==1.54 
+
+# Jupyter
+RUN pip install jupyter jupyterlab==3.0.14 jupyterlab-git==0.30.0
+
+# Deployment
+RUN pip install Werkzeug==0.16.0 flask==1.1.2 flask_cors==3.0.9 flask_restful==0.3.8 flask_restplus==0.13.0
+
+RUN sed -i '/PATH=/d' /etc/environment 
+RUN echo PATH='"'$PATH'"' >> /etc/environment

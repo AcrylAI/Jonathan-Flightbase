@@ -1,0 +1,304 @@
+mpirun --allow-run-as-root -np 4 -H 192.168.1.18:2,192.168.1.19:2 \
+-bind-to none -map-by slot \
+-x NCCL_IB_DISABLE=1 \
+-x NCCL_IB_CUDA_SUPPORT=0 \
+-x NCCL_SOCKET_IFNAME=enp26s0f1,enp25s0f1 \
+-x NCCL_P2P_LEVEL=4 \
+-x NCCL_SHM_DISABLE=0 \
+-x LD_LIBRARY_PATH -x PATH \
+-mca pml ob1 -mca btl ^openib \
+-mca btl_tcp_if_exclude lo,docker0 \
+-mca plm_rsh_args '-p 54321' \
+python pytorch_synthetic_benchmark.py
+
+명령어를 통해서 학습 시 (IB도 물론)
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_synthetic_benchmark.py", line 102, in <module>
+    timeit.timeit(benchmark_step, number=args.num_warmup_batches)
+  File "/opt/conda/lib/python3.8/timeit.py", line 233, in timeit
+    return Timer(stmt, setup, timer, globals).timeit(number)
+  File "/opt/conda/lib/python3.8/timeit.py", line 177, in timeit
+    timing = self.inner(it, self.timer)
+  File "<timeit-src>", line 6, in inner
+  File "pytorch_synthetic_benchmark.py", line 86, in benchmark_step
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_synthetic_benchmark.py", line 102, in <module>
+    timeit.timeit(benchmark_step, number=args.num_warmup_batches)
+  File "/opt/conda/lib/python3.8/timeit.py", line 233, in timeit
+    return Timer(stmt, setup, timer, globals).timeit(number)
+  File "/opt/conda/lib/python3.8/timeit.py", line 177, in timeit
+    timing = self.inner(it, self.timer)
+  File "<timeit-src>", line 6, in inner
+  File "pytorch_synthetic_benchmark.py", line 86, in benchmark_step
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_synthetic_benchmark.py", line 102, in <module>
+    timeit.timeit(benchmark_step, number=args.num_warmup_batches)
+  File "/opt/conda/lib/python3.8/timeit.py", line 233, in timeit
+    return Timer(stmt, setup, timer, globals).timeit(number)
+  File "/opt/conda/lib/python3.8/timeit.py", line 177, in timeit
+    timing = self.inner(it, self.timer)
+  File "<timeit-src>", line 6, in inner
+  File "pytorch_synthetic_benchmark.py", line 86, in benchmark_step
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_synthetic_benchmark.py", line 102, in <module>
+    timeit.timeit(benchmark_step, number=args.num_warmup_batches)
+  File "/opt/conda/lib/python3.8/timeit.py", line 233, in timeit
+    return Timer(stmt, setup, timer, globals).timeit(number)
+  File "/opt/conda/lib/python3.8/timeit.py", line 177, in timeit
+    timing = self.inner(it, self.timer)
+  File "<timeit-src>", line 6, in inner
+  File "pytorch_synthetic_benchmark.py", line 86, in benchmark_step
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+^C^Croot@jf-node-08:/horovod/examples/pytorch# mpirun --allow-run-as-root -np 4 -H 192.168.1.18:2,192.168.1.19:2 -bind-to none -map-by slot -x NCCL_IB_DISABLE=1 -x NCCL_IB_CUDA_SUPPORT=0 -x NCCL_SOCKET_IFNAME=enp26s0f1,enp25s0f1 -x NCCL_P2P_LEVEL=4 -x NCCL_SHM_DISABLE=0 -x LD_LIBRARY_PATH -x PATH -mca pml ob1 -mca btl ^openib -mca btl_tcp_if_exclude lo,docker0 -mca plm_rsh_args '-p 54321' python pytorch_mnist.py
+[jf-node-08:02105] WARNING: local probe returned unhandled shell:unknown assuming bash
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz
+9913344it [00:05, 1811964.88it/s]                             Extracting ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw
+ 60%|█████▉    | 5901312/9912422 [00:05<00:03, 1030627.00it/s]
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+ 65%|██████▌   | 6475776/9912422 [00:06<00:03, 1057199.03it/s]Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz
+ 70%|██████▉   | 6893568/9912422 [00:06<00:03, 997285.28it/s]
+29696it [00:00, 207339.90it/s]                           Extracting ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+ 78%|███████▊  | 7694336/9912422 [00:07<00:01, 1137934.87it/s]Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+ 86%|████████▌ | 8512512/9912422 [00:07<00:01, 1083095.41it/s]Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz
+ 95%|█████████▍| 9368576/9912422 [00:08<00:00, 923376.64it/s]
+9913344it [00:09, 1073443.50it/s]                            Extracting ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw
+  5%|▌         | 86016/1648877 [00:00<02:23, 10853.88it/s]
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+ 26%|██▋       | 434176/1648877 [00:00<00:55, 21874.26it/s]Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
+1649664it [00:01, 1231775.31it/s]                           Extracting ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz
+
+  0%|          | 0/28881 [00:00<?, ?it/s]Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+29696it [00:00, 156414.42it/s]                        Extracting ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+
+5120it [00:00, 3935282.48it/s]          Extracting ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw
+
+Processing...
+Done!
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz
+
+1649664it [00:01, 1071013.27it/s]                           Extracting ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 503: Service Unavailable
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+
+5120it [00:00, 4631191.82it/s]          Extracting ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw
+
+Processing...
+Done!
+[jf-node-08:02111] Read -1, expected 20000, errno = 1
+[jf-node-08:02111] Read -1, expected 64000, errno = 1
+[jf-node-08:02111] Read -1, expected 20000, errno = 1
+[jf-node-08:02111] Read -1, expected 64000, errno = 1
+
+/opt/conda/lib/python3.8/site-packages/torchvision/datasets/mnist.py:502: UserWarning: The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  ../torch/csrc/utils/tensor_numpy.cpp:173.)
+  return torch.from_numpy(parsed.astype(m[2], copy=False)).view(*s)
+
+/opt/conda/lib/python3.8/site-packages/torchvision/datasets/mnist.py:502: UserWarning: The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  ../torch/csrc/utils/tensor_numpy.cpp:173.)
+  return torch.from_numpy(parsed.astype(m[2], copy=False)).view(*s)
+pytorch_mnist.py:57: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  return F.log_softmax(x)
+pytorch_mnist.py:57: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  return F.log_softmax(x)
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_mnist.py", line 196, in <module>
+    train(epoch)
+  File "pytorch_mnist.py", line 71, in train
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_mnist.py", line 196, in <module>
+    train(epoch)
+  File "pytorch_mnist.py", line 71, in train
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+pytorch_mnist.py:57: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  return F.log_softmax(x)
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_mnist.py", line 196, in <module>
+    train(epoch)
+  File "pytorch_mnist.py", line 71, in train
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+pytorch_mnist.py:57: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  return F.log_softmax(x)
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 875, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pytorch_mnist.py", line 196, in <module>
+    train(epoch)
+  File "pytorch_mnist.py", line 71, in train
+    optimizer.step()
+  File "/opt/conda/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 323, in step
+    self.synchronize()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 274, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/opt/conda/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 879, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[54008,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
