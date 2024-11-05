@@ -18,3 +18,37 @@ Please refer [IoTware Project LSA](LICENSE.md).
 The authors thank the following contributors and projects.
 
 * This work was supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) (2022-0-00043, Adaptive Personality for Intelligent Agents).
+
+
+---
+### Install Jonathan-Flightbase Backend
+1. Setting Backend Directory   
+mv /Jonathan-flightbase/backend /jfbcore
+
+2. Set Config   
+/jfbcore/installer/init.sh   
+vi /etc/jfb/setting.conf
+
+  ```
+  INSTALL_TYPE: MASTER  
+  MASTER_IP: App, Kubernetes Master Server  
+  MASTER_NAME: Master Server Host Name  
+  MASTER_JFBCORE_ORIGIN_PATH: /jfbcore   
+  JFB_IMAGES_PATH: /JF-Docker   
+  ```
+
+3. Install packege
+/jfbcore/installer/package/run.sh
+
+4. Run script (Jonathan-App)
+/jfbcore/installer/setting/all_init.sh
+
+
+### Install Jonathan-Flightbase Frontend
+
+1. Setting frontend Directory     
+mv /Jonathan-flightbase/frontend /jonathan-platform-fromt  
+
+2. Run script
+cd /jonathan-platform-front/install/flight-base   
+python3 jf_installer_front.py --master_ip MASTER_IP  
