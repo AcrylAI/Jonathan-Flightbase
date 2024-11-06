@@ -121,6 +121,7 @@ function AbnormalProcessingRecordTable({ data, onDownload }) {
             icon={download}
             iconAlign='right'
             onClick={onDownload}
+            disabled={tableData?.length === 0}
           >
             CSV {t('download.label')}
           </Button>
