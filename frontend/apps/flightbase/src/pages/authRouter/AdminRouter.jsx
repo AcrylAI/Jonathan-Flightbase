@@ -16,21 +16,13 @@ const AdminTrainingPage = lazy(() => import('@src/pages/AdminTrainingPage'));
 const AdminDeploymentPage = lazy(() =>
   import('@src/pages/AdminDeploymentPage'),
 );
-const AdminBuiltInModelPage = lazy(() =>
-  import('@src/pages/AdminBuiltInModelPage'),
-);
+
 const AdminDockerImagePage = lazy(() =>
   import('@src/pages/AdminDockerImagePage'),
 );
 const AdminDatasetPage = lazy(() => import('@src/pages/AdminDatasetPage'));
 const DatasetDetailPage = lazy(() => import('@src/pages/DatasetDetailPage'));
 const AdminNodePage = lazy(() => import('@src/pages/AdminNodePage'));
-const AdminStoragePage = lazy(() => import('@src/pages/AdminStoragePage'));
-const AdminNetworkPage = lazy(() => import('@src/pages/AdminNetworkPage'));
-const AdminBenchmarkingPage = lazy(() =>
-  import('@src/pages/AdminBenchmarkingPage'),
-);
-const AdminRecordPage = lazy(() => import('@src/pages/AdminRecordPage'));
 const AdminUserPage = lazy(() => import('@src/pages/AdminUserPage'));
 const NotFoundPage = lazy(() => import('@src/pages/NotFoundPage'));
 
@@ -111,24 +103,6 @@ function AdminRouter({ trackingEvent }) {
             path={`${path}/nodes`}
             render={() => <AdminNodePage trackingEvent={trackingEvent} />}
           />
-          {/* <Route
-            path={`${path}/storages`}
-            render={() => <AdminStoragePage trackingEvent={trackingEvent} />}
-          />
-          <Route
-            path={`${path}/networks`}
-            render={() => <AdminNetworkPage trackingEvent={trackingEvent} />}
-          />
-          <Route
-            path={`${path}/benchmarking`}
-            render={() => (
-              <AdminBenchmarkingPage trackingEvent={trackingEvent} />
-            )}
-          /> */}
-          {/* <Route
-            path={`${path}/records`}
-            render={() => <AdminRecordPage trackingEvent={trackingEvent} />}
-          /> */}
           <Route
             path={`${path}/users`}
             render={() => <AdminUserPage trackingEvent={trackingEvent} />}
