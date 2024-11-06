@@ -538,9 +538,9 @@ function DatasetDetailContent({
             </div>
           </div>
           <div className={cx('dataset-check-box')}>
-            <span className={cx('dataset-check-title')}>
-              {t('builtInModelComplianceCheck.label')}
-            </span>
+            {/* <span className={cx('dataset-check-title')}>
+              {t('builtInModelComplianceCheck.label')}              
+            </span> */}
             <div className={cx('drop-box')}>
               <Button
                 type='primary-light'
@@ -552,6 +552,7 @@ function DatasetDetailContent({
                 }
                 customStyle={{ width: '140px' }}
                 onClick={datasetOpenHandler}
+                disabled={true}
               >
                 {t('datasetCheck.label')}
               </Button>
