@@ -1,0 +1,66 @@
+@import '@src/styles/color.scss';
+
+.work-status-card {
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .contents {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    .left-contents {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .approved-labeling-cnt {
+        display: flex;
+        .label {
+          display: flex;
+          align-items: flex-end;
+          margin-left: 4px;
+          display: flex;
+        }
+      }
+      .pie-chart {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .legend {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .legend-element {
+            display: grid;
+            grid-template-columns: 16px minmax(86px, 112px) auto;
+            justify-content: start;
+            align-items: center;
+            .mark {
+              display: grid;
+              width: 8px;
+              aspect-ratio: 1;
+              place-content: center;
+              border-radius: 2px;
+              &.submitted {
+                background-color: $blue108;
+              }
+              &.approved {
+                background-color: $lime602;
+              }
+              &.work {
+                background-color: $mono202;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-contents {
+      .chart-area {
+        width: 100%;
+        height: 276px;
+        margin-top: 36px;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+# ubuntu setup
+FROM ubuntu:20.04
+COPY . /jp-front
+
+# ARGS
+ARG PACKAGE=2
+
+# 빌드 명령어
+
+# apt 업데이트
+RUN apt-get -qq update
+
+# replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# update the repository sources list
+# and install dependencies
+RUN apt-get -qq install -y curl 
+RUN if [ "$PACKAGE" != 2 ] ; then apt-get -qq install -y nginx; fi
+#&&  apt-get -y autoclean
+
+# nvm environment variables
+ENV NVM_DIR /usr/local/nvm
+#ENV NODE_VERSION 16.15.0 
+ENV NODE_VERSION 16.17.0
+
+
+# install nvm
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+
+# install node and npm
+RUN source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+  && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+# add node and npm to path so the commands are available
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# confirm installation
+RUN node -v
+
+# npm & yarn setup
+RUN npm install --quiet -g yarn
+RUN npm install --quiet -g pm2
+
+# project setup
+WORKDIR /jp-front
+
+# 불필요 패키지 삭제
+RUN rm -rf ./apps/flightbase
+RUN if [ "$PACKAGE" = 2 ] ; then rm -rf ./apps/federated-learning; fi
+RUN if [ "$PACKAGE" = 3 ] ; then rm -rf ./apps/portal; fi
+
+# 라이브러리 설치
+RUN yarn install --silent --network-timeout 1000000 
+
+#필요한 프로젝트만 ui build
+RUN if [ "$PACKAGE" = 2 ] ; then yarn start:pt-build-real; else yarn build-pack:all; fi
+
+# port option
+EXPOSE 3001
+
+# start option
+ENTRYPOINT ["pm2-runtime","start","yarn","--"] 
+CMD ["start:pt-start-real"]

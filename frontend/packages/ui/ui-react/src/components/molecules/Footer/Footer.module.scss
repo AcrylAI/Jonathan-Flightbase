@@ -1,0 +1,74 @@
+@import '../../../style/theme';
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 69px;
+  padding: 0 25px;
+  box-sizing: border-box;
+  background-color: $background-color;
+  color: #7d7d7d;
+  font-family: SpoqaR;
+  .box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 29px;
+      img {
+        height: 29px;
+      }
+    }
+    .items {
+      display: flex;
+      align-items: center;
+      .copyrights,
+      .updated {
+        white-space: nowrap;
+        font-size: 11px;
+        color: $mono205;
+      }
+      .copyrights {
+        margin-left: 26px;
+      }
+      .updated {
+        margin-left: 15px;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .box {
+      .items {
+        .updated {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    .box {
+      .items {
+        .language {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Theme
+@mixin themable($theme-name) {
+  .footer.#{$theme-name} {
+    background-color: map-get($footer_bg, $theme-name);
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

@@ -1,0 +1,82 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+.resetPassword {
+  width: 100%;
+  max-width: 440px;
+  margin-top: 6px;
+
+  @include flexbox(space-between, normal);
+  flex-direction: column;
+  align-items: center;
+
+  /* 헤더 부분 */
+  &__header {
+    width: 100%;
+
+    @include flexbox(center, center);
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      margin-bottom: 36px;
+    }
+
+    @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+      margin-bottom: 50px;
+    }
+
+    .title-box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .sub-title-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__main {
+    width: 440px;
+
+    &-password-box {
+      margin-bottom: 18px;
+
+      .title {
+        font-size: 18px;
+        height: 27px;
+        font-weight: bold;
+        color: #121619;
+        margin-bottom: 3px;
+      }
+
+      .subtitle {
+        height: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #697077;
+        margin-bottom: 16px;
+      }
+
+      .user-password {
+        margin-bottom: 6px;
+        position: relative;
+
+        &-chkbox {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+  }
+}

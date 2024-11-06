@@ -1,0 +1,26 @@
+@import 'src/styles/color.scss';
+
+.container {
+  background-color: #fbfcff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-inner {
+  width: 100%;
+  display: grid;
+  row-gap: 32px;
+  column-gap: 32px;
+  align-items: center;
+  justify-items: center;
+  @media (min-width: 1641px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1640px) and (min-width: 1301px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

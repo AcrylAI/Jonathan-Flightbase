@@ -1,0 +1,17 @@
+@import '../DeployWorker.module.scss';
+
+.worker-running-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 3px 0;
+  .worker-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    & > li {
+      @include box-area();
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  }
+}

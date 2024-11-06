@@ -1,0 +1,331 @@
+@import 'src/styles/color.scss';
+
+.search-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 36px;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+  .btn-box {
+    bottom: 0;
+    margin: 0 12px 12px 0;
+  }
+
+  .total-rows {
+    margin-right: 8px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.1px;
+    color: $dark-mono200;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
+  .filter-search {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 12px;
+    .filter {
+      display: flex;
+      flex-direction: row;
+      height: 36px;
+      padding-right: 12px;
+      margin-right: 4px;
+      border-right: 1px solid $dark-mono202;
+      & > div:not(:first-child) {
+        margin-left: 8px;
+      }
+      @media (max-width: 1130px) {
+        border: none;
+      }
+    }
+    .search {
+      display: flex;
+      flex-direction: row;
+      white-space: pre-line;
+      & > div {
+        margin-left: 8px;
+        @media (max-width: 1130px) {
+          margin-left: 0px;
+          margin-right: 8px;
+        }
+      }
+      @media (max-width: 1130px) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.rdt_TableHeader {
+  display: none !important;
+}
+
+.datatable {
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+  .rdt_TableHeader {
+    display: none !important;
+  }
+  .rdt_Table {
+    height: auto;
+    .rdt_TableHead {
+      .rdt_TableHeadRow {
+        color: $dark-mono200;
+        background-color: $dark-mono208;
+        height: 48px;
+        min-height: 48px;
+        border-bottom: 1px solid $dark-mono204;
+        word-break: keep-all;
+      }
+      .rdt_TableCol {
+        padding-right: 10px;
+        padding-left: 10px;
+        .rdt_TableCol_Sortable {
+          & > * {
+            font-size: 14px;
+            font-weight: bold;
+            color: $dark-mono200;
+          }
+          // &.duIPu {
+          .asc {
+            .arrow:before {
+              border-bottom-color: $dark-mono200;
+            }
+            .arrow:after {
+              border-top-color: $dark-mono201;
+            }
+          }
+          .desc {
+            .arrow:before {
+              border-bottom-color: $dark-mono201;
+            }
+            .arrow:after {
+              border-top-color: $dark-mono200;
+            }
+          }
+          // }
+          .arrow {
+            position: relative;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            color: $dark-mono200;
+          }
+          .arrow:before,
+          .arrow:after {
+            border: 5px solid transparent;
+            content: '';
+            display: block;
+            height: 0;
+            right: 0px;
+            top: 50%;
+            position: absolute;
+            width: 0;
+          }
+          .arrow:before {
+            border-bottom-color: $dark-mono200;
+            margin-top: -11px;
+          }
+          .arrow:after {
+            border-top-color: $dark-mono200;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+    .rdt_TableBody {
+      .rdt_TableRow {
+        min-height: 48px;
+        border-bottom: 1px solid $dark-mono204 !important;
+        background-color: $dark-mono208;
+        .rdt_TableCell {
+          padding: 13px 10px;
+          font-family: SpoqaR;
+          font-size: 14px;
+          font-weight: 500;
+          color: $dark-mono200;
+          & > div {
+            font-family: SpoqaR;
+            font-size: 14px;
+            font-weight: 500;
+            color: $dark-mono200;
+            &.disabled {
+              color: $dark-mono205;
+            }
+          }
+        }
+      }
+      .rdt_TableCol {
+        .rdt_TableCol_Sortable {
+          div {
+            font-weight: bold;
+            line-height: 1.57;
+            color: $dark-mono200;
+          }
+        }
+      }
+      .rdt_ExpanderRow {
+        background-color: $dark-mono206;
+      }
+    }
+  }
+  .rdt_Pagination {
+    border-top: none;
+    font-size: 14px;
+    background-color: transparent !important;
+    select {
+      font-family: SpoqaM;
+    }
+  }
+}
+
+.rdt_Pagination {
+  border-top: none;
+  font-size: 14px;
+  background-color: transparent !important;
+  select {
+    font-family: SpoqaM;
+  }
+}
+
+.btn-box {
+  display: inline-flex;
+  position: relative;
+  bottom: 44px;
+  > button {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .btn-box {
+    bottom: 0;
+  }
+}
+
+/* Checkbox Custom */
+/* The container */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 18px;
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: $dark-mono208;
+    border-radius: 2px;
+    border: solid 2px $dark-mono202;
+    box-sizing: border-box;
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 4px;
+      top: 1px;
+      width: 4px;
+      height: 7px;
+      border: solid $dark-mono208;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  /* When the checkbox is checked */
+  input:checked ~ .checkmark {
+    background-color: $dark-blue101;
+    border: solid 2px $dark-blue101 !important;
+  }
+
+  /* When the checkbox is disabled */
+  input:disabled ~ .checkmark {
+    background-color: $dark-mono205;
+    border: solid 2px $dark-mono202 !important;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 4px;
+      top: 1px;
+      width: 4px;
+      height: 7px;
+      border: solid $dark-mono202;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+/* Checkbox Custom End*/
+
+/* Table icon */
+.table-icon {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(1.3);
+    transform: scale(1.1);
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+}
+
+.spec {
+  color: $dark-mono200;
+  & > li {
+    list-style: none;
+  }
+}
+
+#pagination-first-page,
+#pagination-previous-page,
+#pagination-next-page,
+#pagination-last-page {
+  & > svg {
+    fill: $dark-mono200;
+  }
+}

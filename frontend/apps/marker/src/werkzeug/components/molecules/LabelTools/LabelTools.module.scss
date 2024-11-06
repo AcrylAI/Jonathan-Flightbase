@@ -1,0 +1,9 @@
+@import "src/styles/color";
+
+.LabelTools {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	color: $blue110;
+	gap: 8px;
+}

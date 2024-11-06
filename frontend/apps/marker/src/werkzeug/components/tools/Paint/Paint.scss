@@ -1,0 +1,34 @@
+@import "src/styles/common";
+
+._mk_draw_paint {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+._mk_annotation_paintor-image {
+	// === svg-image
+}
+
+//noinspection ALL
+._mk_paint-movemode {
+	@include Cursor(grab);
+
+	._marker_issue {
+		@include Cursor(grab);
+	}
+}
+
+//noinspection ALL
+._mk_paint-dragmode {
+	@include Cursor(grabbing);
+
+	._marker_issue {
+		@include Cursor(grabbing);
+	}
+}
+
+._marker_issue {
+	@include Cursor(pointer);
+}

@@ -1,0 +1,205 @@
+@import 'src/style/color.scss';
+
+@mixin contoller-btn($size) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  & > img {
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin current-date($font-size) {
+  display: block;
+  color: $mono207;
+  font-weight: bold;
+  font-size: $font-size;
+}
+
+@mixin cell($cell-size) {
+  display: inline-block;
+  width: $cell-size;
+  height: $cell-size;
+  line-height: $cell-size;
+  text-align: center;
+  color: $mono204;
+}
+
+@mixin grid($margin-bot, $cell-size, $font-size) {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: $margin-bot;
+  border-radius: 18px;
+  overflow: hidden;
+
+  .custom-cell {
+    display: inline-block;
+    width: $cell-size;
+    height: $cell-size;
+    color: $mono204;
+  }
+
+  &.head {
+    color: $mono205;
+    border-radius: 0 !important;
+    border-bottom: 1px solid $mono203;
+    margin-bottom: 4px;
+    .head-cell {
+      width: $cell-size;
+      font-size: $font-size;
+      @include cell($cell-size);
+      &:hover {
+        background: none !important;
+      }
+    }
+  }
+
+  .cell {
+    @include cell($cell-size);
+    &.this-month {
+      color: $mono207;
+    }
+    &.selected {
+      background-color: rgba($blue104, 0.1);
+    }
+    &.disabled {
+      .inner-cell {
+        background-color: unset !important;
+      }
+    }
+    &.today {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $primary-color;
+      }
+    }
+
+    .inner-cell {
+      display: inline-block;
+      width: $cell-size;
+      height: $cell-size;
+      border-radius: 50%;
+      &:hover {
+        background-color: rgba($blue104, 0.08);
+      }
+      & > label {
+        float: none;
+        font-size: $font-size;
+      }
+      &.from,
+      &.to {
+        background-color: $primary-color;
+        color: $mono200;
+      }
+    }
+    &.from,
+    &.to {
+      background-color: rgba($blue104, 0.08);
+    }
+
+    &.from {
+      border-radius: 18px 0 0 18px !important;
+      &.just-from {
+        border-radius: 18px !important;
+      }
+    }
+    &.to {
+      border-radius: 0 18px 18px 0 !important;
+      &.just-to {
+        border-radius: 18px !important;
+      }
+    }
+    &.from.to {
+      border-radius: 18px !important;
+    }
+
+    &.disabled {
+      color: $mono204;
+    }
+  }
+}
+
+@mixin calender-controller($margin-bot, $controll-btn, $current-date) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $margin-bot;
+
+  .controll-btn {
+    @include contoller-btn($controll-btn);
+  }
+  .current-date {
+    @include current-date($current-date);
+  }
+}
+
+.calendar-wrap {
+  &.large {
+    .calendar-controller {
+      @include calender-controller(17px, 26px, 16px);
+    }
+    &.from {
+      margin-right: 30px;
+    }
+    .calendar {
+      .grid {
+        @include grid(4px, 40px, 15px);
+      }
+    }
+  }
+  &.medium {
+    .calendar-controller {
+      @include calender-controller(10px, 24px, 16px);
+    }
+    &.from {
+      margin-right: 30px;
+    }
+    .calendar {
+      .grid {
+        @include grid(4px, 36px, 13px);
+      }
+    }
+  }
+
+  &.small {
+    .calendar-controller {
+      @include calender-controller(7px, 20px, 14px);
+    }
+    &.from {
+      margin-right: 20px;
+    }
+    .calendar {
+      .grid {
+        @include grid(2px, 30px, 11px);
+      }
+    }
+  }
+
+  &.x-small {
+    .calendar-controller {
+      @include calender-controller(4px, 18px, 12px);
+    }
+    &.from {
+      margin-right: 15px;
+    }
+    .calendar {
+      .grid {
+        @include grid(1px, 26px, 10px);
+      }
+    }
+  }
+}

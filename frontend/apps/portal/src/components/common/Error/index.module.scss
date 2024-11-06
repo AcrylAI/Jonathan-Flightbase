@@ -1,0 +1,57 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+.container {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .logo-container {
+    padding: 42px 74px;
+    margin-right: 56px;
+    img {
+      width: 269px;
+    }
+  }
+  .content-container {
+    .error-code {
+      font-family: SpoqaHanSansNeo;
+      font-size: 80px;
+      font-weight: bold;
+      text-align: left;
+      color: #000;
+      margin-bottom: 16px;
+    }
+    .text-container {
+      font-size: 16px;
+      margin-bottom: 32px;
+      color: #747474;
+    }
+    .btn-container {
+      button {
+        width: 126px;
+        height: 40px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    flex-direction: column;
+    .logo-container {
+      margin-right: 0px;
+    }
+    .content-container {
+      .error-code {
+        text-align: center;
+      }
+    }
+    text-align: center;
+  }
+}

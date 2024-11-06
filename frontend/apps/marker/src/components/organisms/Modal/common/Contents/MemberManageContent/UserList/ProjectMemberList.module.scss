@@ -1,0 +1,192 @@
+@import '@src/styles/color.scss';
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  background-color: $blue100;
+  padding: 24px 16px;
+
+  .row-wrapper {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .user-list-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+
+    .left-side {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      .permission {
+        width: 150px;
+        .label {
+          display: flex;
+        }
+      }
+      .id {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 120px;
+        padding-right: 20px;
+      }
+    }
+    .right-side {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      width: 350px;
+      .join-project-number {
+        width: 130px;
+      }
+      .managing-project-number {
+        width: 130px;
+      }
+      .control-icon {
+        padding-right: 24px;
+        margin-left: auto;
+        width: auto;
+      }
+    }
+
+    &.header {
+      color: $blue103;
+      .left-side {
+        display: flex;
+        .permission {
+          display: flex;
+          padding-left: 8px;
+          .label {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &.row {
+      padding: 16px 0px;
+      background-color: #fff;
+      height: 48px;
+      color: $mono207;
+      .left-side {
+        .permission {
+          padding-left: 12px;
+          .label {
+            width: fit-content;
+            padding: 6px 8px;
+            border-radius: 2px;
+            &.flightbase {
+              background-color: $blue101;
+              color: $blue104;
+            }
+            &.labeler {
+              background-color: $yellow301;
+              color: $yellow303;
+            }
+          }
+        }
+      }
+      .right-side {
+        .control-icon {
+          cursor: pointer;
+
+          .circle {
+            width: 24px;
+            height: 24px;
+            border: 2px solid $blue103;
+            border-radius: 50%;
+            position: relative;
+            padding: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.25s ease-in-out, border 0.2s;
+
+            &.active {
+              border: 2px solid $red503;
+            }
+            .bar {
+              position: absolute;
+              width: 10px;
+              background-color: $blue103;
+              border: 1px solid $blue103;
+              transition: all 0.25s ease-in-out, border 0.2s;
+              z-index: 99;
+              &.x-axis {
+                transform: rotate(0deg);
+                &.active {
+                  border: 1px solid $red502;
+                  background-color: $red502;
+                }
+              }
+              &.y-axis {
+                transform: rotate(-90deg);
+                &.active {
+                  border: 1px solid $red502;
+                  background-color: $red502;
+                  transform: rotate(0deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nodata {
+  display: flex;
+  height: 100%;
+  font-family: MarkerFont;
+  justify-content: center;
+  align-items: center;
+  color: $mono204;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.carrot {
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 6px;
+  .up {
+    height: 7px;
+    width: 7px;
+    position: relative;
+    svg {
+      position: absolute;
+      height: 7px;
+      width: 7px;
+    }
+  }
+  .down {
+    height: 7px;
+    width: 7px;
+    position: relative;
+    svg {
+      position: absolute;
+      height: 7px;
+      width: 7px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '@src/styles/color.scss';
+
+.container {
+  // overflow-x: scroll;
+  overflow-y: unset;
+  & > :first-child {
+    display: flex;
+    justify-content: space-between;
+
+    .filterSection {
+      display: flex;
+    }
+    .appliedFilterSection {
+      padding: 20px 0px 20px 0px;
+    }
+  }
+}
+.noDatasetSection {
+  padding-top: 100px;
+  height: calc(100ch - 422px);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  & > img {
+    margin-bottom: 15px;
+  }
+  & > span {
+    margin-bottom: 10px;
+  }
+}
+.filter-container {
+  position: sticky;
+  z-index: 101;
+}
+.filter-button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 4px;
+  background: transparent;
+  width: auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  min-width: 90px;
+}
+.filter-inactive {
+  border: 1px solid $mono203 !important;
+  & > span {
+    color: $mono203;
+  }
+}
+.filter-active {
+  border: 1px solid $blue104;
+  & > span {
+    color: $blue104 !important;
+  }
+}

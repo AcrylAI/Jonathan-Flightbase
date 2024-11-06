@@ -1,0 +1,19 @@
+.contents-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 640px;
+  width: 100%;
+  position: relative;
+  .close {
+    position: absolute;
+    left: calc(100% - 40px);
+    top: 16px;
+    cursor: pointer;
+  }
+  .left-section {
+    width: calc(100% - 360px);
+  }
+  .right-section {
+    width: 360px;
+  }
+}

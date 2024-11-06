@@ -1,0 +1,165 @@
+@import '@src/styles/color.scss';
+.container {
+  background-color: $blue110;
+  position: fixed;
+  width: 64px;
+  height: 48px;
+  top: 90%;
+  left: 94%;
+  z-index: 105;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $mono201;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.13);
+  cursor: pointer;
+  color: white;
+  border-radius: 24px;
+  transition: width 0.15s ease-in-out, top 0.15s ease-in-out,
+    left 0.15s ease-in-out, height 0.15s ease-in-out, transform 0.2s ease-in-out;
+  animation-name: appear;
+  animation-timing-function: linear;
+  animation-duration: 1.3s;
+
+  &:not(.active, .grab) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &.active {
+    width: 151px;
+    height: 176px;
+    padding: 12px 8px;
+    cursor: default;
+    &.sm {
+      height: 128px;
+    }
+  }
+  &.grab {
+    transition: none;
+    cursor: grabbing;
+  }
+  .contents {
+    position: relative;
+    gap: 8px;
+    overflow: hidden;
+    align-items: center;
+
+    .up-side {
+      display: none;
+    }
+    .bottom-side {
+      .pencil-icon {
+        cursor: pointer;
+        display: flex;
+        user-select: none;
+        img {
+          user-select: none;
+        }
+      }
+      .close-icon {
+        display: none;
+      }
+    }
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+
+      .up-side {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+        animation-name: delay;
+        animation-timing-function: linear;
+        animation-duration: 0.3s;
+        animation-delay: 1s;
+
+        .btn-container {
+          border-radius: 16px;
+          height: 48px;
+          cursor: pointer;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 12px 20px;
+          width: 100%;
+
+          &.disabled {
+            background: rgba(255, 255, 255, 0.05);
+            cursor: not-allowed;
+          }
+          &:not(.disabled) {
+            &:hover {
+              background: rgba(95, 97, 110, 1);
+            }
+          }
+        }
+      }
+      .bottom-side {
+        .close-icon {
+          cursor: pointer;
+          display: flex;
+          user-select: none;
+          img {
+            user-select: none;
+          }
+        }
+        .pencil-icon {
+          display: none;
+        }
+      }
+    }
+    &.y-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@keyframes asc {
+  0% {
+    transform: translate(0%, 200%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes desc {
+  0% {
+    transform: translate(0%, -200%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  80% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes delay {
+  0% {
+    display: none;
+  }
+  100% {
+    display: flex;
+  }
+}

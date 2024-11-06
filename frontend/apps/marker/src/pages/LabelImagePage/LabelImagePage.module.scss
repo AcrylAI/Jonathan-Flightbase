@@ -1,0 +1,9 @@
+@import 'src/styles/common';
+
+.LabelImagePage {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: 100%;
+	@include Cursor(default);
+}

@@ -1,0 +1,37 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.Selection {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 8px;
+	width: 100%;
+	overflow: hidden;
+
+	.option {
+		flex-basis: calc((100% - 8px)/2);
+		display: flex;
+		flex-flow: row nowrap;
+		overflow: hidden;
+		gap: 12px;
+	}
+	&.twice .option {
+		flex-basis: 100%;
+	}
+
+	.option:not(.disabled) {
+		color: $blue110;
+		@include Cursor(pointer);
+	}
+	.disabled {
+		@include Cursor(default);
+		//color: $editor-weak-icon;
+		color: $mono204;
+	}
+}
+
+.Radio {
+}
+
+.Check {
+}

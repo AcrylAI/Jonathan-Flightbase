@@ -1,0 +1,13 @@
+@import 'src/styles/common';
+
+.ner-delete-button {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url("./XCircle.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include Cursor(pointer);
+}

@@ -1,0 +1,41 @@
+@import '@src/styles/color.scss';
+
+.btn-list {
+  min-width: 130px;
+  padding: 8px 0;
+  background-color: $dark-mono206;
+  border-radius: 8px;
+  .btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    color: $dark-mono200;
+    font-size: 14px;
+    font-family: SpoqaR;
+    cursor: default;
+    .text {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: SpoqaR;
+    }
+    .icon {
+      margin-right: 4px;
+      width: 20px;
+      height: 20px;
+    }
+    &.hover {
+      cursor: pointer;
+      &:hover {
+        background-color: $dark-mono205;
+      }
+    }
+    &.disable {
+      opacity: 0.3;
+      cursor: default;
+      color: $dark-mono202;
+      &:hover {
+        background-color: $mono206;
+      }
+    }
+  }
+}

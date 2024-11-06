@@ -1,0 +1,29 @@
+.icon-compo-list {
+  display: grid;
+  padding-left: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(110px, auto));
+  column-gap: 32px;
+  & > li {
+    list-style: none;
+    & > div {
+      display: grid;
+      place-items: center;
+      grid-template-rows: 70px 20px;
+      & > p {
+        display: grid;
+        place-items: center;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.icon-compo {
+  padding-top: 10px;
+  display: grid;
+  place-items: center;
+  & > p {
+    display: grid;
+    font-size: 12px;
+  }
+}

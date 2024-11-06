@@ -1,0 +1,28 @@
+.status-card-container {
+  &.pointer {
+    cursor: pointer;
+  }
+  .enter-icon {
+    position: absolute;
+    right: 18px;
+  }
+
+  .labeling-card-icon {
+    margin-bottom: 34px;
+  }
+
+  .labeling-card-status {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+}

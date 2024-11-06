@@ -1,0 +1,81 @@
+@import '@src/styles/color.scss';
+
+.class-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .header {
+    color: $mono204;
+    display: flex;
+    margin-bottom: 8px;
+    padding: 0 8px;
+    .no {
+      min-width: 30px;
+      max-width: 50px;
+      width: 10%;
+    }
+    .color {
+      min-width: 36px;
+      max-width: 50px;
+      width: 12%;
+    }
+    .class-name {
+      flex: 1;
+      min-width: 75px;
+    }
+    .tool {
+      flex: 1;
+      min-width: 80px;
+    }
+  }
+  .class-list-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .class-list-item {
+      display: flex;
+      align-items: center;
+      background-color: $mono201;
+      height: 44px;
+      padding: 16px 8px;
+      color: $mono205;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 1px solid $blue100;
+      transition: all 0.1s ease-in-out;
+      .no {
+        min-width: 30px;
+        max-width: 50px;
+        width: 10%;
+      }
+      .color {
+        min-width: 36px;
+        max-width: 50px;
+        width: 12%;
+        .color-chip {
+          width: 16px;
+          height: 16px;
+          border-radius: 5px;
+        }
+      }
+      .class-name {
+        flex: 1;
+        min-width: 75px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .tool {
+        flex: 1;
+        min-width: 80px;
+      }
+
+      &.active {
+        color: $blue104;
+        background-color: $blue100;
+        border-color: $blue102;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.member {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  &__content {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-footer {
+      align-self: flex-end;
+      margin-top: auto;
+      margin-right: 28px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.test {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,10 @@
+.master {
+  line-height: 1;
+}
+.master::after {
+  content: url(/images/icon/ic-master.png);
+  display: inline-block;
+  width: 18px;
+  vertical-align: middle;
+  margin-left: 4px;
+}

@@ -1,0 +1,18 @@
+<svg width="112" height="127" viewBox="0 0 112 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3" y="3" width="71" height="86" fill="white" stroke="#2A2D3E" stroke-width="2" stroke-linejoin="round"/>
+<rect x="38" y="38" width="71" height="86" fill="white" stroke="#2A2D3E" stroke-width="2" stroke-linejoin="round"/>
+<mask id="path-3-outside-1_7178_49099" maskUnits="userSpaceOnUse" x="36.5898" y="37.0703" width="39" height="53" fill="black">
+<rect fill="white" x="36.5898" y="37.0703" width="39" height="53"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M73.4112 39.0703V87.9335H38.5898V39.0703H73.4112Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M73.4112 39.0703V87.9335H38.5898V39.0703H73.4112Z" fill="#E6EAF2"/>
+<path d="M73.4112 39.0703H75.4112C75.4112 37.9657 74.5158 37.0703 73.4112 37.0703V39.0703ZM73.4112 87.9335V89.9335C74.5158 89.9335 75.4112 89.0381 75.4112 87.9335H73.4112ZM38.5898 87.9335H36.5898C36.5898 89.0381 37.4853 89.9335 38.5898 89.9335V87.9335ZM38.5898 39.0703V37.0703C37.4853 37.0703 36.5898 37.9657 36.5898 39.0703H38.5898ZM71.4112 39.0703V87.9335H75.4112V39.0703H71.4112ZM73.4112 85.9335H38.5898V89.9335H73.4112V85.9335ZM40.5898 87.9335V39.0703H36.5898V87.9335H40.5898ZM38.5898 41.0703H73.4112V37.0703H38.5898V41.0703Z" fill="#2A2D3E" mask="url(#path-3-outside-1_7178_49099)"/>
+<rect x="0.5" y="0.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="0.5" y="85.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="70.5" y="85.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="70.5" y="0.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="35.5" y="35.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="35.5" y="120.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="105.5" y="120.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+<rect x="105.5" y="35.5" width="6" height="6" fill="#2A2D3E" stroke="#2A2D3E" stroke-linejoin="round"/>
+</svg>

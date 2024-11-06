@@ -1,0 +1,17 @@
+@import '~styles/screen.scss';
+
+.basic-title {
+  font-weight: bold;
+  color: #121619;
+  white-space: pre;
+  text-align: center;
+  line-height: 1.5;
+
+  @media (min-width: $desktop) {
+    font-size: 48px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    font-size: 30px;
+  }
+}

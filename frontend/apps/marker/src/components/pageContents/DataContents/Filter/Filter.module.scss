@@ -1,0 +1,40 @@
+.filter-contents {
+  position: absolute;
+  padding: 14px;
+  width: 246px;
+  height: auto;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.1);
+  border-radius: 8px;
+  .filter-title {
+    width: 30px;
+    height: 12px;
+    left: 16px;
+    top: 12px;
+    font-family: MarkerFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #002f77;
+  }
+}
+
+.filter-label {
+  font-family: MarkerFont;
+  width: auto;
+  height: 12px;
+  left: 18px;
+  top: 40px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  color: #747474;
+  margin: 10px 0px 8px 0px;
+}
+.font {
+  font-family: MarkerFont;
+}

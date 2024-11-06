@@ -1,0 +1,193 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+$headerHeight: 68px;
+$footerHeight: 76px;
+
+.main {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    min-height: calc(100% - calc(#{$headerHeight} + #{$footerHeight}));
+    height: auto;
+    flex: 1;
+  }
+
+  &__bg {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    list-style-type: none;
+    @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+      background-image: url('/Images/img-bg.svg');
+      background-size: cover;
+
+      li {
+        display: none;
+      }
+    }
+
+    li {
+      position: absolute;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-duration: 20s;
+
+      &.bg-anim-1 {
+        top: calcResponsive(20);
+        left: calcResponsive(-106);
+        animation-name: bg-1;
+        img {
+          height: calcResponsive(549);
+        }
+      }
+
+      &.bg-anim-2 {
+        bottom: calcResponsive(49);
+        right: calcResponsive(-56);
+        animation-name: bg-2;
+        img {
+          height: calcResponsive(367);
+        }
+      }
+
+      &.bg-anim-3 {
+        top: calcResponsive(220);
+        left: calcResponsive(654);
+        animation-name: bg-3;
+        img {
+          //width: calcResponsive(183);
+          height: calcResponsive(185);
+        }
+      }
+
+      &.bg-anim-4 {
+        top: calcResponsive(283);
+        right: calcResponsive(103);
+        animation-name: bg-4;
+        img {
+          //width: calcResponsive(116);
+          height: calcResponsive(116);
+        }
+      }
+
+      &.bg-anim-5 {
+        bottom: calcResponsive(106);
+        left: calcResponsive(196);
+        animation-name: bg-5;
+        img {
+          //width: calcResponsive(255);
+          height: calcResponsive(255);
+        }
+      }
+    }
+  }
+}
+
+@keyframes bg-1 {
+  67% {
+    top: calcResponsive(-549);
+    left: calcResponsive(650);
+  }
+  68% {
+    top: calcResponsive(-549);
+    left: calcResponsive(-549);
+  }
+  69% {
+    top: calcResponsive(250);
+    left: calcResponsive(-549);
+  }
+  100% {
+    top: calcResponsive(20);
+    left: calcResponsive(-106);
+  }
+}
+
+@keyframes bg-2 {
+  67% {
+    bottom: calcResponsive(150);
+    right: calcResponsive(-367);
+  }
+  68% {
+    bottom: calcResponsive(-367);
+    right: calcResponsive(-367);
+  }
+  69% {
+    bottom: calcResponsive(-367);
+    right: calcResponsive(200);
+  }
+  100% {
+    bottom: calcResponsive(49);
+    right: calcResponsive(-56);
+  }
+}
+
+@keyframes bg-3 {
+  67% {
+    top: calcResponsive(-185);
+    left: calcResponsive(1500);
+  }
+  68% {
+    top: calcResponsive(-185);
+    left: calcResponsive(-185);
+  }
+  69% {
+    top: calcResponsive(300);
+    left: calcResponsive(-185);
+  }
+  100% {
+    top: calcResponsive(220);
+    left: calcResponsive(654);
+  }
+}
+
+@keyframes bg-4 {
+  17% {
+    top: calcResponsive(150);
+    right: calcResponsive(-116);
+  }
+  18% {
+    top: 100vh;
+    right: calcResponsive(-116);
+  }
+  19% {
+    top: 100vh;
+    right: calcResponsive(1000);
+  }
+  100% {
+    top: calcResponsive(283);
+    right: calcResponsive(103);
+  }
+}
+
+@keyframes bg-5 {
+  67% {
+    bottom: calcResponsive(500);
+    left: 100vw;
+  }
+  68% {
+    bottom: calcResponsive(-255);
+    left: 100vw;
+  }
+  69% {
+    bottom: calcResponsive(-255);
+    left: calcResponsive(-255);
+  }
+  70% {
+    bottom: calcResponsive(0);
+    left: calcResponsive(-255);
+  }
+  100% {
+    bottom: calcResponsive(106);
+    left: calcResponsive(196);
+  }
+}

@@ -1,0 +1,49 @@
+@import 'src/styles/color.scss';
+
+.rounds-wrap {
+  background-color: $dark-mono206;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 21px 24px 21px 24px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  grid-gap: 20px;
+  .number {
+    font-size: 16px;
+    width: 67px;
+  }
+  .client {
+    font-size: 12px;
+    white-space: nowrap;
+    margin-left: 20px;
+    color: $dark-mono201;
+    width: 47px;
+  }
+  .result-wrap {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    position: relative;
+    justify-content: center;
+    margin-left: 10px;
+    width: 235px;
+    .result {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 43px;
+      line-height: 1.2;
+    }
+    &.card {
+      box-sizing: border-box;
+      display: felx;
+      justify-content: center;
+    }
+  }
+  &:hover {
+    background-color: $dark-mono205;
+    cursor: pointer;
+  }
+}

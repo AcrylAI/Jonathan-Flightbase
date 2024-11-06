@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="395" height="230" viewBox="0 0 395 230">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-1282 -326) translate(1230 136) translate(36 190) translate(16)">
+                        <rect width="177" height="230" fill="#F2F2F2" rx="12"/>
+                        <g transform="translate(14 11)">
+                            <rect width="54" height="22" fill="#FFE98E" rx="7"/>
+                            <circle cx="13" cy="11" r="5" fill="#FFF"/>
+                        </g>
+                        <rect width="177" height="140" x="218" fill="#F2F2F2" rx="12"/>
+                        <g transform="translate(228 11)">
+                            <rect width="58" height="24" fill="#4161F6" rx="7"/>
+                            <circle cx="13" cy="12" r="5" fill="#FFF"/>
+                        </g>
+                        <rect width="10" height="10" x="171" y="74" fill="#FFF" stroke="#DDEAFF" stroke-linecap="round" stroke-width="3" rx="5"/>
+                        <path stroke="#DDEAFF" stroke-linecap="round" stroke-width="3" d="M177 79c32 0 32-56 64-56"/>
+                        <g transform="translate(231 53)">
+                            <rect width="146" height="63" fill="#FFF" rx="6"/>
+                            <rect width="61" height="12" x="10" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="40" height="12" x="76" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="43" height="12" x="10" y="35" fill="#DFE1E8" rx="6"/>
+                            <rect width="77" height="12" x="57" y="35" fill="#DFE1E8" rx="6"/>
+                        </g>
+                        <g transform="translate(15 53)">
+                            <rect width="146" height="63" fill="#FFF" rx="6"/>
+                            <rect width="61" height="12" x="10" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="61" height="12" x="76" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="43" height="12" x="10" y="35" fill="#DFE1E8" rx="6"/>
+                            <rect width="55" height="12" x="57" y="35" fill="#DFE1E8" rx="6"/>
+                        </g>
+                        <g transform="translate(15 143)">
+                            <rect width="146" height="63" fill="#FFF" rx="6"/>
+                            <rect width="61" height="12" x="10" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="40" height="12" x="76" y="15" fill="#DFE1E8" rx="6"/>
+                            <rect width="43" height="12" x="10" y="35" fill="#DFE1E8" rx="6"/>
+                            <rect width="77" height="12" x="57" y="35" fill="#DFE1E8" rx="6"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

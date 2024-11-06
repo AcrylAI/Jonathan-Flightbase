@@ -1,0 +1,96 @@
+@import '@src/styles/color.scss';
+.file-container {
+  position: relative;
+  width: 100%;
+  font-family: MarkerFont;
+
+  .file-input {
+    display: none;
+  }
+  .upload-btn {
+    font-size: 14px;
+    width: 64px;
+    height: 14px;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 52px);
+    color: $blue104;
+    font-weight: 500;
+    cursor: pointer;
+    .plus {
+    }
+    .title {
+      margin-left: 4px;
+    }
+  }
+  .file-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 144px;
+    margin-bottom: 48px;
+    .file-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $mono201;
+      padding: 16px 14px;
+      color: $mono205;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 200%;
+      height: 42px;
+      border-radius: 2px;
+
+      .file-name {
+        .file-size {
+          margin-left: 8px;
+          color: $mono204;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        margin-right: 8px;
+        margin-left: 8px;
+        .bar {
+          width: 10px;
+          border: 0.5px solid $mono208;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          &.left {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+          &.right {
+            transform: translate(-50%, -50%) rotate(135deg);
+          }
+        }
+      }
+    }
+  }
+  .upload-lane {
+    background-color: $mono201;
+    padding: 14px 0px;
+    height: 42px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 48px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $blue100-1;
+    }
+    .desc {
+      color: $blue104;
+    }
+  }
+}

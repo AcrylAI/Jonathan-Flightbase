@@ -1,0 +1,28 @@
+@import '@src/styles/color.scss';
+
+.node-dashboard-template {
+  display: flex;
+  min-width: 700px;
+  height: 280px;
+  background-color: $mono200;
+  border-radius: 8px;
+  border: 1px solid $card-border-color;
+  &.has-stack-bar {
+    min-width: 900px;
+  }
+  .pie-chart-box {
+    flex: 1 0 220px;
+    padding: 16px 24px;
+    border-right: 1px solid $card-border-color;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .stack-bar-chart-box {
+    flex: 1 0 180px;
+    border-right: 1px solid $card-border-color;
+  }
+  .table-box {
+    flex: 8 350px;
+    overflow: hidden;
+  }
+}

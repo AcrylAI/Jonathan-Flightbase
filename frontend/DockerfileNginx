@@ -1,0 +1,3 @@
+FROM nginx
+RUN mkdir /front-nginx-init
+COPY ./install/jp-front/nginx/init.sh /front-nginx-init

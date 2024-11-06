@@ -1,0 +1,74 @@
+@import 'src/style/color.scss';
+
+// Date Input Style
+
+@mixin date-input($height, $fontSize, $borderRadius) {
+  display: block;
+  position: relative;
+
+  & > input {
+    width: 100%;
+    height: $height;
+    box-sizing: border-box;
+    line-height: 1.2em;
+    font-size: $fontSize;
+    outline: none;
+    background: $mono200;
+    vertical-align: middle;
+    color: $normal-text-color;
+    font-family: SpoqaM;
+    border-radius: $borderRadius;
+    border: 1px solid $mono204;
+    padding: 8px 0.94118em 8px 0.94118em;
+    &.normal-padding {
+      padding: 8px 0.94118em 8px 0.94118em;
+    }
+    &.lowercase {
+      &::placeholder {
+        text-transform: none;
+      }
+      text-transform: lowercase;
+    }
+    &:active,
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+    &::placeholder {
+      color: $placeholder-text-color;
+    }
+    &:read-only {
+      border: 1px solid $mono204 !important;
+      color: $mono205;
+      background-color: $mono202;
+    }
+    &:disabled {
+      border: 1px solid $mono202 !important;
+      color: $mono203;
+      background-color: $mono202;
+    }
+  }
+  &.error > input {
+    border: 1px solid $red502;
+  }
+  &.success > input {
+    border: 1px solid $primary-color;
+  }
+}
+
+.jp {
+  &.input-date {
+    @include date-input(44px, 16px, 4px);
+    &.large {
+      @include date-input(44px, 14px, 4px);
+    }
+    &.medium {
+      @include date-input(36px, 14px, 4px);
+    }
+    &.small {
+      @include date-input(30px, 14px, 4px);
+    }
+    &.x-small {
+      @include date-input(24px, 12px, 4px);
+    }
+  }
+}

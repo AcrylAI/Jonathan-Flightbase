@@ -1,0 +1,45 @@
+@import 'src/style/color.scss';
+
+.badge {
+  display: inline-flex;
+  height: 18px;
+  line-height: 1.5;
+  justify-content: center;
+  align-items: baseline;
+  font-family: SpoqaB;
+  font-size: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 0 4px;
+  border-radius: 18px;
+  border: 2px solid;
+  border-color: $mono205;
+  color: $mono205;
+  &.blue {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+  &.yellow {
+    border-color: $yellow304;
+    color: $yellow304;
+  }
+  &.green,
+  &.running {
+    border-color: $lime603;
+    color: $lime603;
+  }
+  &.reserved,
+  &.installing {
+    border-color: $yellow303;
+    color: $yellow303;
+  }
+  &.red,
+  &.expired,
+  &.error {
+    border-color: $red502;
+    color: $red502;
+  }
+  &.disabled {
+    opacity: 0.2;
+  }
+}

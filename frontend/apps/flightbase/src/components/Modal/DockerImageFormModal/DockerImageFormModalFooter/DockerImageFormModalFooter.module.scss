@@ -1,0 +1,22 @@
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: auto;
+  .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > button {
+      margin-left: 12px;
+    }
+  }
+  .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > button {
+      margin-right: 12px;
+    }
+  }
+}

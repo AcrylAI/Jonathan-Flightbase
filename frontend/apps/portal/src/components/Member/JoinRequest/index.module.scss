@@ -1,0 +1,145 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+// 회원가입 컨테이너
+.joinRequest {
+  width: 100%;
+  max-width: 440px;
+  height: fit-content;
+
+  @media (min-width: $desktop) {
+    margin: 6px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin: 20px;
+  }
+
+  // 회원가입 해더 박스
+  &__header {
+    &--main {
+      width: 100%;
+
+      @include flexbox(center, center);
+      margin-bottom: 12px;
+    }
+
+    &--sub {
+      width: 100%;
+
+      @include flexbox(center, center);
+      flex-direction: column;
+    }
+
+    margin-bottom: 36px;
+  }
+
+  // 사용자 기본정보
+  &__user-info-box {
+    margin-top: 36px;
+    margin-bottom: 36px;
+
+    .user-info-box {
+      position: relative;
+      margin-bottom: 10px;
+
+      label {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-size: 14px;
+        color: #aaa;
+        background: #fff;
+        padding: 0px 4px;
+      }
+    }
+  }
+
+  &__option-info-box {
+    margin-bottom: 36px;
+    > label {
+      display: block;
+      margin-bottom: 12px;
+      font-family: SpoqaB;
+      .required {
+        color: #d91a0c;
+      }
+    }
+    .checkbox-box {
+      // display: flex;
+      display: grid;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      grid-column-gap: 30px;
+      grid-row-gap: 8px;
+      grid-template-columns: repeat(2, 1fr);
+
+      > div {
+        flex: 1;
+        white-space: nowrap;
+      }
+    }
+    .etc-input-box {
+      margin-top: 8px;
+      .etc-input {
+        width: 100%;
+        height: 40px;
+        border: solid 1px #dedfe0;
+        border-radius: 4px;
+        outline: none;
+        padding: 8px 12px;
+        font-size: 16px;
+        &:focus {
+          border: solid 1px #0e4bff;
+        }
+
+        @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+          height: 34px;
+          padding: 6px 8px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  // 약관 동의
+  &__agree {
+    margin-bottom: 20px;
+    div {
+      display: flex;
+      flex-direction: row;
+
+      .required {
+        color: #d91a0c;
+      }
+    }
+  }
+
+  &__submit-box {
+    margin-bottom: 50px;
+  }
+
+  &__chkbox {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    top: 15px;
+    right: 15px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #b7b8b9;
+
+    margin-bottom: 50px;
+  }
+}
+
+// 각 콘텐츠에서 사용하는 타이틀
+.contentTitle {
+  margin-bottom: 16px;
+}

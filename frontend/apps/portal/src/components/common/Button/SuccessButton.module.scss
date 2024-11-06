@@ -1,0 +1,29 @@
+@import '~styles/screen.scss';
+@import '~styles/variables.scss';
+
+.success-button {
+  width: 100%;
+  background-color: $btn-primary;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:hover {
+    background-color: $btn-primary--hover;
+  }
+
+  &:disabled {
+    background-color: #dedfe0;
+  }
+  @media (min-width: $desktop) {
+    font-size: 18px;
+    height: 60px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    font-size: 16px;
+    height: 56px;
+  }
+}

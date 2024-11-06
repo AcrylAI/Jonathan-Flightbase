@@ -1,0 +1,154 @@
+@import 'src/style/theme.scss';
+
+@mixin nav-item($theme-name) {
+  &.main-group {
+    & > a {
+      height: 36px;
+      color: $mono205 !important;
+      padding: 0 12px;
+      margin: 0 0 0 8px;
+      .text {
+        font-size: 13px;
+      }
+      &.active {
+        border-radius: 8px 0 0 8px;
+      }
+    }
+  }
+
+  &.sub-group {
+    & > a {
+      height: 36px;
+      color: $mono205;
+      padding: 0 12px;
+      margin: 0 0 0 36px;
+      .sub-group-icon {
+        display: flex;
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $mono205;
+          margin-right: 10px;
+        }
+      }
+      .text {
+        font-size: 12px;
+      }
+      &.active {
+        border-radius: 8px 0 0 8px;
+        .sub-group-icon {
+          &::before {
+            background-color: $blue104;
+          }
+        }
+      }
+    }
+  }
+
+  & > a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    background-color: transparent;
+    color: $mono206;
+    text-decoration: none;
+
+    .icon-wrap {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: auto 1/1;
+      .active-ico {
+        display: none;
+      }
+      .ico {
+        display: block;
+        width: 100%;
+        object-fit: scale-down;
+      }
+    }
+    .text {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+    &.active {
+      .icon-wrap {
+        .active-ico {
+          display: block;
+          width: 100%;
+          object-fit: scale-down;
+        }
+        .ico {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.end-match.#{$theme-name} {
+    & > a {
+      background-color: map-get($content_bg, $theme-name) !important;
+      box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.04);
+      color: map-get($sidenav_btn_txt_active_color, $theme-name) !important;
+    }
+  }
+}
+
+.nav-item {
+  @include nav-item(jp-primary);
+  @include nav-item(jp-dark);
+}
+
+@mixin themable($theme-name) {
+  .nav-item.#{$theme-name} > a {
+    background-color: map-get($sidenav_btn_bg, $theme-name);
+    color: map-get($sidenav_btn_txt_color, $theme-name);
+    border-color: map-get($sidenav_btn_border_color, $theme-name);
+    &.active {
+      .arrow {
+        margin-left: 10px;
+        border: 1px solid;
+        border-width: 0 2px 2px 0;
+        border-end-end-radius: 1.5px;
+        border-start-end-radius: 1.5px;
+        border-bottom-right-radius: 1.5px;
+        border-bottom-left-radius: 1.5px;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+  }
+  .nav-item.#{$theme-name}.end-match > a {
+    background-color: map-get($sidenav_btn_active_bg, $theme-name);
+    color: map-get($sidenav_btn_txt_active_color, $theme-name);
+    border-color: map-get($sidenav_btn_border_active_color, $theme-name);
+    &.active {
+      .arrow {
+        margin-top: 2px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+    }
+  }
+  // FL 대응
+  .nav-item.jp-dark > a {
+    .icon-wrap {
+      width: 20px;
+      height: 20px;
+      object-fit: scale-down;
+      margin-right: 20px;
+    }
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

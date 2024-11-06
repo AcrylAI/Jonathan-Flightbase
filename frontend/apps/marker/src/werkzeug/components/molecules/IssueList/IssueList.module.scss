@@ -1,0 +1,33 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.IssueList {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 8px;
+}
+
+.IssueItem {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 12px;
+	gap: 12px;
+	width: 100%;
+	@include Cursor(pointer);
+}
+
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	justify-content: space-between;
+	gap: 16px;
+
+	&.warn {
+		color: $red502;
+	}
+
+	.resolve {
+		color: $mono205;
+	}
+}

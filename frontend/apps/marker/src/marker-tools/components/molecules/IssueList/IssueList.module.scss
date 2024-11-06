@@ -1,0 +1,85 @@
+@import 'src/styles/color';
+@import 'src/styles/common';
+
+.issuebox-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0;
+	transition: gap 0.15s ease;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 2px;
+
+	&.open {
+		gap: 12px;
+	}
+}
+
+.issuebox-header {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	padding: 12px;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.issuebox-area {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.issuebox-contents {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 0 12px 12px;
+}
+
+.issue-comment {
+	display: block;
+	color: #1e222a;
+	font-family: SpoqaR, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	word-break: break-all;
+	transition: all 0.15s ease;
+	user-select: none;
+
+	&.close {
+		display: block;
+		max-height: 21px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+.issuebox-arrow,
+.issuebox-check,
+.issuebox-delete {
+	display: flex;
+	flex-flow: row nowrap;
+	width: fit-content;
+	height: fit-content;
+	align-items: center;
+	justify-content: center;
+	@include Cursor(pointer);
+}
+
+.issuebox-arrow {
+	transition: rotate 0.15s ease-out;
+
+	&.open {
+		rotate: 90deg;
+	}
+}
+
+.issuelist-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 16px;
+	width: 100%;
+}

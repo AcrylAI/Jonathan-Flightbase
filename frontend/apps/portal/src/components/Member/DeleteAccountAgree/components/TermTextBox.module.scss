@@ -1,0 +1,30 @@
+@import '~styles/screen.scss';
+
+.term-content-box {
+  width: 100%;
+  height: auto;
+  max-height: 210px;
+  border: 1px solid #dedfe0;
+  background-color: #ffffff;
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: #242424;
+  white-space: pre-wrap;
+
+  @media (min-width: $desktop) {
+    margin: 10px 0;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 10px;
+  }
+}

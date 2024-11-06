@@ -1,0 +1,130 @@
+@import '@src/styles/color.scss';
+
+.control-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  height: 32px;
+  .title {
+    width: 160px;
+    text-align: center;
+    font-size: 16px;
+    font-family: SpoqaM;
+  }
+  .icon-box {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    &.disable {
+      cursor: default;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .arrow-icon {
+      height: 12px;
+    }
+  }
+}
+
+.step-box {
+  display: flex;
+  justify-content: center;
+  .barloader-wrap {
+    display: flex;
+    margin-top: 3px;
+    margin-bottom: 16px;
+    width: 35px;
+
+    .barloader-gray {
+      width: 30px;
+      height: 3px;
+      border-radius: 4px;
+      position: relative;
+      //background-color: red;
+
+      overflow: hidden;
+      .bar1 {
+        width: 30px;
+        height: 3px;
+        background-color: $dark-mono202;
+        border-radius: 4px;
+        position: absolute;
+      }
+      .bar2 {
+        width: 30px;
+        height: 3px;
+        position: absolute;
+        //  border: none;
+        background: -webkit-linear-gradient(
+          to right,
+          #828282,
+          #c2c2c2,
+          #f7f8f8 50%,
+          #c2c2c2,
+          #828282
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #828282,
+          #c2c2c2,
+          #f7f8f8 50%,
+          #c2c2c2,
+          #828282
+        );
+        animation: barloader2 1s linear infinite;
+        border-radius: 4px;
+        //   animation-delay: -1500ms;
+      }
+    }
+
+    .barloader-blue {
+      width: 30px;
+      height: 3px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      .bar1 {
+        width: 30px;
+        height: 3px;
+        background-color: $dark-blue100;
+        border-radius: 4px;
+        position: absolute;
+      }
+      .bar2 {
+        width: 30px;
+        height: 3px;
+        position: absolute;
+        background: -webkit-linear-gradient(
+          to right,
+          $dark-blue100,
+          #f7f8f8 50%,
+          $dark-blue100
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          $dark-blue100,
+          #f7f8f8 50%,
+          $dark-blue100
+        );
+        animation: barloader2 1s linear infinite;
+        border-radius: 4px;
+        //   animation-delay: -1500ms;
+      }
+    }
+  }
+}
+
+@keyframes barloader2 {
+  0% {
+    // border-left: 0px solid $dark-mono202;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    // border-right: 0px solid $dark-mono202;
+    // border-left: 10px solid $dark-mono202;
+    transform: translateX(30px);
+  }
+}

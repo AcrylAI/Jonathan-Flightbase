@@ -1,0 +1,20 @@
+@import '@src/styles/color.scss';
+
+.mywork-dashboard {
+  .last-change {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    & > img {
+      padding: 2px;
+      color: $mono204;
+      margin-right: 6px;
+    }
+  }
+
+  .contents-area {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

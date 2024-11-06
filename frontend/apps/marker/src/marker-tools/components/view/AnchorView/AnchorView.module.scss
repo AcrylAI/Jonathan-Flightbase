@@ -1,0 +1,26 @@
+.anchorview-container {
+  width: fit-content;
+  height: fit-content;
+}
+
+.anchorview-anchor {
+  width: fit-content;
+  height: fit-content;
+}
+
+.anchorview-contents {
+  position: absolute;
+
+  &.s {
+    transform: translateX(-50%);
+  }
+  &.n {
+    transform: translateX(-50%) translateY(-100%);
+  }
+  &.w {
+    transform: translateX(-100%) translateY(-50%);
+  }
+  &.e {
+    transform: translateY(-50%);
+  }
+}

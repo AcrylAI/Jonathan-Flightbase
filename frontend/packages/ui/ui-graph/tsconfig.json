@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "./build/types",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@react/*": ["src/custom_modules/react/*"],
+      "@graph/*": ["src/graph/*"]
+    },
+    "typeRoots": ["./typings"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": [".", "src/**/*", "./typings", "declaration.d.ts"]
+}

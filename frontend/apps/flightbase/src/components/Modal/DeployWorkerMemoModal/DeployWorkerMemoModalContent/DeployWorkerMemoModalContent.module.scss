@@ -1,0 +1,13 @@
+@import '@src/styles/color.scss';
+
+.memo-wrap {
+  & > label {
+    display: flex;
+    justify-content: flex-end;
+    color: $mono205;
+    font-size: 14px;
+    & > div {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '@src/styles/color.scss';
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 8px;
+  background-color: $mono201;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.selected {
+    background-color: $blue100;
+    border: 1px solid $blue102;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  &.create {
+    opacity: 0.5;
+  }
+  &.isLoading {
+    cursor: progress;
+  }
+}

@@ -1,0 +1,37 @@
+@import '@src/styles/color.scss';
+.result-list-item-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 8px 12px;
+  align-items: center;
+  color: $mono205;
+  height: 32px;
+  border-bottom: 1px solid $mono203;
+  background-color: $mono201;
+
+  &.last {
+    border-bottom: none;
+  }
+  .column {
+    width: 25%;
+  }
+  .worker {
+    display: flex;
+    align-items: center;
+    color: $mono206;
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 8px;
+    }
+  }
+  .labeling {
+  }
+  .review {
+  }
+  .assign {
+    color: $mono206;
+  }
+}

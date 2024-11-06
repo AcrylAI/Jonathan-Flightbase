@@ -1,0 +1,26 @@
+@import '@src/styles/color.scss';
+.switch-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  line-height: 150%;
+  .switch-box {
+    border-radius: 2px;
+    padding: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: $blue100;
+  }
+  .label {
+    width: fit-content;
+    font-size: 14px;
+  }
+  .decorate {
+    margin: 8px 16px;
+    color: $blue104;
+  }
+  .check {
+  }
+}

@@ -1,0 +1,26 @@
+@import 'src/styles/color.scss';
+
+.IconBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.IconicText {
+  height: 34px;
+  //font-family: MarkerFont, sans-serif;
+  //font-weight: 500;
+  //font-size: 16px;
+}
+
+.KeyBox {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 2px;
+  background-color: $blue100;
+  border: 0.5px solid #c8d8fd;
+  border-radius: 2px;
+}

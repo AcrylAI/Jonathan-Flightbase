@@ -1,0 +1,42 @@
+@import 'src/styles/common';
+
+.CommentField-box {
+	position: absolute;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 288px;
+	height: 160px;
+
+	border-radius: 2px;
+	border: 1px solid var(--light-light-400, #E6EAF2);
+	background: #FFF;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.10);
+}
+
+.CommentField-textarea {
+	display: flex;
+	flex-flow: row nowrap;
+	resize: none;
+	height: 98px;
+	border: none;
+
+	margin: 12px 12px 8px;
+	padding: 0;
+
+	font-family: SpoqaR, sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.CommentField-buttons {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+	margin: 0 12px 12px;
+
+	.cancel-button {
+		color: #82868E;
+	}
+}

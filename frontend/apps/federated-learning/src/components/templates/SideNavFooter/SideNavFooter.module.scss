@@ -1,0 +1,110 @@
+@import 'src/styles/color.scss';
+
+.lang-setting {
+  position: relative;
+}
+
+.select-lang {
+  position: relative;
+  cursor: pointer;
+  height: 64px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $dark-mono204;
+  cursor: pointer;
+  &:hover {
+    & > label {
+      color: $dark-mono200;
+      &::before {
+        filter: brightness(2);
+      }
+    }
+  }
+  & > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-mono201;
+    cursor: pointer;
+    &.active {
+      color: $dark-mono200;
+      &::before {
+        filter: brightness(2);
+      }
+    }
+    > img {
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+    }
+    &::before {
+      content: '';
+      background-size: 24px 24px;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url(@src/static/images/icon/ic-lang-gray.svg);
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+  }
+}
+.tooltip {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 170px;
+  height: 112px;
+  background-color: $dark-mono205;
+  border-radius: 4px;
+  transform: translate(140px, -20px);
+  box-sizing: border-box;
+  font-size: 14px;
+  .lang {
+    padding: 10.5px 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: $dark-mono201;
+    &.selected {
+      background-color: $dark-mono206 !important;
+      color: $dark-mono200;
+    }
+    & > label {
+      cursor: pointer;
+    }
+    & > img {
+      cursor: pointer;
+      width: 24px;
+      height: 16px;
+      margin-right: 12px;
+    }
+    // .point {
+    //   position: absolute;
+    //   background-color: $dark-blue100;
+    //   width: 4px;
+    //   height: 4px;
+    //   border-radius: 50%;
+    //   right: 0;
+    //   top: 0;
+    //   &.ko {
+    //     transform: translate(-56px, 2px);
+    //   }
+
+    //   &.en {
+    //     // 선택된거 원
+    //     transform: translate(-36px, 2px);
+    //   }
+    // }
+    :hover {
+      color: $dark-mono200;
+    }
+  }
+}

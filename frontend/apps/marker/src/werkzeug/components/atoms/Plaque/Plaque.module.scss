@@ -1,0 +1,11 @@
+@import "src/styles/color";
+
+.Plaque {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: $mono200;
+	border: 1px solid $mono203;
+	border-radius: 4px;
+}

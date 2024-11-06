@@ -1,0 +1,20 @@
+@import '@src/styles/color.scss';
+.modal-header-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px 48px;
+  margin-bottom: 32px;
+  justify-content: center;
+  .header-title {
+    color: $mono206;
+    display: flex;
+    align-items: center;
+
+    .ico {
+      cursor: pointer;
+      margin-right: 8px;
+      display: flex;
+    }
+  }
+}

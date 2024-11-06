@@ -1,0 +1,63 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+.findInfo {
+  width: 100%;
+  max-width: 570px;
+  margin: 36px auto;
+
+  @include flexbox(space-between, center);
+  flex-direction: column;
+
+  /* 헤더 부분 */
+  &__header {
+    width: 100%;
+    @include flexbox(center, center);
+
+    &-title {
+      font-size: 52px;
+      font-weight: bold;
+      line-height: 1.33;
+      text-align: center;
+      color: #242424;
+
+      @media (min-width: $desktop) {
+        font-size: 52px;
+      }
+
+      @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+        max-width: 260px;
+        white-space: pre;
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__main {
+    width: 100%;
+    max-width: 440px;
+    margin-top: 60px;
+
+    &-items {
+      @include flexbox(space-between, center);
+
+      .item {
+        width: 50%;
+        height: 64px;
+        color: #979899;
+        text-align: center;
+        line-height: 64px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #979899;
+        margin-bottom: 30px;
+        cursor: pointer;
+      }
+
+      .active {
+        color: #002bff;
+        font-weight: bold;
+        border-bottom: 2px solid #002bff;
+      }
+    }
+  }
+}

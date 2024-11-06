@@ -1,0 +1,14 @@
+@import "src/styles/color";
+
+.Header {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	height: 64px;
+	min-height: 64px;
+	max-height: 64px;
+	background-color: $editor-bg-color;
+	border-bottom: 1px solid $editor-border-color;
+	padding: 0 16px;
+	gap: 16px;
+}

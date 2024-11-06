@@ -1,0 +1,249 @@
+@import '@src/styles/color.scss';
+
+.list-box {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid $card-border-color;
+  background-color: $mono200;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+
+  .group-head {
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .first {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 680px;
+      border-right: solid 1px $card-border-color;
+
+      .fixed-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .arrow-btn {
+          width: 36px;
+          height: 36px;
+          transform: rotate(270deg);
+          border-radius: 8px;
+          margin-right: 24px;
+          cursor: pointer;
+          &.open {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .job-info-box {
+        margin-left: 48px;
+        height: 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .group-name {
+          font-family: SpoqaB;
+          font-size: 18px;
+          color: $mono207;
+          height: 22px;
+        }
+        .group-info {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .status-count {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .bullet {
+              display: block;
+              width: 6px;
+              height: 6px;
+              border-radius: 3px;
+              margin-right: 4px;
+              &.running {
+                background-color: $lime603;
+              }
+              &.pending {
+                background-color: $yellow303;
+              }
+              &.done {
+                background-color: $mono204;
+              }
+            }
+            .label {
+              font-family: SpoqaM;
+              font-size: 14px;
+              color: $mono205;
+              margin-right: 4px;
+            }
+            .value {
+              width: 21px;
+              height: 18px;
+              font-family: SpoqaB;
+              font-size: 14px;
+              color: $mono207;
+              margin-right: 8px;
+            }
+          }
+          .gpu-count {
+            border-left: solid 1px $card-border-color;
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+            height: 18px;
+            .label {
+              font-family: SpoqaM;
+              font-size: 14px;
+              color: $mono205;
+              margin-right: 4px;
+            }
+            .value {
+              width: 21px;
+              height: 18px;
+              font-family: SpoqaB;
+              font-size: 14px;
+              color: $mono207;
+              margin-right: 8px;
+            }
+          }
+          .features {
+            display: flex;
+            flex-direction: row;
+            .features-tag {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 54px;
+              height: 18px;
+              border-radius: 15px;
+              border: solid 2px $blue104;
+              background-color: $mono200;
+              color: $blue104;
+              font-family: SpoqaB;
+              font-size: 11px;
+              box-sizing: border-box;
+              margin-right: 2px;
+            }
+          }
+        }
+      }
+
+      .tool-box {
+        display: none;
+      }
+    }
+
+    .second {
+      flex: 2;
+      display: flex;
+      flex-direction: row;
+      padding-left: 24px;
+      font-family: SpoqaB;
+      font-size: 18px;
+      color: $mono207;
+
+      .job-info-box {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        div {
+          display: flex;
+          flex-direction: column;
+          margin-right: 12px;
+          &.run-code {
+            max-width: 214px;
+          }
+          &.datetime {
+            width: 164px;
+          }
+          .label {
+            display: flex;
+            height: 18px;
+            align-items: center;
+            padding-bottom: 8px;
+            font-family: SpoqaM;
+            font-size: 14px;
+            color: $mono205;
+            white-space: nowrap;
+          }
+          .value {
+            height: 20px;
+            font-family: SpoqaB;
+            font-size: 14px;
+            color: $mono207;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            &.medium {
+              background-color: $mono200;
+              font-family: SpoqaM;
+              padding-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .tool-box {
+      position: relative;
+      margin-left: 10px;
+
+      .menu {
+        margin: 4px 0;
+        width: 44px;
+        height: 44px;
+        padding: 6px;
+        cursor: pointer;
+        border-radius: 50%;
+        box-sizing: border-box;
+        &:hover {
+          background-color: $hover-bg-color;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1800px) {
+      display: grid;
+      grid-template-columns: repeat(1fr, 2);
+
+      .first {
+        border-right-width: 0;
+        margin-bottom: 24px;
+        min-width: 0;
+        .tool-box {
+          display: block;
+        }
+      }
+
+      .second {
+        padding-top: 24px;
+        padding-left: 0;
+        margin-left: 60px;
+        border-top: solid 1px $card-border-color;
+
+        .tool-box {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .second {
+      .job-info-box {
+        justify-content: space-between;
+      }
+    }
+  }
+}

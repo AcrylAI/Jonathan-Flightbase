@@ -1,0 +1,32 @@
+.project-member {
+  height: 100%;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .contents {
+    column-gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-contents {
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+@media screen and (max-width: 958px) {
+  .project-member {
+    .contents {
+      display: flex;
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 16px;
+    }
+  }
+}

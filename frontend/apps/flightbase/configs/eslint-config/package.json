@@ -1,0 +1,7 @@
+{
+  "name": "@wadiz/eslint-config",
+  "version": "0.1.0",
+  "description": "ESLint Wadiz Config",
+  "license": "UNLICENSED",
+  "main": "./index.js"
+}

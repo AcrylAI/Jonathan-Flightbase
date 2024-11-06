@@ -1,0 +1,48 @@
+@import '@src/styles/color.scss';
+.skeleton-container {
+  width: 100%;
+  height: 56px;
+  background-color: $mono201;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+  gap: 8px;
+  .left-side {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .content {
+      width: 100%;
+      animation: skeleton-loading 0.8s linear infinite alternate;
+      height: 12px;
+      background-color: $editor-selected-color;
+      border-radius: 3px;
+      &.short {
+        height: 14px;
+        width: 60%;
+      }
+    }
+  }
+  .right-side {
+    .content {
+      width: 100%;
+      border-radius: 4px;
+      animation: skeleton-loading 0.8s linear infinite alternate;
+      width: 24px;
+      height: 24px;
+      background-color: $editor-selected-color;
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(220, 32%, 93%, 0.5);
+  }
+  100% {
+    background-color: hsl(220, 32%, 93%, 1);
+  }
+}

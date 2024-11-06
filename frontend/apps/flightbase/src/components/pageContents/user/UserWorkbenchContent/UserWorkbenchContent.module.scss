@@ -1,0 +1,38 @@
+@import '@src/styles/color.scss';
+
+.content {
+  .title-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $mono204;
+    padding-bottom: 8px;
+    margin-bottom: 40px;
+    .btn-box {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 12px;
+    }
+  }
+
+  .drone-challenge {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .tool-title {
+    font-size: 24px;
+    font-family: SpoqaB;
+    color: $mono205;
+    margin: 0 0 24px 0;
+  }
+
+  .loading-list {
+    display: grid;
+    grid-template-columns: repeat(2, 366px);
+    grid-gap: 30px;
+    margin: 20px 0 40px;
+    padding: 0 4px;
+  }
+}

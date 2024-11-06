@@ -1,0 +1,32 @@
+@import '~styles/screen';
+
+.text-box {
+	width: 100%;
+
+	.text {
+		font-weight: 300;
+		color: #242424;
+		margin-right: 6px;
+
+		@media (min-width: $desktop) {
+			font-size: 14px;
+		}
+
+		@media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+			font-size: 12px;
+		}
+	}
+
+	.required-text {
+		font-weight: 500;
+		color: rgba(#242424, 0.4);
+
+		@media (min-width: $desktop) {
+			font-size: 14px;
+		}
+
+		@media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+			font-size: 12px;
+		}
+	}
+}

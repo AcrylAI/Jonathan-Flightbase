@@ -1,0 +1,39 @@
+@import '@src/styles/color.scss';
+
+.project-selected-list-container {
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  color: $blue104;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 16px;
+  background-color: $blue100;
+  padding: 8px 16px;
+  gap: 6px;
+  min-height: 56px;
+
+  .list-container {
+    gap: 8px;
+    height: 36px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px 10px 12px 14px;
+    border: 1px solid $blue101;
+
+    .id {
+    }
+    .icon {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import 'src/styles/color';
+
+.header-container {
+	display: flex;
+	flex-flow: row nowrap;
+	position: relative;
+	max-height: 56px;
+	min-height: 56px;
+	height: 56px;
+	padding: 0 24px;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border-bottom: 1px solid $editor-border-color;
+	background-color: #f5f7fa;
+}
+
+.header-box {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.header-filestate {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+	margin-left: 40px;
+	gap: 16px;
+	justify-items: flex-start;
+}
+
+.true-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.submit-area {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	align-content: flex-end;
+	gap: 12px;
+}

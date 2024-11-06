@@ -1,0 +1,28 @@
+@import '@src/styles/color.scss';
+
+.badge {
+  margin-left: 8px;
+  display: flex;
+  background-color: $blue101;
+  border-radius: 16px;
+  height: 24px;
+  color: $blue104;
+  padding: 6px 8px;
+  justify-content: center;
+  align-items: center;
+}
+.tool-wrapper {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 16px;
+  background-color: $blue100;
+  border-radius: 2px;
+  .selected-data-type {
+    margin-bottom: 16px;
+  }
+  .checkbox-wrapper {
+    display: flex;
+    margin-top: 8px;
+    gap: 22px;
+  }
+}

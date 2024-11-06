@@ -1,0 +1,115 @@
+@import 'src/styles/color.scss';
+
+.page-header-bg {
+  background-color: #fbfcff;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.page-header-inner {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header-left-section {
+  display: flex;
+  flex-direction: column;
+
+  .project-title {
+    height: 14px;
+    color: $mono205;
+    margin-bottom: 10px;
+  }
+
+  .page-title {
+    color: $blue110;
+    margin-right: 16px;
+  }
+
+  .page-info-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .member-count-area {
+    display: flex;
+    width: 59px;
+    height: 28px;
+    background: $blue101;
+    border-radius: 16px;
+    padding: 6px 10px;
+
+    > p {
+      color: $blue104;
+      margin-left: 6px;
+    }
+  }
+}
+
+.spinner-icon {
+  animation: spin;
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @keyframes spin {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.tooltip-section {
+  position: relative;
+  padding: 4px;
+  margin-left: -12px;
+
+  .tooltip-desc-box {
+    position: absolute;
+    top: 30px;
+    width: 284px;
+    background: $mono200;
+    border: 1px solid $blue101;
+    box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.06);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+
+    p {
+      color: $mono206;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.2s ease-in-out;
+      z-index: 70;
+    }
+  }
+}
+
+.page-header-right-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .page-header-search {
+    width: 220px;
+    height: 33px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    &::placeholder {
+      color: #dbdbdb;
+    }
+  }
+}

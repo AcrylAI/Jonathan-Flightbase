@@ -1,0 +1,242 @@
+@import 'src/styles/color.scss';
+
+.dashboard {
+  .page-title {
+    line-height: 1;
+    font-size: 24px;
+    font-family: SpoqaB;
+    color: $dark-mono200;
+    margin: 0 0 16px 0;
+  }
+  .row-container {
+    display: flex;
+    .first-row {
+      flex: 1;
+      .content-graph {
+        padding: 34px 17px 0px 17px;
+        background-color: $dark-mono207;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        .content-top {
+          padding: 0 15px;
+          display: flex;
+          justify-content: space-between;
+          .title {
+            color: $dark-mono201;
+            font-size: 14px;
+            margin-bottom: 12px;
+          }
+        }
+
+        .content-mid {
+          padding: 0 15px;
+          height: 56px;
+          background-color: $dark-mono207;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: $dark-mono201;
+          .mid-number {
+            color: $dark-mono200;
+            font-family: SpoqaB;
+            font-size: 48px;
+          }
+          .mid-selectbox {
+            width: 200px;
+          }
+        }
+        .content-metric {
+          height: 328px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .first-row-bottom {
+        display: flex;
+        .content-network {
+          flex: 1;
+          background-color: $dark-mono207;
+          margin-top: 32px;
+          border-radius: 8px;
+          margin-right: 32px;
+          min-width: 367px;
+          padding: 34px 17px 34px 17px;
+          box-sizing: border-box;
+          height: 346px;
+
+          .title {
+            color: $dark-mono201;
+            font-size: 14px;
+            padding: 0 15px;
+          }
+        }
+        .content-clients {
+          height: 346px;
+          width: 431px;
+          min-width: 367px;
+          border-radius: 8px;
+          padding: 32px;
+          margin-top: 32px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          background-color: $dark-mono207;
+          .title-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+              color: $dark-mono201;
+              font-size: 14px;
+            }
+            .clients-btn {
+              display: flex;
+            }
+          }
+          .clients {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            .clients-head {
+              color: $dark-mono201;
+              font-size: 12px;
+            }
+            .clients-subhead {
+              color: $dark-mono200;
+              font-size: 24px;
+            }
+          }
+          .status {
+            flex: 1;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+
+    .second-row {
+      max-width: 400px;
+      width: 367px;
+      min-width: 367px;
+
+      margin-left: 32px;
+      .content-model {
+        border-radius: 8px;
+        padding: 34px 32px 34px 32px;
+        background-color: $dark-mono207;
+        color: $dark-mono201;
+        height: 235px;
+        box-sizing: border-box;
+        position: relative;
+
+        .title {
+          font-size: 14px;
+        }
+
+        .edit-btn {
+          position: absolute;
+          left: 300px;
+          top: 40px;
+          :hover:not(:last-child) {
+            display: none;
+          }
+        }
+
+        .name {
+          margin-top: 9px;
+          color: $dark-mono200;
+          font-size: 24px;
+          position: relative;
+          .name-drop {
+            z-index: 1;
+            background-color: $dark-mono205;
+            box-sizing: border-box;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            min-height: 54px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: $dark-mono201;
+            display: none;
+          }
+          &:hover .name-drop {
+            display: block;
+          }
+        }
+        .desc-title {
+          margin-top: 9px;
+          font-size: 14px;
+        }
+        .desc {
+          margin-top: 12px;
+          font-size: 13px;
+          position: relative;
+          .desc-drop {
+            z-index: 1;
+            background-color: $dark-mono205;
+            box-sizing: border-box;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            min-height: 54px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: $dark-mono201;
+            display: none;
+          }
+          &:hover .desc-drop {
+            display: block;
+          }
+        }
+        .empty-model {
+          color: $dark-mono202;
+        }
+      }
+      .content-rounds {
+        border-radius: 8px;
+        padding: 32px;
+        background-color: $dark-mono207;
+        height: 560px;
+        margin-top: 32px;
+        box-sizing: border-box;
+        .title-wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .title {
+            color: $dark-mono201;
+            font-size: 14px;
+          }
+          .clients-btn {
+            display: flex;
+          }
+        }
+        .rounds-list {
+          margin-top: 6px;
+          &.empty-rounds {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 441px;
+            .empty-rounds-text {
+              color: $dark-mono201;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

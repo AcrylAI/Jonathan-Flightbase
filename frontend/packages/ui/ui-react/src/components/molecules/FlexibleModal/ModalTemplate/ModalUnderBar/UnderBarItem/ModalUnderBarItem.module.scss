@@ -1,0 +1,46 @@
+.underbar-item {
+  width: 380px;
+  box-shadow: 3px -2px 12px #0000004d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  height: 40px;
+  background-color: #dbdbdb;
+  border-radius: 8px 8px 0 0;
+  min-width: 0;
+  transition: all 0.7s ease-in-out;
+  cursor: pointer;
+
+  .modal-title {
+    color: #121619;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .control-icons {
+    display: flex;
+    .close:hover {
+      background-color: #f3262d;
+      border-radius: 0px 8px 0px 0px;
+    }
+    .maximize:hover {
+      background-color: #f0f0f0;
+    }
+    img {
+      opacity: 0.6;
+      width: 16px;
+      height: 16px;
+      padding: 12px;
+    }
+  }
+}
+
+@keyframes extension {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 380px;
+  }
+}

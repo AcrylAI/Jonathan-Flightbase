@@ -1,0 +1,86 @@
+@import '@src/styles/color.scss';
+.page-prop-content-container {
+  display: flex;
+  flex-direction: column;
+  .class-name {
+    margin-bottom: 26px;
+    display: flex;
+    .holder {
+      color: $mono204;
+      margin-right: 4px;
+    }
+    .name {
+      color: $mono206;
+    }
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .list-item-container {
+      .title {
+        display: flex;
+        align-items: center;
+        .idx {
+          margin-right: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $blue104;
+          border-radius: 50%;
+          width: 16px;
+          height: 16px;
+          color: #fff;
+        }
+        .name {
+          margin-right: 4px;
+        }
+        .required {
+          color: $red502;
+        }
+        .multi {
+          color: $mono204;
+          margin-left: 4px;
+        }
+      }
+    }
+    .opt-container {
+      border-left: 1px solid $mono203;
+      margin-left: 7px;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-bottom: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      &.multi {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 8px;
+        column-gap: 40px;
+      }
+
+      .option-item-container {
+        display: flex;
+        align-items: center;
+
+        .box {
+          width: 16px;
+          height: 16px;
+          border: 1px solid $blue102;
+          border-radius: 2px;
+          margin-right: 8px;
+
+          &.circle {
+            border-radius: 50%;
+          }
+        }
+        .name {
+          max-width: 72px;
+          color: $mono205;
+        }
+      }
+    }
+  }
+}

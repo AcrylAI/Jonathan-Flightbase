@@ -1,0 +1,48 @@
+@import 'src/styles/common';
+
+.labelbox-container {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	padding: 12px;
+	width: 100%;
+	height: fit-content;
+	background-color: #fff;
+	@include Cursor(pointer);
+}
+
+.labelgroup-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0;
+	transition: gap 0.15s ease;
+
+	&.open {
+		gap: 12px;
+	}
+}
+
+.labelgroup-arrow {
+	width: fit-content;
+	height: fit-content;
+	transition: rotate 0.15s ease-out;
+
+	&.open {
+		rotate: 90deg;
+	}
+}
+
+.labelgroup-list {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 12px;
+	width: 100%;
+	margin-left: 12px;
+	box-sizing: border-box;
+}
+
+.labellist-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 16px;
+}

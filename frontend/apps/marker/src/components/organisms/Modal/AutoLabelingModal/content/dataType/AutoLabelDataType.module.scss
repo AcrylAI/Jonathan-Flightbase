@@ -1,0 +1,13 @@
+@import '@src/styles/color.scss';
+.data-type-container {
+  font-family: MarkerFont;
+  .desc {
+    color: $mono205;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .checkbox-group {
+    display: flex;
+    gap: 40px;
+  }
+}

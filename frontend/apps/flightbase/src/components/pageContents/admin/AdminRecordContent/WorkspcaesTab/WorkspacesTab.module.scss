@@ -1,0 +1,17 @@
+@import '@src/styles/color.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 12px;
+  .title {
+    font-family: SpoqaM;
+    font-size: 20px;
+    color: $mono207;
+    margin: 0;
+  }
+}
+.selectbox {
+  width: 180px;
+}

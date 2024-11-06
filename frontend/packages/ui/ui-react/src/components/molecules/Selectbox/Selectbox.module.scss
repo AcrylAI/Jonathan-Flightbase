@@ -1,0 +1,345 @@
+@import 'src/style/color.scss';
+
+// select form size
+$selectform-large: 42px;
+$selectform-medium: 34px;
+$selectform-small: 28px;
+$selectform-x-small: 22px;
+
+// font size
+$font-large: 16px;
+$font-medium: 14px;
+$font-small: 12px;
+
+// selectbox className controller 설정
+@mixin selectbox-controller($height, $font-size) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: $height;
+  border-radius: 4px;
+  padding-right: calc($font-size + $font-size);
+  background-color: $mono200;
+  cursor: default;
+
+  &.default {
+    border: 1px solid $mono204;
+  }
+
+  &.error {
+    border: 1px solid $error-color !important;
+  }
+
+  &.readonly {
+    border: 1px solid $mono204 !important;
+    color: $mono205;
+    background-color: $mono202;
+  }
+
+  &.disabled {
+    border: 1px solid $mono204 !important;
+    color: $mono203;
+    background-color: $mono202;
+  }
+  &.jp-dark {
+    background-color: $dark-mono208;
+    color: $dark-mono200;
+    border-color: $dark-mono204;
+    &.disabled {
+      border-color: $dark-mono204 !important;
+      background-color: $dark-mono206;
+      color: $dark-mono202;
+    }
+    &.readonly {
+      border-color: $dark-mono204 !important;
+      background-color: $dark-mono206;
+      color: $dark-mono202;
+    }
+  }
+  &.open,
+  &:focus {
+    border: 1px solid $primary-color;
+    outline: none;
+  }
+  & > .arrow-icon {
+    position: absolute;
+    right: 10px;
+    width: calc($font-size + 2px);
+    height: calc($font-size + 2px);
+    &.open {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+    }
+  }
+}
+
+// input tag를 사용하는 selectbox
+@mixin selectbox-input($height, $font-size) {
+  .controller {
+    @include selectbox-controller($height, $font-size);
+    &.check-box-div {
+      padding-left: 19px;
+      .input-check-icon {
+        position: absolute;
+        top: 30%;
+        left: 8px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    & > input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding-left: 14px;
+      font-size: $font-size;
+      font-family: SpoqaM;
+      color: transparent;
+      text-shadow: 0 0 0 $mono207; // search
+      cursor: default;
+      &::placeholder {
+        color: $placeholder-text-color;
+        text-shadow: none;
+      }
+      &:read-only {
+        color: $mono205;
+        background-color: $mono202;
+        text-shadow: none;
+      }
+      &:disabled {
+        color: $mono203;
+        background-color: $mono202;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+// 일반 selectbox form
+@mixin selectbox-default($height, $font-size) {
+  .controller {
+    @include selectbox-controller($height, $font-size);
+    & > span {
+      width: 100%;
+      height: $height;
+      padding-left: 14px;
+      font-size: $font-size;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      white-space: nowrap;
+      cursor: default;
+      &.placeholder {
+        color: $placeholder-text-color;
+      }
+      &.left {
+        flex-direction: row;
+        justify-content: flex-start;
+        > .label-icon {
+          margin-right: 6px;
+        }
+      }
+      &.right {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        > .label-icon {
+          margin-left: 6px;
+        }
+      }
+      > .label-icon {
+        width: $font-size;
+        height: $font-size;
+      }
+    }
+  }
+}
+
+// list ul
+@mixin list-body($height) {
+  padding: 8px 0;
+  margin: 0;
+  border: 1px solid $mono203;
+  background-color: $mono200;
+  border-radius: 8px;
+  box-shadow: 0 3px 9px 0 rgba(18, 22, 25, 0.08), 0 2px 4px 1px rgba(18, 22, 25, 0.14);
+  box-sizing: border-box;
+  max-height: 200px + $height;
+  overflow-y: auto;
+  overflow-x: hidden;
+  outline: none;
+
+  &.jp-dark {
+    background-color: $dark-mono208;
+    color: $dark-mono200;
+    border-color: $dark-mono204;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $mono204;
+    border-radius: 2px;
+  }
+}
+
+// list li
+@mixin list-element($font-size) {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: auto;
+  font-size: $font-size;
+  padding: 12px 16px 12px 16px;
+  &.disabled {
+    color: $disable-color;
+  }
+  &.hover {
+    &:not(.title) {
+      background-color: $hover-bg-color;
+    }
+  }
+  &:not(.title) {
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+  }
+  &.jp-dark {
+    color: $dark-mono200;
+    background-color: $dark-mono208;
+    &:hover {
+      &:not(.title) {
+        background-color: $dark-mono207;
+      }
+    }
+    &:not(.title) {
+      &:hover {
+        background-color: $dark-mono207;
+      }
+    }
+  }
+}
+
+@mixin list-default($height, $font-size) {
+  & > ul {
+    @include list-body($height);
+    & > li {
+      @include list-element($font-size);
+      .icon {
+        width: 18px;
+        height: 18px;
+        &.left {
+          margin-right: 6px;
+        }
+        &.right {
+          margin-left: 6px;
+        }
+      }
+      .status {
+        margin-left: 6px;
+      }
+    }
+  }
+}
+
+@mixin list-group($height, $font-size) {
+  & > ul {
+    @include list-body($height);
+    & > li {
+      @include list-element($font-size);
+      &.title {
+        position: relative;
+        padding: 0px 16px 10px 16px;
+        .divide-line {
+          position: absolute;
+          top: -1px;
+          width: calc(100% - 26px);
+          border: solid;
+          border-width: 1px;
+          color: $mono203;
+          transform: scaleY(0.5);
+        }
+        & > span {
+          display: flex;
+          align-items: center;
+          padding-top: 4px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          &.title-label {
+            font-size: 12px;
+            color: $mono204;
+          }
+        }
+      }
+      .icon {
+        width: 18px;
+        height: 18px;
+        &.title {
+          width: 14px;
+          height: 14px;
+          margin-top: 5px;
+        }
+        &.left {
+          margin-right: 6px;
+        }
+        &.right {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+
+@mixin list() {
+  z-index: 5;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin selectbox-type($height, $font-size) {
+  &.default-selectbox {
+    @include selectbox-default($height, $font-size);
+  }
+  &.input-selectbox {
+    @include selectbox-input($height, $font-size);
+  }
+  &.list {
+    position: relative;
+    .list-default {
+      @include list();
+      @include list-default($height, $font-size);
+    }
+    .list-group {
+      @include list();
+      @include list-group($height, $font-size);
+    }
+  }
+}
+
+.jp {
+  &.selectbox {
+    width: 100%;
+    .large {
+      @include selectbox-type($selectform-large, $font-large);
+    }
+    .medium {
+      @include selectbox-type($selectform-medium, $font-medium);
+    }
+    .small {
+      @include selectbox-type($selectform-small, $font-small);
+    }
+    .x-small {
+      @include selectbox-type($selectform-x-small, $font-small);
+    }
+  }
+}

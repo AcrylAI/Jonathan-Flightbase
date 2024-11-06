@@ -1,0 +1,96 @@
+/* 공통으로 사용할 BoxShadow에 대한 사이즈 설정 */
+@mixin boxShadow(/*$backgroundColor:#fff, */ $radius: 4px) {
+  //background-color: $backgroundColor;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  border-radius: $radius;
+}
+
+@mixin userSelect() {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+@mixin rippleParent() {
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin rippleInit() {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+}
+
+@mixin rippleActive() {
+  &::after {
+    animation: ripple 1s ease-out;
+  }
+}
+
+@mixin ColorSet() {
+  // "blue"|"mono"|"yellow"|"orange"|"red"|"lime"|"transparent";
+}
+
+//noinspection ALL
+@mixin Cursor($type:default) {
+  @if $type == default {
+    cursor: url("/static/cursor/cursor_default.png") 0 0, auto;
+  }
+  @else if $type == bbox {
+    cursor: url("/static/cursor/cursor_bbox.png") 12 12, auto;
+  }
+  @else if $type == grab {
+    cursor: url("/static/cursor/cursor_grab.png") 8 8, auto;
+  }
+  @else if $type == grabbing {
+    cursor: url("/static/cursor/cursor_grabbing.png") 8 7, auto;
+  }
+  @else if $type == issue {
+    cursor: url("/static/cursor/cursor_issue.png") 0 0, auto;
+  }
+  @else if $type == pointer {
+    cursor: url("/static/cursor/cursor_pointer.png") 4 0, auto !important;
+  }
+  @else if $type == polygon {
+    cursor: url("/static/cursor/cursor_polygon.png") 6 5, auto;
+  }
+  @else if $type == ew-resize {
+    cursor: url("/static/cursor/cursor_ew-resize.png") 10.5 6, auto;
+  }
+  @else if $type == ns-resize {
+    cursor: url("/static/cursor/cursor_ns-resize.png") 6 10.5, auto;
+  }
+  @else if $type == nesw-resize {
+    cursor: url("/static/cursor/cursor_nesw-resize.png") 9 9, auto;
+  }
+  @else if $type == nwse-resize {
+    cursor: url("/static/cursor/cursor_nwse-resize.png") 9 9, auto;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}

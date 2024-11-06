@@ -1,0 +1,22 @@
+@import '@src/styles/color.scss';
+
+@mixin animation() {
+  animation: dissolve 2s infinite;
+}
+
+@mixin expression-box() {
+  background-color: $editor-border-color;
+  border-radius: 2px;
+}
+
+@keyframes dissolve {
+  0% {
+    background-color: $editor-bg-color;
+  }
+  60% {
+    background-color: $editor-border-color;
+  }
+  100% {
+    background-color: $editor-bg-color;
+  }
+}

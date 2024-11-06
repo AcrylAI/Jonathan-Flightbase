@@ -1,0 +1,66 @@
+@import '@src/styles/color.scss';
+
+.project-dashboard {
+  .last-sync {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    & > img {
+      padding: 2px;
+      color: $mono204;
+      margin-right: 6px;
+    }
+  }
+
+  .contents-area {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .status-card {
+      display: flex;
+      width: 100%;
+    }
+    .datastatus-projectmember-dataset {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      column-gap: 24px;
+      .projectmember-dataset {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+    .classes-workresult {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      column-gap: 24px;
+      .labeling-result {
+        height: 100%;
+        .header {
+          display: flex;
+          justify-content: space-between;
+        }
+        .contents {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .project-dashboard {
+    .contents-area {
+      .datastatus-projectmember-dataset {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+      }
+      .classes-workresult {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+      }
+    }
+  }
+}

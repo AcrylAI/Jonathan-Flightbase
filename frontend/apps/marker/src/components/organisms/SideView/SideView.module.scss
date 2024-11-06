@@ -1,0 +1,110 @@
+@import '@src/styles/color.scss';
+
+.side-view-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 100%;
+  .content-container {
+    display: flex;
+    position: fixed;
+    width: calc(100% - 184px);
+    height: calc(100% - 64px);
+    top: 64px;
+    background-color: $blue109;
+    left: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: left 0.3s ease-in-out;
+    .inner-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-radius: 16px 0px 0px 16px;
+      overflow-y: scroll;
+      background-color: $blue109;
+      border: 1px solid $blue101;
+      height: 100%;
+      box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.06);
+      padding: 19px;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+      .title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          color: $blue110;
+        }
+        .switch {
+          margin-left: auto;
+          color: $mono204;
+          display: flex;
+          gap: 4px;
+        }
+      }
+      .desc {
+        color: $mono205;
+      }
+      .children-container {
+      }
+    }
+  }
+}
+
+.toggle {
+  position: fixed;
+  width: 24px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue101;
+  left: calc(100% - 24px);
+  user-select: none;
+  top: calc(50% - 60px);
+  z-index: 120;
+  transition: left 0.3s ease-in-out, background-color 0.15s linear, color 0.1s;
+  cursor: pointer;
+  border-radius: 6px 0px 0px 6px;
+
+  &:hover {
+    background-color: $blue102;
+  }
+  .article {
+    color: $blue104;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      &.active {
+        animation-name: spin;
+        animation-duration: 0.6s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  &.active {
+    border-radius: 6px 0px 0px 6px;
+    background-color: $blue101;
+    &:hover {
+      background-color: $blue102;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,11 @@
+@import '@src/styles/color.scss';
+.list-item-container {
+  display: flex;
+  padding: 3px 0px;
+  align-content: center;
+  .left-side {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}

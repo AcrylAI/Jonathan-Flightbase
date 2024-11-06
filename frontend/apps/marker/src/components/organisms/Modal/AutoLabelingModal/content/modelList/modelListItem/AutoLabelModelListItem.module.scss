@@ -1,0 +1,47 @@
+@import '@src/styles/color.scss';
+.item-container {
+  display: flex;
+  width: 100%;
+  background-color: $mono201;
+  padding: 16px 8px;
+  color: $mono205;
+  align-items: center;
+  cursor: pointer;
+  .radio {
+    width: 10%;
+  }
+  .model {
+    width: 25%;
+    padding-right: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .d-name {
+    width: 25%;
+    padding-right: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .d-owner {
+    width: 25%;
+  }
+  .resource {
+    width: 15%;
+    .box {
+      padding: 6px 8px;
+      width: 72px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mono202;
+      border-radius: 2px;
+      &.active {
+        color: #fff;
+        background-color: $blue104;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import '@src/styles/color.scss';
+.list-container {
+  height: 100%;
+  width: 100%;
+  border: 1px solid $mono203;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  border-radius: 2px 2px 0px 0px;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .header {
+    width: 100%;
+    padding: 12px;
+    border-bottom: 1px solid $mono203;
+  }
+  .list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: hidden;
+    .dim {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10%;
+      .warning {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+    .search {
+      padding: 12px 12px 0px 12px;
+    }
+    .children {
+      height: 100%;
+      padding: 12px;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+      &.scrollHidden {
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
+      }
+    }
+    .nodata {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  .footer {
+    margin-top: auto;
+    .button {
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      height: 58px;
+      display: flex;
+      color: #fff;
+      background-color: $blue110;
+      justify-content: center;
+      padding: 21px;
+      border: 1px solid $blue110;
+      &.disabled {
+        cursor: default;
+        background-color: $mono204;
+        border-color: $mono204;
+      }
+    }
+  }
+}

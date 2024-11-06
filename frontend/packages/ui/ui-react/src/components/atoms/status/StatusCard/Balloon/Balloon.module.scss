@@ -1,0 +1,28 @@
+@import 'src/style/color.scss';
+
+.balloon {
+  position: absolute;
+  background-color: $dark-mono205;
+  font-family: SpoqaM;
+  font-size: 14px;
+  margin-top: 4px;
+  border-radius: 3px;
+  z-index: 5;
+  .title {
+    padding: 14px 16px;
+    color: $dark-mono200;
+    white-space: nowrap;
+  }
+
+  .desc {
+    padding: 16px;
+    color: $dark-mono201;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .line {
+    height: 1px;
+    background-color: $dark-mono204;
+  }
+}

@@ -1,0 +1,20 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import './color.scss';
+
+* {
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $mono201;
+}
+
+li {
+  list-style: none;
+}

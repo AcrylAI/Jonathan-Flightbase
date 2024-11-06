@@ -1,0 +1,36 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.ZoomBox {
+	display: flex;
+	flex-flow: row nowrap;
+	border-radius: 4px;
+	border: 1px solid $editor-border-color;
+	color: $blue110;
+}
+
+.button, .scope {
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 34px;
+	height: 34px;
+	@include Cursor(pointer);
+
+	&:hover {
+		background-color: $editor-selected-color;
+	}
+}
+
+.scope {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 34px;
+	width: 60px;
+	border-left: 1px solid $editor-border-color;
+	border-right: 1px solid $editor-border-color;
+}

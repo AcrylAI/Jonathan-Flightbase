@@ -1,0 +1,144 @@
+@import '@src/styles/color.scss';
+.modal-steps-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+  align-items: center;
+  padding-bottom: 24px;
+  padding: 0px 48px;
+  margin-bottom: 48px;
+  .modal-step-view {
+    display: flex;
+    flex-direction: row;
+    .step-container {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 96px;
+        margin-right: 42px;
+
+        .title {
+          color: $mono205;
+          font-size: 14px;
+          line-height: 150%;
+          margin-bottom: 4px;
+        }
+        .circle {
+          width: 20px;
+          height: 20px;
+          margin-top: 8px;
+          border: 2px solid #d9d9d9;
+          border-radius: 50%;
+          background-color: #d9d9d9;
+          position: relative;
+          .check {
+            opacity: 0;
+          }
+
+          .bar-gray {
+            position: absolute;
+            height: 4px;
+            width: 138px;
+            top: 35%;
+            left: 45%;
+            background-color: #d9d9d9;
+            z-index: -1;
+          }
+          .bar {
+            position: absolute;
+            height: 4px;
+            width: 138px;
+            top: 35%;
+            left: 45%;
+            background-color: #d9d9d9;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0px;
+          .bar {
+            display: none;
+          }
+          .bar-gray {
+            display: none;
+          }
+        }
+        &.active {
+          .title {
+            color: $blue104;
+            animation-name: progress-font;
+            animation-duration: 2s;
+          }
+
+          .circle {
+            background-color: #ffffff;
+            border-color: $blue104;
+            animation-name: progress-color;
+            animation-duration: 1s;
+            .bar {
+              z-index: -1;
+            }
+          }
+        }
+
+        &.done {
+          .title {
+            color: $blue104;
+          }
+          .circle {
+            background-color: $blue104;
+            border-color: $blue104;
+            .check {
+              position: absolute;
+              opacity: 1;
+              left: 15%;
+              top: 25%;
+              z-index: 100;
+            }
+            .bar {
+              animation-name: progress;
+              animation-duration: 1.5s;
+              animation-iteration-count: 1;
+              background-color: $blue104;
+              border-color: $blue104;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 138px;
+  }
+}
+@keyframes progress-color {
+  0% {
+    border-color: #d9d9d9;
+    background-color: #d9d9d9;
+  }
+  100% {
+    border-color: $blue104;
+    background-color: #ffffff;
+  }
+}
+@keyframes progress-font {
+  0% {
+    color: #d9d9d9;
+  }
+  100% {
+    color: $blue104;
+  }
+}

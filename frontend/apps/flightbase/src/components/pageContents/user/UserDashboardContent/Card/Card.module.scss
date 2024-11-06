@@ -1,0 +1,226 @@
+@import '@src/styles/color.scss';
+
+.card {
+  position: relative;
+  width: 100%;
+  min-width: 360px;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: 360px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+  }
+  > div {
+    display: block;
+  }
+  .contents-box {
+    width: 100%;
+    height: 475px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid $card-border-color;
+    background-color: $mono200;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+      box-shadow: $card-hover-color;
+    }
+    .header {
+      position: relative;
+      margin: 26px 36px 0px 36px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $card-border-color;
+      .bookmark-btn {
+        position: absolute;
+        top: -3px;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        .ic-star {
+          width: 24px;
+          height: 24px;
+          &.active {
+            filter: brightness(123%);
+          }
+          &:not(.active) {
+            filter: brightness(140%);
+          }
+          &:hover {
+            filter: brightness(123%);
+          }
+        }
+      }
+      .name-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 4px;
+        .workspace-name {
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 1.5;
+          font-family: SpoqaB;
+          font-size: 24px;
+          color: $mono207;
+        }
+        .tooltip-contents {
+          .description {
+            font-family: SpoqaR;
+            color: $mono207;
+            margin-bottom: 12px;
+          }
+          li {
+            list-style-position: inside;
+            text-indent: -16px;
+            padding-left: 16px;
+            .label {
+              font-family: SpoqaM;
+              color: $mono207;
+              &::before {
+                content: '˙';
+              }
+            }
+            .value {
+              font-family: SpoqaR;
+              color: $mono207;
+            }
+          }
+        }
+      }
+      .datetime {
+        font-size: 14px;
+        color: $mono205;
+        margin-top: 4px;
+        margin-bottom: 12px;
+        font-family: SpoqaR;
+      }
+    }
+    .body {
+      margin: 20px 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .usage-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .graph {
+          width: 84px;
+          height: 84px;
+        }
+
+        .usage-text-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 12px;
+
+          .label {
+            font-family: SpoqaR;
+            font-size: 14px;
+            color: $mono205;
+            text-align: center;
+            white-space: nowrap;
+          }
+
+          .usage {
+            font-size: 24px;
+            color: $mono207;
+            margin: 2px 0 0 0;
+          }
+        }
+      }
+    }
+    .footer {
+      box-sizing: border-box;
+      padding: 16px 24px;
+      margin: 0 30px 24px 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 16px;
+      background-color: $mono201;
+      border-radius: 8px;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          flex: 50%;
+        }
+
+        label {
+          height: 18px;
+          margin-bottom: 2px;
+          font-family: SpoqaR;
+          font-size: 14px;
+          text-align: center;
+          color: $mono205;
+          display: flex;
+          align-items: center;
+          .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 3px;
+          }
+        }
+        .count {
+          height: 26px;
+          font-family: SpoqaM;
+          font-size: 24px;
+          text-align: right;
+          color: $mono207;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .expired-dim {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba($red503, 0.2);
+    border-radius: 8px;
+    background-color: rgba($mono200, 0.7);
+    color: $red503;
+    text-shadow: $red501 1px 1px 4px;
+    font-size: 20px;
+    font-family: SpoqaM;
+    padding: 36px;
+    box-sizing: border-box;
+    img {
+      margin-bottom: 4px;
+      width: 32px;
+      height: 32px;
+    }
+    .message {
+      background-color: rgba($mono200, 0.5);
+      font-size: 14px;
+      font-family: SpoqaR;
+      color: $mono207;
+      line-height: 1.5;
+      text-align: center;
+      margin-top: 12px;
+      p {
+        margin: 0 !important;
+      }
+    }
+  }
+}

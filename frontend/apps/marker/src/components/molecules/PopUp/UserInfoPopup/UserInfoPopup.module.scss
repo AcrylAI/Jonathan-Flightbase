@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  gap: 76px;
+  margin-bottom: 8px;
+  .sign-out {
+    cursor: pointer;
+  }
+}
+.user-name {
+  margin-bottom: 36px;
+}
+.change-btn {
+  cursor: pointer;
+}

@@ -1,0 +1,97 @@
+@import 'src/style/theme.scss';
+
+$sidenav_header_h: 120px;
+$sidenav_footer_h: 76px;
+
+.sidenav {
+  background-color: #f4f6fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  header.sidenav-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0 5px;
+    .logo {
+      text-align: center;
+      a {
+        display: block;
+      }
+      img {
+        max-width: 80%;
+      }
+      .logo-img {
+        height: 120px;
+        margin: auto;
+        object-fit: scale-down;
+      }
+    }
+  }
+
+  nav.nav {
+    flex: 1 1 calc(100% - #{$sidenav_header_h} - #{$sidenav_footer_h});
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  footer.sidenav-footer {
+    flex: 0 0 $sidenav_footer_h;
+    height: $sidenav_footer_h;
+    .manual-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .manual-download-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 4px;
+        padding: 8px 10px;
+        font-size: 13px;
+        color: $blue104;
+        background-color: transparent;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+          background-color: $blue101;
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@mixin themable($theme-name) {
+  .sidenav.#{$theme-name} {
+    background-color: map-get($sidenav_bg, $theme-name);
+  }
+  .sidenav.jp-dark {
+    border-right: none !important;
+    > header.sidenav-header {
+      // FL 대응
+      margin-top: 8px;
+      border-bottom: 1px solid $dark-mono204;
+      img {
+        max-width: 85%;
+      }
+      .logo-img {
+        height: 42px;
+      }
+    }
+  }
+  .group-name.#{$theme-name} {
+    color: map-get($sidenav_btn_txt_color, $theme-name);
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

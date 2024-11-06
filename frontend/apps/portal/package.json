@@ -1,0 +1,41 @@
+{
+  "name": "@jonathan/portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:dev": "cp ./configs/app-config/config-dev ./.env.local && next dev -p 3001",
+    "dev:real": "cp ./configs/app-config/config-real ./.env.local && next dev -p 3001",
+    "start:dev": "cp ./configs/app-config/config-dev ./.env.local && next start -p 3001",
+    "start:real": "cp ./configs/app-config/config-real ./.env.local && next start -p 3001",
+    "build:dev": "cp ./configs/app-config/config-dev ./.env.local && next build",
+    "build:real": "cp ./configs/app-config/config-real ./.env.local && next build"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cookies": "^0.8.0",
+    "cookies-next": "^2.1.1",
+    "i18next": "^21.9.1",
+    "next": "12.2.2",
+    "next-auth": "^4.9.0",
+    "next-i18next": "^11.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.4",
+    "react-query": "^3.39.1",
+    "recoil": "^0.7.4",
+    "universal-cookie": "^4.0.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/cookies": "^0.7.7",
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
+    "@types/uuid": "^8.3.4",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.2",
+    "next-images": "^1.8.4",
+    "prettier": "^2.7.1",
+    "typescript": "4.7.4"
+  }
+}

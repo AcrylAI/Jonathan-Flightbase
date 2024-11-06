@@ -1,0 +1,71 @@
+@import '~styles/screen.scss';
+
+.basic-input-box {
+	width: 100%;
+
+	$icon-area-width: 68px;
+	.basic-input {
+		$border: 1px;
+		outline: none !important;
+		// width: calc(100% - ((#{$border} * 2) + #{$icon-area-width}));
+		width: 100%;
+		border: solid $border #dedfe0;
+		border-radius: 4px;
+		padding-left: $icon-area-width;
+		color: #242424;
+		font-weight: 300;
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		background-size: 30px 30px;
+		box-sizing: border-box;
+
+		@media (min-width: $desktop) {
+			height: 72px;
+			font-size: 16px;
+		}
+
+		@media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+			height: calc(56px - (#{$border} * 2));
+			font-size: 14px;
+		}
+
+		/* input focus 상태일 때 스타일*/
+		&:focus {
+			outline: none !important;
+			border: solid $border #0e4bff;
+		}
+
+		&:disabled {
+			background-color: #f3f3f5;
+			color: rgba($color: #212121, $alpha: 0.3);
+		}
+
+		&::placeholder {
+			opacity: 0.3;
+			font-size: 16px;
+			letter-spacing: -0.2px;
+			color: #212121;
+		}
+
+		&.phone {
+			background-image: url('~Images/member/inputIcon/jo-ico-login-call.svg');
+		}
+
+		&.code {
+			background-image: url('~Images/member/inputIcon/jo-ico-login-security.svg');
+		}
+	}
+
+	.basic-input-span {
+		font-size: 12px;
+		font-weight: normal;
+
+		&--error {
+			color: #e02020;
+		}
+
+		&--success {
+			color: #0e4bff;
+		}
+	}
+}

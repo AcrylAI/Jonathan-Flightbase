@@ -1,0 +1,52 @@
+@import '~styles/screen.scss';
+
+.fp-wrap {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  .join-box {
+    margin-bottom: 12px;
+  }
+}
+
+.fp-header-box {
+  .title-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .sub-title-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin-bottom: 67px;
+  }
+}
+
+.fp-body {
+  .fp-input-box {
+    margin-bottom: 30px;
+  }
+  .fp-result-box {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+}

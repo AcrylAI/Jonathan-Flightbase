@@ -1,0 +1,71 @@
+@import '@src/styles/color.scss';
+
+.chart-area {
+  width: 100%;
+  background-color: $mono200;
+  border-bottom: 1px solid $mono203;
+  border-left: 1px solid $mono203;
+  border-right: 1px solid $mono203;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  & > div {
+    padding: 24px 24px;
+  }
+  .donut-chart {
+    border-right: 1px solid $mono203;
+    width: 439px;
+    .chart {
+      position: relative;
+      .legend-area {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        width: 160px;
+        height: 168px;
+        row-gap: 8px;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .legend {
+          display: flex;
+          column-gap: 8px;
+          width: 100%;
+          .mark {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+          }
+          .data-text {
+            display: flex;
+            padding-right: 8px;
+            justify-content: space-between;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .line-chart {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .chart-area {
+    .donut-chart {
+      width: 272px;
+      .chart {
+        .legend-area {
+          right: 50%;
+          top: 100%;
+          transform: translate(55%, -110%);
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

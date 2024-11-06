@@ -1,0 +1,122 @@
+@import 'src/style/color.scss';
+
+@mixin modal-padding() {
+  padding-left: 44px;
+  padding-right: 36px;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  animation: fade-in 0.4s;
+  z-index: 200;
+
+  &.hidden {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  &.visible {
+    opacity: 1;
+    z-index: 200;
+    visibility: visible;
+  }
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  border-radius: 8px;
+  box-shadow: 0 3px 16px 0 hsla(0, 0%, 0%, 0.1);
+  background-color: $mono200;
+  box-sizing: border-box;
+
+  animation: fade-in 0.4s;
+  transition: width 0.4s ease-in-out;
+
+  &.hidden {
+    animation: drop 1s;
+  }
+  &.visible {
+  }
+
+  &.window {
+    width: 750px;
+    max-height: calc(100% - 48px);
+    min-height: 10vh;
+
+    &.lg {
+      width: 750px;
+    }
+    &.md {
+      width: 640px;
+    }
+    &.sm {
+      width: 400px;
+    }
+    .modal-content {
+      display: flex;
+      width: 100%;
+      max-height: calc(780px - 36px);
+      min-height: calc(10vh - 36px);
+    }
+  }
+
+  &.full-screen {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+
+    .modal-content {
+      display: flex;
+      width: 100%;
+      max-height: calc(100vh - 36px);
+      min-height: calc(100vh - 36px);
+    }
+  }
+}
+.jp-dark {
+  background-color: $dark-mono206 !important;
+}
+
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    width: calc(100% - 20px);
+  }
+}
+@media screen and (max-width: 480px) {
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  from {
+    transform: translate(-50%, -50%) perspective(1px);
+  }
+
+  to {
+    transform: translate(-50%, 100%) perspective(1px);
+  }
+}

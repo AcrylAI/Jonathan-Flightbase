@@ -1,0 +1,18 @@
+@import '@src/styles/color.scss';
+.info-container {
+  display: flex;
+  margin-bottom: 13px;
+
+  .title {
+    color: $mono204;
+    margin-right: 8px;
+  }
+  .tooltip {
+    display: flex;
+    align-items: center;
+    .type {
+      color: $mono205;
+      margin-right: 4px;
+    }
+  }
+}

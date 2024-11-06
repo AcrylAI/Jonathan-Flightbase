@@ -1,0 +1,228 @@
+@import 'src/style/color.scss';
+
+@mixin status($height, $font-size) {
+  .jp-primary {
+    height: $height;
+    font-size: $font-size;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc($height / 2);
+    font-family: SpoqaM !important;
+    color: $mono205;
+    background-color: $mono202;
+    cursor: default;
+    line-height: 1.5;
+    padding-left: 12px;
+    padding-right: 12px;
+    &.help {
+      cursor: help;
+    }
+
+    &.green,
+    &.complete,
+    &.running,
+    &.trainingRunning,
+    &.deploymentRunning,
+    &.active,
+    &.serviceActive,
+    &.ready,
+    &.attached,
+    &.connected {
+      color: $lime603 !important;
+      background-color: $lime601;
+    }
+
+    &.blue,
+    &.training,
+    &.aggregation,
+    &.broadcasting {
+      color: $blue104 !important;
+      background-color: $blue101;
+    }
+
+    &.yellow,
+    &.pending,
+    &.reserved,
+    &.installing,
+    &.attaching {
+      color: $yellow303 !important;
+      background-color: $yellow301;
+    }
+
+    &.gray,
+    &.done,
+    &.stop,
+    &.detached,
+    &.disconnected {
+      color: $mono205 !important;
+      background-color: $mono202;
+    }
+
+    &.red,
+    &.expired,
+    &.failed,
+    &.error {
+      color: $red502 !important;
+      background-color: $red501;
+    }
+
+    &.orange,
+    &.unknown {
+      color: $orange402 !important;
+      background-color: $orange401;
+    }
+  }
+
+  .jp-dark {
+    color: $mono200 !important;
+    &.green,
+    &.running,
+    &.trainingRunning,
+    &.deploymentRunning,
+    &.active,
+    &.serviceActive,
+    &.ready,
+    &.attached {
+      background-color: $lime603;
+    }
+
+    &.yellow,
+    &.pending,
+    &.reserved,
+    &.installing,
+    &.attaching,
+    &.deleting {
+      background-color: $yellow303;
+      cursor: wait !important;
+    }
+
+    &.blue,
+    &.training,
+    &.aggregation,
+    &.broadcasting {
+      background-color: $blue104;
+    }
+
+    &.gray,
+    &.done,
+    &.stop,
+    &.detached {
+      background-color: $mono204;
+    }
+    &.red,
+    &.expired,
+    &.failed,
+    &.error {
+      background-color: $red502;
+    }
+
+    &.orange,
+    &.unknown {
+      background-color: $orange402;
+    }
+  }
+}
+
+.icon {
+  &.progress {
+    animation: rotate 1s linear infinite;
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+// @mixin status($height, $font-size) {
+//   .jp-dark {
+//     height: $height;
+//     font-size: $font-size;
+//     display: flex !important;
+//     align-items: center;
+//     justify-content: center;
+//     font-family: SpoqaM !important;
+//     cursor: default;
+//     line-height: 1.5;
+//     padding-left: 12px;
+//     padding-right: 12px;
+//     color: $dark-mono200 !important;
+//     border-radius: 3px;
+//     &.complete,
+//     &.running,
+//     &.trainingRunning,
+//     &.deploymentRunning,
+//     &.active,
+//     &.serviceActive,
+//     &.ready,
+//     &.attached,
+//     &.connected {
+//       background-color: $dark-lime602;
+//     }
+//     &.idle,
+//     &.training,
+//     &.aggregation,
+//     &.broadcasting {
+//       background-color: $dark-blue101;
+//       color: $dark-mono200;
+//     }
+//     &.pending,
+//     &.reserved,
+//     &.installing,
+//     &.attaching,
+//     &.deleting {
+//       background-color: $dark-yellow301;
+//       cursor: wait !important;
+//     }
+//     &.done,
+//     &.stop,
+//     &.detached,
+//     &.disconnected {
+//       background-color: $dark-mono203;
+//     }
+//     &.expired,
+//     &.failed,
+//     &.error {
+//       background-color: $dark-red501;
+//     }
+//     &.unknown {
+//       background-color: $dark-mono208;
+//     }
+//   }
+// }
+
+.jp {
+  position: relative;
+  &.large {
+    @include status(40px, 16px);
+  }
+  &.medium {
+    @include status(30px, 14px);
+  }
+  &.small {
+    @include status(24px, 12px);
+  }
+  &.x-small {
+    @include status(18px, 10px);
+  }
+}
+
+// .jp-dark {
+//   position: relative;
+//   &.large {
+//     @include status(40px, 16px);
+//   }
+//   &.medium {
+//     @include status(30px, 14px);
+//   }
+//   &.small {
+//     @include status(24px, 12px);
+//   }
+//   &.x-small {
+//     @include status(18px, 10px);
+//   }
+// }

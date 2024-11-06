@@ -1,0 +1,197 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.LabelList {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 8px;
+}
+
+.LabelGroup {
+	display: flex;
+	flex-flow: column nowrap;
+
+	.container {
+		display: flex;
+		flex-flow: row nowrap;
+		overflow: hidden;
+		gap: 8px;
+		width: 100%;
+		padding: 8px;
+
+		.namearea {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			gap: 4px;
+			overflow: hidden;
+			@include Cursor(pointer);
+			flex-grow: 1;
+		}
+
+		.typearea {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			gap: 4px;
+			min-width: fit-content;
+			max-width: fit-content;
+		}
+
+		.namebox {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			flex-grow: 1;
+			overflow: hidden;
+		}
+
+		&.hidden {
+			color: $editor-weak-icon;
+		}
+
+		.show {
+			display: none;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&:hover .show {
+			display: flex;
+		}
+	}
+
+	.inventory {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 8px;
+		padding-top: 8px;
+		padding-left: 8px;
+	}
+}
+
+.LabelItem {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: fit-content;
+	padding: 0 8px;
+
+	.header {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		min-height: 40px;
+		gap: 4px;
+		color: $blue110;
+
+		.text {
+			display: flex;
+			flex-flow: row nowrap;
+			flex-grow: 1;
+			overflow: hidden;
+		}
+
+		.show {
+			display: none;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&:hover .show {
+			display: flex;
+		}
+
+		&.deactive {
+			color: $editor-weak-icon;
+		}
+	}
+
+	.properties {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 14px;
+		padding: 8px 8px 8px 16px;
+	}
+}
+
+.Property {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	overflow: hidden;
+
+	&.Single {
+		align-items: center;
+		gap: 6px;
+	}
+	&.Multi {
+		align-items: stretch;
+		gap: 6px;
+
+		.name {
+			padding-top: 2px;
+		}
+	}
+
+	.name {
+		display: flex;
+		flex-flow: row nowrap;
+		overflow: hidden;
+		color: $mono206;
+	}
+
+	.stroke {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		font-size: 18px;
+		font-family: '돋움', sans-serif;
+		color: $mono203;
+		@include userSelect;
+	}
+
+	.option {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		overflow: hidden;
+		color: $blue104;
+	}
+
+	.option-tree {
+		display: flex;
+		flex-flow: column nowrap;
+		overflow: hidden;
+		gap: 4px;
+	}
+
+	.option-box {
+		display: flex;
+		flex-flow: row nowrap;
+		overflow: hidden;
+		gap: 6px;
+	}
+}
+
+.fold {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	min-width: fit-content;
+	max-width: fit-content;
+	transition: rotate .2s ease-out;
+	rotate: -90deg;
+	color: $mono205;
+
+	&.active {
+		rotate: 0deg;
+	}
+}
+
+.show {
+	color: $editor-weak-icon;
+	@include Cursor(pointer);
+}

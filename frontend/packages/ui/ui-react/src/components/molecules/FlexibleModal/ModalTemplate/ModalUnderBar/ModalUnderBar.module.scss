@@ -1,0 +1,9 @@
+.underbar-container {
+  display: flex;
+  position: fixed;
+  top: calc(100% - 40px);
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}

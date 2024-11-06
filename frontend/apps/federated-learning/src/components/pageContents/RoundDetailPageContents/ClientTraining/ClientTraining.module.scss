@@ -1,0 +1,227 @@
+@import '../RoundDetailPageContents.module.scss';
+
+$list-form-first: minmax(100px, 720px) minmax(220px, 386px) minmax(100px, 128px);
+
+$list-form-second: minmax(100px, 720px) minmax(220px, 456px)
+  minmax(100px, 128px);
+
+$list-form-third: minmax(100px, 720px) minmax(220px, 546px) minmax(100px, 128px);
+
+$list-form-default: minmax(100px, 690px) minmax(290px, 676px)
+  minmax(100px, 128px);
+
+.client-training {
+  max-height: calc(100vh - 262px);
+
+  .double-card {
+    display: grid;
+    column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 32px;
+    & > div {
+      height: 380px;
+      padding: 32px;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include card();
+    }
+
+    .runtime-info {
+      display: flex;
+      flex-direction: column;
+      .title {
+        @include title();
+        padding: 9px 8px;
+        box-sizing: border-box;
+        border-bottom: solid 2px $dark-mono204;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        font-size: 13px;
+        padding: 10px 8px;
+        border-bottom: solid 1px $dark-mono204;
+        line-height: 22px;
+        .text-key {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          color: $dark-mono201 !important;
+          max-width: 160px;
+          margin-right: 8px;
+        }
+        .text-contents {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-left: 8px;
+          &.parameters {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .trained-data-chart {
+      .title {
+        @include title();
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+      .no-data-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          margin-top: 48px;
+          width: 176px;
+        }
+        span {
+          margin-top: 16px;
+          font-size: 13px;
+          color: $dark-mono201;
+        }
+      }
+    }
+  }
+
+  .single-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    & > div {
+      @include card();
+    }
+
+    .trained-data-count,
+    .clients-ratio-data {
+      padding: 32px 32px 20px 32px;
+      .title-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          @include title();
+        }
+        .class-count {
+          font-size: 13px;
+          font-family: SpoqaR;
+          color: $dark-mono201;
+        }
+      }
+      .info-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        grid-gap: 4px;
+        .info-item {
+          width: 120px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: $dark-mono200;
+          .label {
+            font-size: 13px;
+            font-family: SpoqaT;
+            display: flex;
+            align-items: center;
+            .marker {
+              display: inline-block;
+              width: 12px;
+              height: 3px;
+              margin-right: 8px;
+              border-radius: 2px;
+              &.count {
+                height: 12px;
+                background: #3c8bdc;
+              }
+              &.max {
+                background: #e870ec;
+              }
+              &.avg {
+                background: #54f089;
+              }
+              &.min {
+                background: #fbb170;
+              }
+            }
+          }
+          .value {
+            font-size: 16px;
+            font-family: SpoqaR;
+          }
+        }
+      }
+      .no-data-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 176px;
+        }
+        span {
+          margin-top: 16px;
+          font-size: 13px;
+          color: $dark-mono201;
+        }
+      }
+    }
+  }
+  .training-results {
+    margin-top: 32px;
+    width: 1fr;
+    .title {
+      font-size: 16px;
+    }
+  }
+  .result-list {
+    list-style: none;
+    & > li {
+      display: grid;
+    }
+    .columns {
+      grid-template-columns: minmax(0, 342px) $list-form-default;
+      &.metric-size-0,
+      &.metric-size-1,
+      &.metric-size-2,
+      &.metric-size-3 {
+        grid-template-columns: minmax(0, 342px) $list-form-first !important;
+      }
+      &.metric-size-4 {
+        grid-template-columns: minmax(0, 342px) $list-form-second !important;
+      }
+      &.metric-size-5 {
+        grid-template-columns: minmax(0, 342px) $list-form-third !important;
+      }
+
+      padding: 16px 0px 0px 8px;
+      .metric-column {
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        & > label {
+          @include title();
+          width: 30px;
+          &:not(:first-child) {
+            margin-left: 78px;
+          }
+        }
+        &::-webkit-scrollbar {
+          height: 4px;
+        }
+      }
+      & > label {
+        @include title();
+      }
+    }
+  }
+}

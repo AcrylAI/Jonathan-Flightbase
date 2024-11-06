@@ -1,0 +1,22 @@
+.btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 36px 44px;
+  margin-top: auto;
+
+  .left-side {
+    display: flex;
+    flex-direction: row;
+    div {
+      margin-left: 12px;
+    }
+  }
+  .right-side {
+    display: flex;
+    flex-direction: row;
+    div {
+      margin-left: 12px;
+    }
+  }
+}

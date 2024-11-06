@@ -1,0 +1,158 @@
+@import '@src/styles/color.scss';
+
+.history-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 24px;
+  padding: 8px 0;
+  border-bottom: 1px solid $mono203;
+  &:last-child {
+    border-bottom: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .type {
+      min-width: 32px;
+      margin-right: 6px;
+    }
+    .name {
+      display: flex;
+      flex-direction: row;
+      width: 180px;
+      height: 18px;
+      font-family: SpoqaM;
+      font-size: 14px;
+      color: $mono207;
+      margin-right: 12px;
+      .training {
+        max-width: 88px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .job {
+        margin-left: 4px;
+        width: 88px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .progress {
+      width: calc(100% - 604px);
+      height: 8px;
+      margin: 6px 12px 4px 0;
+    }
+    .status {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        .label {
+          height: 18px;
+          font-family: SpoqaM;
+          font-size: 14px;
+          color: $mono205;
+          margin-right: 4px;
+          &.status-label {
+            display: inline-block;
+            width: 61px;
+          }
+        }
+        .value {
+          width: 36px;
+          height: 18px;
+          font-family: SpoqaM;
+          font-size: 14px;
+          color: $mono207;
+          margin-right: 8px;
+          &.status-count {
+            width: 92px;
+            padding-right: 8px;
+            border-right: solid 1px $mono205;
+          }
+        }
+      }
+    }
+  }
+  .btn-box {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    padding: 4px;
+    cursor: pointer;
+    .arrow {
+      width: 17px;
+      height: 17px;
+    }
+    &:hover {
+      background-color: $mono202;
+      &::after {
+        content: attr(name);
+        position: absolute;
+        top: 0;
+        right: 28px;
+        width: max-content;
+        height: auto;
+        line-height: 1.5;
+        padding: 3px 6px;
+        background: $mono200;
+        font-size: 12px;
+        font-family: SpoqaR;
+        border-radius: 2px;
+        border: 1px solid $mono205;
+        color: $mono206;
+        text-align: center;
+        z-index: 100;
+      }
+    }
+  }
+  @media (max-width: 1080px) {
+    .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      .type {
+        min-width: 32px;
+        margin-right: 6px;
+      }
+      .name {
+        width: 184px;
+      }
+      .progress {
+        width: calc(100% - 250px);
+      }
+      .status {
+        flex: 1;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        div {
+          justify-content: flex-end;
+          .label.status-label {
+            border-left: solid 1px $mono205;
+            padding-left: 8px;
+          }
+          .value.status-count {
+            border-right: 0;
+            padding-right: 0;
+            margin-right: 12px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

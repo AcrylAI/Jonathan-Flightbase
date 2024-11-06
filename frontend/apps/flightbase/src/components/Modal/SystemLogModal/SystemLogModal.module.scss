@@ -1,0 +1,36 @@
+@import '@src/styles/color.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh !important;
+  .title {
+    font-size: 20px;
+    margin: 0 0 20px;
+  }
+  .head-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 48px;
+    margin-bottom: 10px;
+    .head {
+      font-family: SpoqaM;
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+  .log-data-box {
+    flex: 1;
+    margin-right: 48px;
+    font-size: 14px;
+    padding: 16px;
+    min-height: 80px;
+    max-height: calc(65vh - 70px);
+    border-radius: 8px;
+    background-color: $mono202;
+    overflow: auto;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+  }
+}

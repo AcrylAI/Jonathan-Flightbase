@@ -1,0 +1,29 @@
+@import '@src/styles/color.scss';
+.deleted-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 16px 19px 8px;
+  background-color: $red501;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  height: 52px;
+  border: 1.5px solid transparent;
+  .left-side {
+    display: flex;
+    .desc {
+      color: $red502;
+    }
+    .tooltip {
+      display: flex;
+      align-items: center;
+      margin-left: 4px;
+    }
+  }
+  .right-side {
+    .cancel-btn {
+      color: $mono205;
+      cursor: pointer;
+    }
+  }
+}

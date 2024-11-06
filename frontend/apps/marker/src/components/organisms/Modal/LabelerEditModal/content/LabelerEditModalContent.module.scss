@@ -1,0 +1,18 @@
+@import '@src/styles/color.scss';
+.lb-content-container {
+  font-family: MarkerFont;
+  .id-container {
+    width: 100%;
+    background-color: $mono201;
+    border: 1px solid $mono203;
+    padding: 16px;
+    border-radius: 5px;
+    color: $mono205;
+  }
+  .password-container {
+    background-color: $blue109;
+    padding: 16px;
+    padding-bottom: 8px;
+    margin-bottom: 40px;
+  }
+}

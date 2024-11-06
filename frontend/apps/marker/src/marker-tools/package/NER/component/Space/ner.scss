@@ -1,0 +1,104 @@
+@function calculateHeight() {
+  $overlap: var(--ner-level, 0);
+    $pad: calc(4px * ($overlap + 1));
+    $bod: calc(2px * ($overlap));
+  @return calc($pad + $bod);
+}
+
+.ner-space {
+    background-color: #fff;
+    border: 1px solid #e6eaf2;
+    color: #1e222a;
+    font-size: 16px;
+    line-height: 96px;
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+    padding: 32px;
+}
+
+.ner-paragraph {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 5em;
+    letter-spacing: 0.05em;
+    color: #1E222A;
+    white-space: pre-wrap;
+}
+
+/* BASIC SETTINGS */
+.ner-span {
+    //line-height: 1em;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+}
+
+/* SPACING SETTINGS */
+.ner-span {
+    padding: calculateHeight() 4px;
+
+    &.ner-left {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    &.ner-right {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+}
+.ner-close {
+    &:has(.ner-left) {
+        margin-right: -1px;
+        padding-right: 0;
+    }
+    &:has(.ner-right) {
+        margin-left: -1px;
+        padding-left: 0;
+    }
+}
+
+/* BORDER SETTINGS */
+.ner-span {
+    border: 1px solid var(--ner-border, transparent);
+
+    &.ner-left {
+        border: none;
+        border-top: 1px solid var(--ner-border, transparent);
+        border-left: 1px solid var(--ner-border, transparent);
+        border-bottom: 1px solid var(--ner-border, transparent);
+    }
+
+    &.ner-right {
+        border: none;
+        border-top: 1px solid var(--ner-border, transparent);
+        border-right: 1px solid var(--ner-border, transparent);
+        border-bottom: 1px solid var(--ner-border, transparent);
+    }
+
+    &.ner-center {
+        border: none;
+        border-top: 1px solid var(--ner-border, transparent);
+        border-bottom: 1px solid var(--ner-border, transparent);
+    }
+}
+
+/* PSEUDO CLASS SETTING */
+.ner-last::after {
+    content: var(--ner-name, '');
+    background-color: var(--ner-color, transparent);
+    color: var(--ner-contrast, #2A2D3E);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 4px;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.ner-comment::after {
+    content: "";
+    display: inline-block;
+    margin-bottom: -2px;
+    width: 16px;
+    height: 16px;
+    background-image: url("./WarningCircle.svg");
+}

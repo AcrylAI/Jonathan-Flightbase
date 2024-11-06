@@ -1,0 +1,12 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+}

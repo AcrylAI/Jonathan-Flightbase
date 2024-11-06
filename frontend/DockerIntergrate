@@ -1,0 +1,71 @@
+
+# ubuntu setup
+FROM ubuntu:20.04
+COPY . /jp-front
+
+# ARGS
+ARG PACKAGE=3
+
+# apt 업데이트
+RUN apt-get -qq update
+
+# replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# update the repository sources list
+# and install dependencies
+RUN apt-get -qq install -y curl 
+RUN apt-get -qq install -y nginx
+
+# nvm environment variables
+ENV NVM_DIR /usr/local/nvm
+#ENV NODE_VERSION 16.15.0 
+ENV NODE_VERSION 16.17.0
+
+# install nvm
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+
+# install node and npm
+RUN source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+  && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+# add node and npm to path so the commands are available
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# confirm installation
+RUN node -v
+
+# node heap memory setup
+RUN export NODE_OPTIONS=--max_old_space_size=4096
+
+# npm & yarn setup
+RUN npm install --quiet -g yarn
+
+# project setup
+WORKDIR /jp-front
+
+# 불필요 패키지 삭제
+RUN rm -rf ./apps/federated-learning
+
+# 라이브러리 설치
+RUN yarn install --silent --network-timeout 1000000 
+
+#필요한 프로젝트만 ui build
+RUN yarn build-pack:all 
+
+# port option
+EXPOSE 80
+
+# Static 배포 설정
+RUN yarn workspace @jonathan/federated-learning build:deploy
+
+# 기본 설정 삭제
+RUN rm -f /etc/nginx/sites-enabled/default*
+
+# 내부 NginX 설정
+RUN cp -f /jp-front/install/jp-front/nginx/static.conf /etc/nginx/conf.d/static.conf
+
+ENTRYPOINT nginx -c /etc/nginx/nginx.conf -g 'daemon off;'

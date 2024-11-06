@@ -1,0 +1,18 @@
+@import "src/styles/color.scss";
+
+.ToolVendor {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: 12px;
+	flex-grow: 1;
+}
+
+.line {
+	display: flex;
+	flex-flow: row nowrap;
+	min-height: 24px;
+	min-width: 2px;
+	border-radius: 2px;
+	background-color: $editor-border-color;
+}

@@ -1,0 +1,70 @@
+@import '@src/styles/color.scss';
+.radio-container {
+  display: flex;
+  font-family: MarkerFont;
+  font-weight: 400;
+  color: $mono204;
+  font-size: 14px;
+  align-items: center;
+  cursor: pointer;
+  input {
+    display: none;
+  }
+  .radio-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    position: relative;
+    height: 16px;
+    .out-circle {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $blue102;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+    }
+    .in-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+      background-color: #fff;
+    }
+  }
+
+  .label {
+    user-select: none;
+    margin-left: 12px;
+  }
+  &.active {
+    .radio-mark {
+      .out-circle {
+        border-color: $blue104;
+      }
+      .in-circle {
+        background-color: $blue104;
+      }
+    }
+    .label {
+      color: $blue104;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    .radio-mark {
+      .out-circle {
+        border-color: $mono204;
+        background-color: $mono202;
+      }
+      .in-circle {
+        background-color: $mono202;
+      }
+    }
+    .label {
+      color: $mono204;
+    }
+  }
+}

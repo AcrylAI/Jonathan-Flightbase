@@ -1,0 +1,28 @@
+.data-set {
+  height: 100%;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    & > div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .data-set {
+    .contents {
+      & > div {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

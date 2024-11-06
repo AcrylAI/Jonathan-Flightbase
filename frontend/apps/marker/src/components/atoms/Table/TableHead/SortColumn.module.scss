@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    margin-top: 1px;
+    max-height: 80px;
+    // overflow: hidden;
+    vertical-align: top;
+    // text-overflow: ellipsis;
+    // word-break: break-all;
+    -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 1;
+  }
+  .sort {
+    display: grid;
+    margin-left: 6px;
+    height: 23px;
+    align-items: center;
+    .dark {
+      filter: invert(23%) sepia(0%) saturate(31%) hue-rotate(249deg)
+        brightness(93%) contrast(88%);
+    }
+  }
+}

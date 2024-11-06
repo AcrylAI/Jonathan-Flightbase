@@ -1,0 +1,32 @@
+@import "src/styles/color";
+
+.template-container {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.template-main {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.template-contents {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: 100%;
+	background-color: $blue109;
+}
+
+.template-aside {
+	display: flex;
+	flex-flow: column nowrap;
+	width: fit-content;
+	height: 100%;
+}

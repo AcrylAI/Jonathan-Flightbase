@@ -1,0 +1,75 @@
+@import "src/styles/color";
+
+.Group {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	margin-bottom: 16px;
+
+	.aside {
+		display: flex;
+		flex-flow: column nowrap;
+		position: relative;
+
+		.index {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			padding: 4px 5px;
+			background-color: $blue104;
+			border-radius: 8px;
+			height: 17px;
+
+			& > div {
+				font-size: 8px !important;
+			}
+		}
+
+		.stroke {
+			display: flex;
+			width: 1px;
+			flex-grow: 1;
+			background-color: $mono202;
+			margin: 0 auto;
+		}
+	}
+
+	.content {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+
+		.title {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			gap: 2px;
+			margin-bottom: 8px;
+			max-width: 158px;
+			height: 17px;
+		}
+
+		.options {
+			display: flex;
+			flex-flow: row wrap;
+			gap: 4px;
+			width: 100%;
+
+			.label {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				gap: 8px;
+				flex-basis: 70px;
+				flex-grow: 1;
+				cursor: pointer;
+				user-select: none;
+				max-width: 160px;
+
+				&.disabled {
+					cursor: default;
+				}
+			}
+		}
+	}
+}

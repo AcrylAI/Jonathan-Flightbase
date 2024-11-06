@@ -1,0 +1,223 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+.service {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  @media (min-width: $desktop) {
+    min-width: $desktop;
+  }
+
+  &__card_wrapper {
+    width: 100%;
+    padding: 68px 0;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+      flex-direction: column;
+      align-items: center;
+      padding: 68px 0 128px 0;
+    }
+  }
+}
+
+// card 내부 style
+.logo-container {
+  height: calcResponsive(57);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: calcResponsive(10);
+
+  .logo-big {
+    height: calcResponsive(30);
+  }
+
+  .small-logo-wrapper {
+    width: 100%;
+    height: calcResponsive(30);
+    display: flex;
+    justify-content: center;
+
+    .logo-small {
+      height: calcResponsive(30);
+    }
+
+    .ico-close {
+      margin: 0 6px;
+    }
+  }
+}
+
+.card-title {
+  height: calcResponsive(47);
+  font-size: calcResponsive(32);
+  font-family: SpoqaB;
+  color: #2a2c30;
+  text-align: center;
+}
+
+.card-sub-title {
+  height: calcResponsive(24);
+  font-size: calcResponsive(16);
+  font-family: SpoqaR;
+  text-align: center;
+  color: #bdbfc4;
+}
+
+.product-datascope {
+  width: calcResponsive(324);
+  height: calcResponsive(242);
+  margin: calcResponsive(30) 0 calcResponsive(34) calcResponsive(72);
+}
+
+.product-platform {
+  width: calcResponsive(399);
+  height: calcResponsive(204);
+  margin: calcResponsive(37) auto calcResponsive(38) auto;
+}
+
+.product-bots {
+  width: calcResponsive(395);
+  height: calcResponsive(230);
+  margin: calcResponsive(34) auto calcResponsive(38) auto;
+}
+
+.product-introduce {
+  font-size: calcResponsive(18);
+  font-weight: 500;
+  color: #2a3034;
+}
+
+.product-more {
+  margin: calcResponsive(5) 0 calcResponsive(16) 0;
+  width: fit-content;
+  height: calcResponsive(28);
+  font-size: calcResponsive(18);
+  font-family: SpoqaM;
+  color: #2c76f8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.product-desc {
+  padding: 0px;
+  margin: 0 0 calcResponsive(4) calcResponsive(24);
+  li {
+    font-family: SpoqaR;
+    list-style-type: disc;
+    list-style-position: outside;
+    position: relative;
+    font-size: calcResponsive(16);
+    color: #818388;
+    &:not(:last-child) {
+      margin-bottom: calcResponsive(2);
+    }
+  }
+}
+
+.product-btn {
+  margin-top: auto;
+  width: 100%;
+  height: calcResponsive(60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: calcResponsive(18);
+  border-radius: 4px;
+
+  &.active {
+    background: #2c76f8;
+    color: #ffffff;
+  }
+
+  &.deactive {
+    color: #697077;
+    background: #dbdcdd;
+  }
+}
+
+@media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+  .logo-container {
+    height: 57px;
+    margin-bottom: 10px;
+
+    .logo-big {
+      height: 30px;
+    }
+
+    .small-logo-wrapper {
+      height: 30px;
+
+      .logo-small {
+        height: 30px;
+      }
+    }
+  }
+
+  .card-title {
+    height: 47px;
+    font-size: 32px;
+  }
+
+  .card-sub-title {
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .product-datascope {
+    width: 324px;
+    height: 242px;
+    margin: 30px 0 34px 72px;
+  }
+
+  .product-platform {
+    width: 399px;
+    height: 204px;
+    margin: 37px auto 44px auto;
+  }
+
+  .product-bots {
+    width: 395px;
+    height: 230px;
+    margin: 36px auto 40px auto;
+  }
+
+  .product-introduce {
+    // height: 54px;
+    font-size: 18px;
+  }
+
+  .product-more {
+    margin: 5px 0 20px 0;
+    height: 28px;
+    font-size: 18px;
+  }
+
+  .product-desc {
+    margin-left: 24px;
+    margin-bottom: 50px;
+    li {
+      font-size: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 2px;
+      }
+
+      &::before {
+        width: 5px;
+        height: 5px;
+        left: 12px;
+      }
+    }
+  }
+
+  .product-btn {
+    height: 60px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,138 @@
+@import 'src/styles/common';
+
+.root {
+	--toastify-color-light: #2A2D3E;
+	--toastify-text-color-light: #fff;
+	min-width: 480px;
+	min-height: 64px;
+
+	.body, .snackbar-root, .snackbar-text, .snackbar-action, .snackbar-cancel {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+
+	.body {
+		margin: 0;
+		padding: 0 24px;
+	}
+
+	.snackbar-root {
+		gap: 16px;
+	}
+
+	.snackbar-text {
+		min-width: 270px;
+		flex-grow: 1;
+	}
+
+	.snackbar-action {
+		padding: 12px 18px;
+		@include Cursor(pointer);
+
+		transition: background-color 0.15s ease-in-out;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: rgba(172, 172, 172, 0.15);
+		}
+	}
+
+	.snackbar-cancel {
+		width: 36px;
+		height: 36px;
+		padding: 8px;
+		@include Cursor(pointer);
+
+		transition: background-color 0.15s ease-in-out;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: rgba(172, 172, 172, 0.15);
+		}
+	}
+
+	.text-span, .text-button {
+		font-family: 'SpoqaR', sans-serif;
+		line-height: 1em;
+	}
+
+	.text-span {
+		font-size: 16px;
+	}
+	.text-button {
+		color: grey;
+		font-size: 16px;
+	}
+}
+
+//.jonathan-ui-toast-container {
+//	--toastify-toast-width: 'fit-content';
+//	--toastify-color-light: #202732;
+//	--toastify-text-color-light: #E9EDF2;
+//	--toastify-toast-min-height: 64px;
+//	--toastify-font-family: 'sans-serif';
+//	position: absolute;
+//	z-index: 900;
+//
+//	//.root {
+//	//	padding: 0;
+//	//}
+//	.body {
+//		padding: 0;
+//	}
+//
+//	.snackbar-root {
+//		display: flex;
+//		flex-flow: row nowrap;
+//		align-items: center;
+//		gap: 16px;
+//		min-width: 380px;
+//		min-height: 64px;
+//		padding-right: 16px;
+//		box-sizing: border-box;
+//
+//		&.wide {
+//			min-width: 472px;
+//		}
+//	}
+//
+//	.snackbar-root {
+//		.status {
+//			border-radius: 4px 0 0 4px;
+//			min-height: 64px;
+//			height: 100%;
+//			width: 4px;
+//
+//			&.error {
+//				background-color: #E04952;
+//			}
+//			&.warning {
+//				background-color: #EBDE6D;
+//			}
+//			&.info {
+//				background-color: #878BEF;
+//			}
+//			&.success {
+//				background-color: #29D593;
+//			}
+//			&.none {
+//				width: 0;
+//			}
+//		}
+//		.text {
+//			margin-right: 8px;
+//		}
+//		.action {
+//			margin-left: auto;
+//			margin-right: 0;
+//		}
+//	}
+//
+//	.snackbar-close {
+//		width: 16px;
+//		height: 16px;
+//		cursor: pointer;
+//		margin-left: auto;
+//	}
+//}

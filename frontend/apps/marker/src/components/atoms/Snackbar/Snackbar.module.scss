@@ -1,0 +1,74 @@
+@import "src/styles/color";
+
+.Snackbar {
+	position: absolute;
+	bottom: 24px;
+	left: calc(50% - 280px);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	min-width: 560px;
+	max-width: 560px;
+	min-height: 64px;
+	border-radius: 6px;
+	padding: 16px;
+	background-color: $blue110;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+	color: $mono200;
+
+	&.visible {
+		animation-name: popup-snackbar;
+		animation-duration: .2s;
+		animation-fill-mode: forwards;
+	}
+
+	&.hidden {
+		animation-name: popdown-snackbar;
+		animation-duration: .2s;
+		animation-fill-mode: forwards;
+	}
+}
+
+.contents {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.close {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	min-width: 24px;
+	min-height: 24px;
+	cursor: pointer;
+}
+
+@keyframes popup-snackbar {
+	0% {
+		visibility: visible;
+		bottom: -88px;
+	}
+	75% {
+		bottom: 48px;
+	}
+	100% {
+		bottom: 24px;
+	}
+}
+
+@keyframes popdown-snackbar {
+	0% {
+		bottom: 24px;
+	}
+	50% {
+		bottom: 48px;
+	}
+	99% {
+		bottom: -88px;
+	}
+	100% {
+		visibility: hidden;
+	}
+}

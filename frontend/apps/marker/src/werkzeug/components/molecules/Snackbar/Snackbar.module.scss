@@ -1,0 +1,13 @@
+.SubmitBar {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-right: 8px;
+
+	.box {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+}

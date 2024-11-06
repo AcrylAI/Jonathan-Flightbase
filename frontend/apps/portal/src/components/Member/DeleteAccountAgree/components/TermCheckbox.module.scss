@@ -1,0 +1,91 @@
+@import '~styles/screen';
+@import '~styles/variables';
+
+.basic-check-box {
+    input {
+        position: absolute; // take it out of document flow
+        opacity: 0; // hide it
+    }
+
+    > input + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        font-weight: bold;
+        color: #242424;
+        display: flex;
+        align-items: center;
+
+        @media (min-width: $desktop) {
+            font-size: 16px;
+        }
+
+        @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+            font-size: 14px;
+        }
+    }
+
+    > input + label:before {
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        border-radius: 2px;
+        border: solid 2px #b7b8b9;
+        box-sizing: border-box;
+
+        @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (min-width: $desktop) {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    // 호버
+    // > input:hover + label:before {
+    // 	background: #f35429;
+    // }
+
+    // > input:focus + label:before {
+    // 	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    // }
+
+    > input:checked + label:before {
+        background: $btn-primary;
+        border: solid 2px $btn-primary;
+    }
+
+    > input:disabled + label {
+        color: #dedfe0;
+        cursor: auto;
+    }
+
+    > input:disabled + label:before {
+        box-shadow: none;
+        background-color: #dedfe0;
+    }
+
+    > input:checked + label:after {
+        content: '';
+        position: absolute;
+        background: white;
+        width: 2px;
+        height: 2px;
+        box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+        transform: rotate(45deg);
+
+        @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+            left: 3px;
+            top: 8px;
+        }
+
+        @media (min-width: $desktop) {
+            left: 4px;
+            top: 10px;
+        }
+    }
+}

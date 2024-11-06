@@ -1,0 +1,83 @@
+@import './color.scss';
+
+// Header START ========================================================================
+$header_bg: (
+  'jp-primary': #2a2d3e,
+  'jp-dark': #262a4a,
+);
+
+$header_menu_line_bg: (
+  'jp-primary': $mono203,
+  'jp-dark': $dark-mono200,
+);
+
+// Header END ========================================================================
+
+// SideNav START =========================================================================
+
+// Nav 배경 컬러
+$sidenav_bg: (
+  'jp-primary': #f4f6fa,
+  'jp-dark': $dark-mono207,
+);
+
+// Nav 버튼 배경 컬러
+$sidenav_btn_bg: (
+  'jp-primary': transparent,
+  'jp-dark': transparent,
+);
+$sidenav_btn_hover_bg: (
+  'jp-primary': #f4f6fa,
+  'jp-dark': $dark-mono205,
+);
+$sidenav_btn_active_bg: (
+  'jp-primary': $new-bg-color,
+  'jp-dark': $dark-mono206,
+);
+
+// Nav 버튼 보더 컬러
+$sidenav_btn_border_color: (
+  'jp-primary': transparent,
+  'jp-dark': transparent,
+);
+$sidenav_btn_border_hover_color: (
+  'jp-primary': transparent,
+  'jp-dark': $dark-mono205,
+);
+$sidenav_btn_border_active_color: (
+  'jp-primary': transparent,
+  'jp-dark': $dark-mono206,
+);
+
+// Nav 버튼 텍스트 컬러
+$sidenav_btn_txt_color: (
+  'jp-primary': $mono206,
+  'jp-dark': $dark-mono201,
+);
+$sidenav_btn_txt_hover_color: (
+  'jp-primary': $mono206,
+  'jp-dark': $dark-mono200,
+);
+$sidenav_btn_txt_active_color: (
+  'jp-primary': $blue104,
+  'jp-dark': $dark-mono200,
+);
+
+// SideNav END =========================================================================
+
+// Content START ========================================================================
+
+$content_bg: (
+  'jp-primary': $new-bg-color,
+  'jp-dark': $dark-background-color,
+);
+
+// Content END ========================================================================
+
+// Footer START ========================================================================
+$footer_bg: (
+  'jp-primary': $new-bg-color,
+  'jp-dark': $dark-background-color,
+);
+
+// Footer END ========================================================================

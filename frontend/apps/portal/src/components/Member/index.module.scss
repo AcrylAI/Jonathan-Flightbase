@@ -1,0 +1,119 @@
+@import '~styles/screen.scss';
+
+.login-wrap {
+  width: 100%;
+  max-width: 440px;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: $desktop) {
+    margin: 6px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin: 20px;
+  }
+}
+
+/* 헤더 부분 */
+.login-header-box {
+  .title-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .sub-title-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin-bottom: 47px;
+  }
+}
+
+/* 바디 부분 */
+.user-body-container {
+  .id-box {
+    margin-bottom: 6px;
+  }
+}
+.user-info-box {
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+.checkbox-box {
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+.submit-button-box {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.user-event-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 46px;
+
+  .event-item {
+    font-weight: 500;
+    color: #121619;
+    cursor: pointer;
+
+    &:first-child {
+      color: #2c76f8;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+      font-size: 12px;
+    }
+  }
+
+  .division {
+    font-weight: 300;
+    color: #979899;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    @media (min-width: $desktop) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+      font-size: 12px;
+    }
+  }
+}
+
+.social-btn-box {
+  width: 100%;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 118px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin-bottom: 50px;
+  }
+}

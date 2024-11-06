@@ -1,0 +1,381 @@
+@import '@src/styles/color.scss';
+
+@mixin storageInUseValue() {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      height: 18px;
+      font-family: SpoqaM;
+      font-size: 14px;
+      color: $mono205;
+      padding: 20px 24px 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .edit-btn {
+      margin-bottom: 2px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+      }
+    }
+
+    .first-row {
+      display: flex;
+      flex-direction: row;
+      margin-top: -10px;
+      margin: 0 10px;
+
+      .workspace-info {
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 1px solid $card-border-color;
+        background-color: $mono200;
+        display: flex;
+        flex-direction: column;
+        padding: 23px 24px 24px 24px;
+        margin: 12px 10px 12px 0;
+        flex: 50%;
+        max-width: calc(50% - 10px);
+        .title-div {
+          display: flex;
+          flex-direction: row;
+          .workspace-name {
+            font-family: SpoqaM;
+            font-size: 24px;
+            color: $mono207;
+            margin-left: 8px;
+            height: 29px;
+            line-height: 29px;
+          }
+        }
+        .workspace-description {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          border-bottom: 1px solid $card-border-color;
+          margin-bottom: 6px;
+          .description {
+            flex: 1;
+            font-family: SpoqaM;
+            font-size: 16px;
+            color: $mono205;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            height: 54px;
+            line-height: 18px;
+            margin: 14px 0 12px;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            box-sizing: border-box;
+          }
+          .edit-btn {
+            margin-top: 10px;
+          }
+        }
+        .meta {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 16px;
+          margin-top: 12px;
+          height: 19px;
+          label {
+            font-family: SpoqaM;
+            color: $mono205;
+            margin-right: 12px;
+            width: 60px;
+            min-width: 60px;
+          }
+          span {
+            font-family: SpoqaM;
+            color: $mono207;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+      .top-right-contents {
+        flex: 50%;
+        display: flex;
+        box-sizing: border-box;
+        margin-left: 10px;
+        max-width: calc(50% - 10px);
+        .storage-box {
+          flex: 1;
+          border-radius: 8px;
+          border: 1px solid $card-border-color;
+          background-color: $mono200;
+          margin: 12px 0px 12px 10px;
+          min-height: 250px;
+
+          .storage-top {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .title-box {
+              display: flex;
+              justify-content: space-between;
+              padding: 20px 24px 12px;
+              font-family: SpoqaM;
+              font-size: 14px;
+              color: $mono205;
+            }
+            .chart-box {
+              display: flex;
+              padding: 0px 24px 24px;
+              flex: 1;
+              .chart-graph {
+                flex: 1;
+                position: relative;
+                margin: auto;
+                .pcent {
+                  position: absolute;
+                  bottom: 75px;
+                  left: 53px;
+                }
+              }
+              .chart-value {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                font-size: 13px;
+                color: $mono205;
+                flex-direction: column;
+                padding-left: 25px;
+                .capacity-box {
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 6px;
+                  @for $i from 1 through 4 {
+                    & > div:nth-child(#{$i}) {
+                      @include storageInUseValue();
+
+                      .value {
+                        color: $mono207;
+                      }
+                    }
+                  }
+                }
+              }
+              @media (max-width: 1700px) {
+                .chart-graph {
+                  width: 80px;
+                }
+                .chart-value {
+                  .capacity-box {
+                    row-gap: 6px;
+                  }
+                }
+              }
+
+              @media (max-width: 796px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .chart-graph {
+                  width: 100px;
+                }
+
+                .chart-value {
+                  display: flex;
+                  padding-left: 0;
+                  align-items: center;
+                  .capacity-box {
+                    display: flex;
+                    grid-gap: 8px;
+                    flex-direction: column;
+
+                    @for $i from 1 through 4 {
+                      & > div:nth-child(#{$i}) {
+                        display: flex;
+                        flex-direction: column;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .usage {
+          flex: 1;
+          margin: 12px 10px 12px 0px;
+          display: flex;
+          align-items: center;
+          .gpu-usage {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            border: 1px solid $card-border-color;
+            background-color: $mono200;
+            & > div {
+              display: flex;
+              flex-direction: row;
+              height: 100%;
+              align-items: center;
+              justify-content: space-between;
+              @media (max-width: 768px) {
+                flex-wrap: wrap;
+              }
+
+              @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                justify-content: space-around;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1644px) {
+      .first-row {
+        flex-direction: column;
+        .workspace-info {
+          margin-right: 0px;
+          max-width: 100%;
+        }
+        .top-right-contents {
+          margin-left: 0px;
+          max-width: 100%;
+        }
+      }
+      .usage {
+        margin-right: 0px;
+      }
+      .storage-box {
+        margin-left: 0px;
+      }
+    }
+    .second-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .latest-job,
+      .history {
+        flex: 1;
+        min-width: 640px;
+        height: 228px;
+        border-radius: 8px;
+        border: 1px solid $card-border-color;
+        background-color: $mono200;
+        display: flex;
+        flex-direction: column;
+        margin: 12px 10px;
+        .history-list {
+          overflow: auto;
+        }
+        .no-history {
+          height: calc(100% - 110px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 14px;
+          font-family: SpoqaM;
+          color: $mono207;
+        }
+      }
+    }
+
+    .third-row {
+      display: flex;
+      flex-direction: column;
+      min-width: 408px;
+      height: 454px;
+      border-radius: 8px;
+      border: 1px solid $card-border-color;
+      background-color: $mono200;
+      box-sizing: border-box;
+      margin: 12px 10px;
+      & > div {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 1366px) {
+      .first-row {
+        .workspace-info {
+          padding: 20px 20px 36px 24px;
+          .meta {
+            height: auto;
+            align-items: baseline;
+            span {
+              white-space: normal;
+            }
+          }
+          .title-div {
+            .workspace-name {
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .second-row {
+        grid-template-columns: 1fr 1fr;
+        .latest-job,
+        .history {
+          min-width: 408px;
+        }
+      }
+    }
+    .status-box {
+      padding: 0px;
+      .status {
+        .total-count {
+          display: flex;
+          margin: 10px 0;
+        }
+      }
+      @media (max-width: 1024px) {
+        .status {
+          .total-count {
+            display: grid;
+            height: 100%;
+            grid-template-columns: repeat(2, minmax(197px, 1fr));
+            grid-template-rows: repeat(2, 108px);
+            row-gap: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .no-response,
+  .no-data {
+    height: calc(100% - 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: SpoqaM;
+    color: $mono207;
+  }
+}

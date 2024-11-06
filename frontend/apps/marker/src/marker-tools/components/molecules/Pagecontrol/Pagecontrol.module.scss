@@ -1,0 +1,9 @@
+.pagecontrol {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: fit-content;
+  height: fit-content;
+}

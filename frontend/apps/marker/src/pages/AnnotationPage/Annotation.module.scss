@@ -1,0 +1,17 @@
+@import "src/styles/common";
+
+.annotation-conatiner {
+	display: flex;
+	flex-flow: column nowrap;
+	overflow: hidden !important;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	@include Cursor();
+
+	.contents-area {
+		display: flex;
+		flex-flow: row nowrap;
+		height: calc(100% - 64px);
+	}
+}

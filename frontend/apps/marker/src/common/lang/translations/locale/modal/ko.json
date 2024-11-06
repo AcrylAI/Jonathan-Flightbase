@@ -1,0 +1,130 @@
+{
+  "newProject": {
+    "setting": "기본 설정",
+    "projectName": "프로젝트 이름",
+    "description": "프로젝트 설명",
+    "dataType": "데이터 타입",
+    "image": "이미지",
+    "text": "텍스트",
+    "annotationType": "어노테이션 도구",
+    "boundingBox": "바운딩 박스",
+    "polygon": "폴리곤",
+    "workflow": "작업 과정",
+    "mobileAvailability": "모바일 접근 허용",
+    "unavailability": "불가능",
+    "availability": "가능",
+    "guideline": "작업 가이드 파일",
+    "maxByte": "1GB이하의 PDF와 PPT 파일만 가능",
+    "addMembers": "멤버 추가",
+    "textSelectedMembers": "명이 선택되었습니다.",
+    "memberType": "멤버 유형",
+    "id": "아이디",
+    "participatingProject": "참여 프로젝트 수",
+    "monitoringProject": "관리 프로젝트 수",
+    "connectDataset": "데이터셋 연결",
+    "textConnectDataset": "프로젝트를 조나단 플라이트베이스의 데이터셋과 연결합니다.",
+    "textReadFile": "선택된 폴더에 위치한 파일만 읽어옵니다.",
+    "projectDataType": "프로젝트 데이터 유형",
+    "createClasses": "클래스 생성",
+    "class": "클래스",
+    "addClass": "클래스 추가",
+    "property": "속성",
+    "selectedClass": "선택된 클래스",
+    "singleSelective": "단일 선택",
+    "multiSelective": "복수 선택",
+    "option": "선택 항목"
+  },
+  "inputBox": { "className": "클래스 이름을 입력해주세요." },
+  "selectBox": { "selectTool": "도구를 선택해주세요." },
+  "autolabeling": {
+    "selectAutolabelingModel": "오토라벨링 모델 선택",
+    "select": "선택",
+    "deployment": "배포 이름",
+    "owner": "배포 소유자",
+    "resource": "리소스"
+  },
+  "setAutolabeling": {
+    "header": "오토라벨링 설정",
+    "selectDataType": "데이터 유형",
+    "selectKeepData": "데이터 유지",
+    "step1": "1단계. 모델 선택",
+    "step2": "2단계. 모델 클래스 선택",
+    "step3": "3단계. 모델 클래스와 매치할 클래스 선택",
+    "classPreview": "클래스 미리보기",
+    "modelClass": "모델클래스",
+    "class": "클래스",
+    "deploymentName": "배포이름"
+  },
+  "stopAutolabeling": {
+    "mainText": "오토라벨링 진행을 중지하시겠습니까?",
+    "subText": "현재까지 진행된 오토라벨링 결과만 저장됩니다."
+  },
+  "editClasses": {
+    "editClasses": "클래스 수정",
+    "emptyClasses": "생성된 클래스가 없습니다.",
+    "emptyProperties": "생성된 속성이 없습니다."
+  },
+  "exportResults": {
+    "export": "추출",
+    "preview": "미리보기",
+    "send": "연결된 폴더로 보내기",
+    "folderPath": "확장자를 선택해주세요.",
+    "fileName": "파일이름",
+    "overwrite": "동일한 이름의 파일 덮어쓰기"
+  },
+  "addMembers": {
+    "memberType": "멤버 유형",
+    "id": "아이디",
+    "participatingProjects": "참여 프로젝트 수",
+    "monitoringProjects": "관리 프로젝트 수",
+    "selectMembers": "멤버를 선택해주세요.",
+    "noMembers": "선택할 멤버가 없습니다."
+  },
+  "deleteGuideline": {
+    "header": "선택한 작업 가이드 파일을 삭제하시겠습니까?",
+    "text": "파일 이름 : 가이드라인이름"
+  },
+  "editDescription": { "header": "프로젝트 설명 수정" },
+  "connectDataset": {
+    "header": "데이터셋 연결",
+    "text": "프로젝트를 조나단 플라이트베이스의 데이터셋과 연결합니다.선택된 폴더에 위치한 파일만 읽어옵니다.",
+    "precaution": "폴더 변경 시 유의 사항"
+  },
+  "deleteProject": {
+    "header": "프로젝트 삭제",
+    "text": "프로젝트를 삭제하면 모든 작업 내용을 잃게 됩니다.프로젝트를 삭제하시려면 프로젝트 이름을 아래에 입력해주세요.",
+    "projectName": "프로젝트 이름 : 프로젝트 이름"
+  },
+  "createMember": {
+    "header": "멤버 추가",
+    "password": "비밀번호",
+    "minCharacters": "최소 8자 이상 입력해주세요",
+    "specialCharacters": "다음 특수문자를 포함하여 입력해주세요",
+    "confirmPassword": "비밀번호 확인",
+    "memo": "메모"
+  },
+  "editMember": { "header": "멤버 수정", "newPassword": "새 비밀번호" },
+  "cancelAssign": {
+    "header": "할당을 취소하시겠습니까?",
+    "text": "할당 취소 시 진행된 작업 내역이 모두 삭제됩니다."
+  },
+  "assignNewWork": {
+    "number": "번호",
+    "worker": "작업자",
+    "labeling": "라벨링",
+    "review": "검수",
+    "willBeAssigned": "할당 작업 수",
+    "distribution": "분배",
+    "autoDistribution": "자동 분배",
+    "assigned": "할당됨"
+  },
+  "confirmAssign": {
+    "assignedWork": "총 건의 작업이 할당됩니다.",
+    "labelingWork": "라벨링 작업",
+    "worker": "작업자",
+    "labelingInProgress": "라벨링 중",
+    "reviewInProgress": "검수 중",
+    "willBeAssigned": "할당 작업 수",
+    "reviewWork": "검수 작업"
+  }
+}

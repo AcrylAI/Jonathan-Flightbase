@@ -1,0 +1,14 @@
+{
+  "name": "transform-svg-to-react-comp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@svgr/cli": "^5.5.0",
+    "pascal-case": "^3.1.2",
+    "shelljs": "^0.8.4"
+  },
+  "scripts": {
+    "build": "node icon-comp-generator.js"
+  }
+}

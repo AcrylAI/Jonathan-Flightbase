@@ -1,0 +1,46 @@
+@import 'src/styles/color';
+
+.adjustmentbox-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
+  height: fit-content;
+  padding: 16px 12px;
+  border: 1px solid #e6eaf2;
+  background-color: #f5f7fa;
+  box-sizing: border-box;
+
+  .adjustment-label {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 72px;
+    min-width: 72px;
+    max-width: 72px;
+    height: fit-content;
+  }
+
+  .adjustmentbox-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .adjustment-slider-list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+  }
+
+  .adjustment-slider-item {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 32px;
+    align-items: center;
+  }
+}
+
+.adjustment-button {}

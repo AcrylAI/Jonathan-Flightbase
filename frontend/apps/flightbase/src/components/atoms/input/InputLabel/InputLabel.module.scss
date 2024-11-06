@@ -1,0 +1,49 @@
+@import '@src/styles/color.scss';
+
+.label-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .label {
+    font-family: SpoqaB;
+    color: $title-color;
+    font-size: 14px;
+    &.small {
+      font-size: 12px;
+    }
+    &.medium {
+      font-size: 14px;
+    }
+    &.large {
+      font-size: 16px;
+    }
+  }
+
+  .optional {
+    color: $mono205;
+    font-size: 14px;
+    font-family: SpoqaM;
+    margin-left: 4px;
+    margin-right: 4px;
+    &.small {
+      font-size: 12px;
+    }
+    &.medium {
+      font-size: 14px;
+    }
+    &.large {
+      font-size: 16px;
+    }
+    &.x-large {
+      font-size: 20px;
+    }
+  }
+
+  .label-right-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4px;
+  }
+}

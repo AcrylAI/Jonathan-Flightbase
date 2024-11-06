@@ -1,0 +1,8 @@
+NEXT_PUBLIC_ENV_COOKIE_DOMAIN=.acryl.ai
+NEXTAUTH_URL=https://portal.acryl.ai
+NEXT_PUBLIC_ENV_API_HOST=https://portal.acryl.ai/apiv1
+NEXT_PUBLIC_ENV_AUTH_SECRET=ak2d92019ascfsde
+NEXT_PUBLIC_APP_MODE=prod
+
+# FusionAuth application id
+NEXT_PUBLIC_FUSIONAUTH_APP_ID=2af36720-b2b4-489c-8c81-15bc80fd0994

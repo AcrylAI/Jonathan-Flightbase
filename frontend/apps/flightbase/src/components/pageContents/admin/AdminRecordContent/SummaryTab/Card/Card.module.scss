@@ -1,0 +1,84 @@
+@import '@src/styles/color.scss';
+
+.card {
+  display: flex;
+  height: 148px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid $card-border-color;
+  background-color: $mono200;
+  min-width: 410px;
+  .left-box,
+  .right-box {
+    padding: 24px 0 24px 24px;
+    box-sizing: border-box;
+  }
+  .left-box {
+    min-width: 320px;
+    width: 40%;
+    border-right: 1px solid $card-border-color;
+    .name {
+      font-family: SpoqaM;
+      font-size: 24px;
+      color: $mono207;
+      margin: 4px 24px 6px 0;
+    }
+    .range {
+      white-space: nowrap;
+      color: $mono205;
+      font-size: 14px;
+      font-family: SpoqaR;
+    }
+  }
+
+  .right-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    .info-item {
+      width: 50%;
+      .label {
+        font-family: SpoqaR;
+        white-space: nowrap;
+        color: $mono205;
+        font-size: 14px;
+        margin: 0 0 4px 0;
+        height: 18px;
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 4px;
+          vertical-align: top;
+        }
+      }
+      .val {
+        font-size: 18px;
+        font-family: SpoqaM;
+        color: $mono207;
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1780px) {
+  .card {
+    display: block;
+    height: auto;
+    .left-box {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid $card-border-color;
+    }
+    .right-box {
+      width: 100%;
+      .info-item {
+        min-width: 35%;
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

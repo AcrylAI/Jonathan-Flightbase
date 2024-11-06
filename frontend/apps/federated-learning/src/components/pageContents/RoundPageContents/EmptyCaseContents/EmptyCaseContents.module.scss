@@ -1,0 +1,25 @@
+@import 'src/styles/color.scss';
+
+.no-round-box {
+  width: 100%;
+  border-radius: 8px;
+  background-color: $dark-mono207;
+  padding: 48px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+  .image {
+    width: 410px;
+    height: 120px;
+    margin-bottom: 40px;
+  }
+
+  .message {
+    color: $dark-mono201;
+    font-size: 13px;
+    margin: 0 0 16px 0;
+  }
+}

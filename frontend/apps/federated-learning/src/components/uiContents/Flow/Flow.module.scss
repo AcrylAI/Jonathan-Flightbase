@@ -1,0 +1,327 @@
+@import '@src/styles/color.scss';
+
+.span-container {
+  background-color: $dark-mono206;
+  border-radius: 4px;
+  display: flex;
+  width: 240px;
+  height: 48px;
+  align-items: center;
+  .client-thumbnail-container {
+    background-color: $dark-mono205;
+    height: 100%;
+    width: 48px;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .client-thumbnail-name {
+    font-weight: 700;
+    color: $dark-mono202;
+    font-size: 24px;
+  }
+  .client-name {
+    flex: 1;
+    margin-left: 12px;
+    color: $dark-mono200;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.2;
+  }
+}
+.box {
+  width: 40px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  margin: 0 20px;
+  font-size: 12px;
+  .client-number {
+    color: $dark-mono200;
+  }
+}
+
+.error-status-icon {
+  margin-right: 30px;
+}
+
+.status-icon {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 20px;
+}
+.darkLime {
+  background-color: $dark-lime601;
+}
+.blue {
+  background-color: $dark-blue101;
+}
+.learning {
+  background: $dark-lime602 !important;
+}
+.container {
+  width: 30px;
+  display: flex;
+  position: fixed;
+
+  .circle {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $dark-mono200;
+    animation: move 1000ms linear 0ms infinite;
+    margin-right: 10px;
+
+    &:first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: grow 1000ms linear 0ms infinite;
+    }
+
+    &:last-child {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 0;
+      animation: grow 1000ms linear 0s infinite reverse;
+    }
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(24px);
+  }
+}
+
+.mainNode-container {
+  width: 184px;
+  background-color: $dark-mono206;
+  border-radius: 4px;
+  border: 3px solid $dark-mono206;
+}
+
+.complete:before,
+.complete:after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  background: $dark-lime601;
+  background-size: 400%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+  border-radius: 4px;
+}
+
+.block:before,
+.block:after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  background: linear-gradient(
+    80deg,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-mono200,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-mono200,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-blue101,
+    $dark-mono200
+  );
+  background-size: 400%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  z-index: -1;
+  animation: steam 6s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 30% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.aggregation-div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 70px;
+  .aggregation-img {
+    width: 20px;
+    height: 22px;
+    align-self: center;
+  }
+  .aggregation-text {
+    margin-left: 10px;
+    color: $dark-mono200;
+    align-self: center;
+  }
+  &:hover {
+    .error-message {
+      display: flex;
+    }
+  }
+  .error-message {
+    position: absolute;
+    width: 142px;
+    height: 46px;
+    color: $dark-mono200;
+    border-radius: 4px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-mono205;
+    display: none;
+  }
+}
+
+.round-metrics {
+  height: 100px;
+  padding: 12px 20px;
+  border-top: 1px solid #5f5f5f;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  .round-metrics-div {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .round-metrics-key {
+    color: $dark-mono201;
+    flex: 2;
+    margin: 0;
+  }
+  .round-metrics-value {
+    color: $dark-mono200;
+    flex: 1;
+    margin: 0;
+  }
+}
+.round-metrics::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.round-detail-aggregation {
+  width: 378px;
+  background-color: $dark-mono206;
+  height: 236px;
+  min-height: 236px;
+  border-radius: 4px;
+  border: 3px solid $dark-lime601;
+  .round-detail-aggregation-cell-title {
+    display: flex;
+    border-bottom: 1px solid $dark-mono204;
+    padding: 23px 17px 11px 17px;
+    align-items: center;
+    position: relative;
+  }
+  .round-detail-aggregation-cell-title :nth-child(-n + 2) {
+    flex: 1;
+    color: $dark-mono201;
+    margin: 0px;
+    text-align: center;
+  }
+  .round-detail-aggregation-cell-title :nth-child(3) {
+    flex: 1;
+    color: $dark-mono200;
+    margin: 0px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .error-img {
+      flex: 0;
+      width: 17px;
+      height: 17px;
+      padding-left: 2px;
+    }
+    .error-message {
+      width: 142px;
+      height: 46px;
+      background-color: $dark-mono205;
+      position: absolute;
+      margin-top: 80px;
+      margin-left: 60px;
+      border-radius: 4px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      color: $dark-mono200;
+    }
+  }
+  .global-model-data {
+    height: 170px;
+    overflow-y: scroll;
+  }
+  .global-model-data-div {
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid $dark-mono204;
+  }
+  .global-model-data-div :nth-child(-n + 2) {
+    flex: 1;
+    color: $dark-mono201;
+    margin: 0px;
+    text-align: center;
+  }
+  .global-model-data-div :nth-child(3) {
+    flex: 1;
+    color: $dark-mono200;
+    margin: 0px;
+    text-align: center;
+
+    img {
+      padding-left: 5px;
+    }
+  }
+}
+.round-detail-aggregation::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.global-model-data::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}

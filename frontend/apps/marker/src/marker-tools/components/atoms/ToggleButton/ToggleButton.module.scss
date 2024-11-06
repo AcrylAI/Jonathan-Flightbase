@@ -1,0 +1,32 @@
+@import 'src/styles/color';
+@import 'src/styles/common';
+
+.toggle-button {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  border: none;
+  border-radius: 2px;
+  background-color: transparent;
+
+  &:not(:disabled) {
+    color: $blue110;
+    @include Cursor(pointer);
+
+    &:hover {
+      background-color: $editor-border-color;
+    }
+
+    &.selected {
+      background-color: $editor-border-color;
+    }
+  }
+
+  &:disabled {
+    color: $mono204;
+    @include Cursor(default);
+  }
+}

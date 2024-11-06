@@ -1,0 +1,65 @@
+@import '../AutoLabelingRunContents.module.scss';
+
+.model-container {
+  display: flex;
+  flex-direction: column;
+  width: 352px;
+  padding: 8px 20px;
+  .page-mark {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    .mark {
+      width: 4px;
+      height: 4px;
+      background-color: $mono203;
+      border-radius: 2px;
+      transition: width 0.15s ease-in;
+      &.selected {
+        width: 24px;
+      }
+    }
+  }
+  .model-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    .model-status {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 28px;
+      gap: 8px;
+      height: 100%;
+      width: 100%;
+      .model {
+        display: flex;
+        align-items: center;
+        .delete-badge {
+          @include delete-badge();
+        }
+      }
+    }
+    .arrow-icon {
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+      &.left {
+        transform: rotate(270deg);
+      }
+      &.right {
+        transform: rotate(90deg);
+      }
+      &.dim {
+        cursor: default;
+        &.left {
+          transform: rotate(180deg);
+        }
+        &.right {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}

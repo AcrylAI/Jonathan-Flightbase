@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M0 0H46V46H0z" opacity=".2" transform="translate(-1184 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(260) translate(68 46)"/>
+                                <path fill="#FFF" d="M23.316 36.239c-9.692 0-18.148-5.2-22.677-12.922 0 12.524 10.153 22.676 22.677 22.676s22.677-10.152 22.677-22.676c-4.529 7.722-12.985 12.922-22.677 12.922M23.316 10.393c9.692 0 18.148 5.2 22.677 12.922C45.993 10.791 35.84.64 23.316.64S.64 10.79.64 23.315c4.53-7.722 12.985-12.922 22.677-12.922" opacity=".25" transform="translate(-1184 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(260) translate(68 46)"/>
+                                <path fill="#FFF" d="M23.316 10.393v12.923H10.393c0 7.137 5.786 12.923 12.923 12.923 7.137 0 12.923-5.786 12.923-12.923 0-7.137-5.786-12.923-12.923-12.923" opacity=".25" transform="translate(-1184 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(260) translate(68 46)"/>
+                                <path fill="#FFF" d="M23.316 10.393c-7.137 0-12.923 5.786-12.923 12.923h12.923V10.393z" opacity=".7" transform="translate(-1184 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(260) translate(68 46)"/>
+                                <path fill="#FFF" d="M23.333 10.394c7.13.01 12.906 5.79 12.906 12.922 0 7.132-5.777 12.914-12.907 12.923 9.685-.006 18.135-5.204 22.661-12.923-4.526-7.718-12.975-12.916-22.66-12.922M10.393 23.316c0-7.132 5.778-12.914 12.907-12.922-9.685.005-18.135 5.203-22.661 12.922C5.165 31.036 13.615 36.233 23.3 36.24c-7.13-.009-12.907-5.791-12.907-12.923" opacity=".95" transform="translate(-1184 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(260) translate(68 46)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

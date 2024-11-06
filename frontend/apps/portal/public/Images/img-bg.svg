@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="768" height="2803" viewBox="0 0 768 2803">
+    <defs>
+        <path id="j1qhm6ijma" d="M0 0H768V2803H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(0 -68) translate(0 68)">
+                <mask id="2vjl87ucub" fill="#fff">
+                    <use xlink:href="#j1qhm6ijma"/>
+                </mask>
+                <circle cx="460.921" cy="2684.521" r="45" fill="#FFFE99" mask="url(#2vjl87ucub)"/>
+                <path fill="#F1F5FF" d="M770.921 2833.521v-373c-203.793 0-369 166.998-369 373h369z" mask="url(#2vjl87ucub)" transform="rotate(-90 586.421 2647.021)"/>
+                <ellipse cx="486.025" cy="1098.927" fill="#F1F5FF" mask="url(#2vjl87ucub)" rx="58" ry="57.921"/>
+                <ellipse cx="156.567" cy="998.047" fill="#FFFEC3" mask="url(#2vjl87ucub)" rx="22" ry="21.97"/>
+                <circle cx="611.901" cy="873" r="116" fill="#F1F5FF" mask="url(#2vjl87ucub)"/>
+                <path fill="#F1F5FF" d="M92.758 499.97v-169c-91.68 0-166 75.663-166 169h166z" mask="url(#2vjl87ucub)" transform="rotate(-90 9.758 415.47)"/>
+                <path fill="#F1F5FF" d="M261.258 348.491H444.90599999999995V531.002H261.258z" mask="url(#2vjl87ucub)"/>
+                <path fill="#F1F5FF" d="M497.947 2060.744v-548c-298.786 0-541 245.347-541 548h541z" mask="url(#2vjl87ucub)" transform="scale(-1 1) rotate(-90 0 2014.19)"/>
+                <path fill="#FFFE99" d="M-0.742 -0.531H94.258V165.469H-0.742z" mask="url(#2vjl87ucub)"/>
+                <path fill="#FFFE99" d="M260.758 166.97v-168c-92.232 0-167 75.215-167 168h167z" mask="url(#2vjl87ucub)" transform="rotate(90 177.258 82.97)"/>
+                <path fill="#F1F5FF" d="M444.868 349.59V164.881c-100.798 0-182.511 82.697-182.511 184.71h182.511z" mask="url(#2vjl87ucub)" transform="rotate(90 353.612 257.236)"/>
+                <path fill="#F1F5FF" d="M94.258 165.469H261.258V332.469H94.258z" mask="url(#2vjl87ucub)"/>
+            </g>
+        </g>
+    </g>
+</svg>

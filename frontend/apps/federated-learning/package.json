@@ -1,0 +1,80 @@
+{
+  "name": "@jonathan/federated-learning",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start:deploy": "cp ./configs/app-config/config-deploy ./.env && vite dev --host",
+    "start:kl": "cp ./configs/app-config/config-kl ./.env && vite dev --host",
+    "start:yb": "cp ./configs/app-config/config-yb ./.env && vite dev --host",
+    "start:wy": "cp ./configs/app-config/config-wy ./.env && vite dev --host",
+    "start:idc": "cp ./configs/app-config/config-idc ./.env && vite dev --host",
+    "build:kl": "cp ./configs/app-config/config-kl ./.env && vite build",
+    "build:yb": "cp ./configs/app-config/config-yb ./.env && vite build",
+    "build:deploy": "cp ./configs/app-config/config-deploy ./.env && vite build && mv build /",
+    "build:wy": "cp ./configs/app-config/config-wy ./.env && vite build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.9.6",
+    "@amcharts/amcharts5": "^5.2.8",
+    "@jonathan/react-utils": "^1.0.0",
+    "@jonathan/ui-react": "^1.0.0",
+    "@nivo/bar": "^0.79.1",
+    "@nivo/core": "^0.79.0",
+    "@nivo/generators": "^0.79.0",
+    "@nivo/line": "^0.79.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.27.2",
+    "d3": "^7.1.1",
+    "echarts": "^5.3.3",
+    "echarts-for-react": "^3.0.2",
+    "i18next": "^21.9.1",
+    "i18next-localstorage-cache": "^1.1.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "node-sass": "^7.0.1",
+    "react": "^18.2.0",
+    "react-data-table-component": "^6.9.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.3.3",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^5.5.0",
+    "redux": "^4.1.0",
+    "redux-actions": "^2.6.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "eslint-config-react-app": "^7.0.1",
+    "vite": "^3.0.7"
+  }
+}

@@ -1,0 +1,31 @@
+@import 'src/styles/color.scss';
+
+.header-area {
+  margin-top: 12px;
+}
+
+.delete-modal-contents {
+  > p {
+    color: $mono204;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  > button {
+    border: none;
+    padding: 10px 16px;
+    margin-left: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .cancel-button {
+    background-color: transparent;
+    color: $mono205;
+  }
+  .delete-button {
+    background-color: $red502;
+    color: $mono200;
+  }
+}

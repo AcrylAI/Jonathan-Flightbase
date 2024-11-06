@@ -1,0 +1,61 @@
+@import '@src/styles/color.scss';
+.mode-container {
+  min-height: 407px;
+  padding: 5px 48px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .header {
+  }
+  .btns {
+    height: 100%;
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.box {
+  cursor: pointer;
+  width: 315px;
+  height: 100%;
+  border: 1px solid $blue102;
+  padding: 21px 24px;
+  border-radius: 8px;
+  color: $blue110;
+  box-shadow: 0px 3px 12px 0px rgba(45, 118, 248, 0);
+  transform: translate(0px, 0px);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 3px 12px 0px rgba(45, 118, 248, 0.12);
+    background-color: $blue109;
+    transform: translate(0px, -4px);
+  }
+  .title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 200px;
+  }
+  .desc {
+    margin-top: 14px;
+  }
+
+  &.disabled {
+    border: 1px solid $mono203;
+    color: $mono204;
+
+    &:hover {
+      cursor: not-allowed;
+      box-shadow: 0px 0px 1px 0px rgba(45, 118, 248, 0);
+      background-color: #fff;
+    }
+  }
+}

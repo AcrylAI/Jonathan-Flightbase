@@ -1,0 +1,33 @@
+@import '../DeployWorkerRunning.module.scss';
+
+.new-worker-setting {
+  @include box-area();
+  padding: $padding-primary 0px $padding-primary $padding-primary;
+  background-color: $mono200;
+  .title {
+    font-size: 20px;
+    color: $mono205;
+  }
+  .setting-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    & > li {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+      width: 300px;
+      margin-bottom: 25px;
+      .label {
+        color: $mono205;
+      }
+      .content {
+        font-weight: bold;
+      }
+    }
+  }
+  .btn-wrap {
+    display: flex;
+    gap: 10px;
+  }
+}

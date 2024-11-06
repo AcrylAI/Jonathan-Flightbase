@@ -1,0 +1,22 @@
+.user-setting {
+  position: relative;
+  width: fit-content;
+  .profile-wrap {
+    display: flex;
+    align-items: center;
+    .thumbnail {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      line-height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      color: #fff;
+      background-color: #2c76f8;
+      font-size: 12px;
+      .user-image {
+        width: 100%;
+      }
+    }
+  }
+}

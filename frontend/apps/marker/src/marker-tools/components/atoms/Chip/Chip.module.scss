@@ -1,0 +1,26 @@
+@import 'src/styles/common';
+
+.chip {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: fit-content;
+	height: 32px;
+	gap: 8px;
+	padding: 8px 12px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	box-sizing: border-box;
+	transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
+
+	@include Cursor(pointer);
+}
+
+.chip-icon {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+}

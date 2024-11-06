@@ -1,0 +1,35 @@
+@import '@src/styles/color.scss';
+.select-box-container {
+  display: flex;
+  .select-box {
+    // cursor: pointer;
+    height: 40px;
+    width: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $mono204;
+    background-color: #fff;
+    transition: all 0.3s;
+    padding: 12px 24px;
+    border: 1px solid $mono204;
+    &.short {
+      width: 96px;
+    }
+
+    &.left {
+      border-radius: 4px 0px 0px 4px;
+    }
+    &.right {
+      cursor: not-allowed;
+      border-radius: 0px 4px 4px 0px;
+      border-left: none;
+    }
+
+    &.active {
+      background-color: $blue101;
+      color: $blue104;
+      border: 1px solid $blue104;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="955" viewBox="0 0 1920 955">
+    <defs>
+        <path id="rw03f85q9a" d="M0 0H1920V955H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(0 -68) translate(0 68)">
+                <mask id="3833et1wkb" fill="#fff">
+                    <use xlink:href="#rw03f85q9a"/>
+                </mask>
+                <circle cx="323.5" cy="841.5" r="127.5" fill="#FFFE99" mask="url(#3833et1wkb)"/>
+                <g mask="url(#3833et1wkb)">
+                    <g transform="translate(-111 -19)">
+                        <g>
+                            <path fill="#FFFE99" d="M80.703 0H184.735V182.76H80.703z" transform="translate(.373 .471)"/>
+                            <path fill="#FFFE99" d="M367.47 183.673V.025c-100.936 0-182.76 82.222-182.76 183.648h182.76z" transform="translate(.373 .471) rotate(90 276.09 91.849)"/>
+                            <path fill="#F1F5FF" d="M552.117 366.495v-184.71c-100.936 0-182.76 82.698-182.76 184.71h182.76z" transform="translate(.373 .471) rotate(90 460.737 274.14)"/>
+                            <path fill="#F1F5FF" d="M183.76 549.255V364.546C82.825 364.546 1 447.243 1 549.256h182.76z" transform="translate(.373 .471) rotate(-90 92.38 456.9)"/>
+                            <path fill="#F1F5FF" d="M184.735 182.76H368.38300000000004V365.52H184.735zM369.382 365.521H553.03V548.281H369.382z" transform="translate(.373 .471)"/>
+                        </g>
+                        <g transform="translate(1720.475 678.285)">
+                            <ellipse cx="60.174" cy="221.524" fill="#FFFE99" rx="44.585" ry="44.628"/>
+                            <path fill="#F1F5FF" d="M367.52 368.418V-1C165.65-1 2 164.394 2 368.418h365.52z" transform="rotate(-90 184.76 183.71)"/>
+                        </g>
+                        <circle cx="1869.522" cy="321.432" r="58" fill="#F1F5FF"/>
+                        <path fill="#F1F5FF" d="M947.385 384.966V200.257c-100.935 0-182.76 82.697-182.76 184.71h182.76z" transform="rotate(-90 856.005 292.612)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,72 @@
+@import '@src/styles/color.scss';
+
+.container {
+  height: 100%;
+}
+
+.users-list {
+  z-index: 10;
+  position: absolute;
+  width: 392px;
+  height: auto;
+  padding: 16px;
+  background: $mono200;
+  /* Blue/101 */
+  top: 40px;
+  font-family: MarkerFont;
+  border: 1px solid $blue101;
+  box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.06);
+  border-radius: 4px;
+  & > div {
+    font-family: MarkerFont;
+  }
+}
+
+.memo-img {
+  margin-left: 10px;
+  filter: invert(46%) sepia(9%) saturate(8%) hue-rotate(45deg) brightness(96%)
+    contrast(93%);
+}
+
+.accessStatus {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 4px;
+  height: 24px;
+
+  border-radius: 2px;
+  font-family: MarkerFont;
+}
+.accessStatusPrivate {
+  background: $mono202;
+}
+.accessStatusPublic {
+  background: $lime601;
+}
+
+.deploy-title {
+  display: flex;
+  justify-content: center;
+  & > p {
+    margin-right: 5px;
+  }
+}
+.memo-text {
+  position: fixed;
+  width: auto;
+  max-width: 392px;
+  height: auto;
+  padding: 16px;
+  background: $mono200;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $blue101;
+  box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.06);
+  border-radius: 4px;
+  & > :first-child {
+    margin-bottom: 5px;
+  }
+}

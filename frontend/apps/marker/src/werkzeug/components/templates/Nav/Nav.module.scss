@@ -1,0 +1,11 @@
+@import "src/styles/color";
+
+.Nav {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 240px;
+	min-width: 240px;
+	max-width: 240px;
+	background-color: $editor-bg-color;
+	border-right: 1px solid $editor-border-color;
+}

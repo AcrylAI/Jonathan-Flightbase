@@ -1,0 +1,124 @@
+@import '../WorkerList.module.scss';
+$chart-background: rgba(100, 150, 255, 0.1);
+
+.overview {
+  display: flex;
+  background-color: $mono202;
+  .left {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px $padding-small 0px $padding-small;
+    border-right: 1px solid $mono203;
+    .info {
+      padding-top: $padding-xsmall;
+      & > span {
+        color: $mono206;
+        font-size: 13px;
+      }
+      .overview-info {
+        font-size: 13px;
+        font-family: SpoqaB;
+        margin-bottom: 17px;
+      }
+      .restart-cnt-label {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .memo {
+      padding-bottom: $padding-xsmall;
+      .memo-controler {
+        display: flex;
+        justify-content: space-between;
+        & > span {
+          color: $mono206;
+          font-size: 13px;
+        }
+        & > label {
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 12px;
+          width: 25px;
+          height: 21px;
+          color: $blue105;
+        }
+      }
+      .memo-output {
+        border-radius: 4px;
+        margin-top: 4px;
+        background-color: $mono200;
+        padding: $padding-xsmall $padding-xsmall 0 $padding-xsmall;
+        overflow: scroll;
+        height: 105px;
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    overflow-x: scroll;
+    .chart-wrap {
+      display: flex;
+      align-items: center;
+      padding-right: $padding-small;
+      padding-left: 40px;
+      .overview-chart {
+        &.ram,
+        &.cpu {
+          padding: $padding-xsmall $padding-xsmall $padding-xsmall $padding-xsmall;
+        }
+        &.ram,
+        &.cpu {
+          border-radius: 3px;
+          margin-right: 24px;
+          background-color: $mono200;
+
+          .chart-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & > label {
+              font-size: 13px;
+              color: $mono205;
+              margin-bottom: 4px;
+              .value {
+                color: $mono206;
+              }
+              & > img {
+                width: 19px;
+                margin-left: 3px;
+              }
+            }
+          }
+          .chart-area {
+            width: 380px;
+            height: 178px;
+            outline: 1px solid $mono203;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .overview {
+    flex-direction: column;
+    .left {
+      width: auto;
+      border-bottom: 1px solid $mono203;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding-top: $padding-xsmall;
+    }
+    .right {
+      width: auto;
+      padding-top: $padding-xsmall;
+      padding-bottom: $padding-xsmall;
+    }
+  }
+}

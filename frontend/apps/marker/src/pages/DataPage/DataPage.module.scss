@@ -1,0 +1,16 @@
+@import '@src/styles/color.scss';
+.container {
+  height: 100%;
+}
+.noDatasetSection {
+  margin-top: 250px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  & > img {
+    margin-bottom: 8px;
+  }
+  gap: 4px;
+}

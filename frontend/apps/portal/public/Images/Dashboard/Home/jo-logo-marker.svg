@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <path id="prefix__a" d="M0 0.125L19.953 0.125 19.953 34.211 0 34.211z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="60" height="60" fill="#3368FF" opacity=".08" rx="8"/>
+        <g>
+            <path fill="#0E4BFF" d="M19.953 28.418h17.051V5.699c0 9.417-7.634 17.05-17.05 17.05v5.669z" opacity=".4" transform="translate(10 10)"/>
+            <g>
+                <g transform="translate(10 10) translate(0 2.767) translate(0 2.807)">
+                    <mask id="prefix__b" fill="#fff">
+                        <use xlink:href="#prefix__a"/>
+                    </mask>
+                    <path fill="#0E4BFF" d="M19.953 17.176c-9.416 0-17.05-7.634-17.05-17.051v22.719H0V34.21h19.953V17.176z" mask="url(#prefix__b)" opacity=".7"/>
+                </g>
+                <path fill="#0E4BFF" d="M2.903 2.917L2.903 2.932M19.953 2.932L19.953 2.932 19.953.075 19.942.077 19.953.075z" transform="translate(10 10) translate(0 2.767)"/>
+            </g>
+            <path fill="#0E4BFF" d="M19.954 19.022L19.954 19.022" transform="translate(10 10)"/>
+            <path fill="#0E4BFF" d="M19.953 39.785L39.907 39.785 39.907 28.418 19.953 28.418z" opacity=".2" transform="translate(10 10)"/>
+            <path fill="#0E4BFF" d="M19.953 2.842v19.907c9.417 0 17.051-7.633 17.051-17.05V0l-17.05 2.842z" opacity=".7" transform="translate(10 10)"/>
+            <path fill="#0E4BFF" d="M19.953 2.842L2.903 5.699c0 9.417 7.634 17.05 17.05 17.05V2.843z" opacity=".95" transform="translate(10 10)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+@import '@src/styles/color.scss';
+
+.check-container {
+  font-family: MarkerFont;
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  color: $mono204;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .check-mark {
+    transition: all 0.15s ease-in-out;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $blue102;
+    border-radius: 2px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label {
+    margin-left: 12px;
+    user-select: none;
+  }
+
+  &.checked {
+    color: $blue104;
+    .check-mark {
+      border-color: $blue104;
+      background-color: $blue104;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    .check-mark {
+      border-color: $mono204;
+      background-color: $mono202;
+      img {
+        display: none;
+      }
+    }
+  }
+}

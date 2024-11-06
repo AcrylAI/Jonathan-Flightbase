@@ -1,0 +1,123 @@
+@import '@src/styles/color.scss';
+.ws-selector-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 13px;
+  color: $mono205;
+
+  .select-box {
+    cursor: pointer;
+    display: flex;
+    width: 152px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid $blue101;
+    background-color: #fff;
+    height: 38px;
+    border-radius: 3px;
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .arrow-box {
+      margin-left: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease-in-out;
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+    &.active {
+      .arrow-box {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .content-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 240px;
+    height: 167px;
+    top: 100%;
+    z-index: 102;
+    margin-top: 4px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.06);
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+
+    .search-box {
+      padding-right: 2px;
+    }
+    .list-item-container {
+      display: flex;
+      flex-direction: column;
+      padding: 4px 5px;
+      overflow-y: scroll;
+      gap: 4px;
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+      .list-item {
+        border-radius: 4px;
+        height: 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 6px;
+        cursor: pointer;
+        &.selected {
+          background-color: $blue100;
+          .left-side {
+            color: $blue104;
+          }
+        }
+        &.expired {
+          cursor: not-allowed;
+        }
+        .left-side {
+          color: $mono204;
+        }
+        .right-side {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .badge {
+            text-align: center;
+            background-color: $lime601;
+            padding: 4px 8px;
+            color: $lime603;
+            border-radius: 16px;
+            margin-right: 8px;
+
+            &.expired {
+              color: $red502;
+              background-color: $red501;
+            }
+          }
+          .star {
+          }
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px 2px;
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

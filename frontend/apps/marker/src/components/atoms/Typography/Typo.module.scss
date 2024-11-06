@@ -1,0 +1,53 @@
+@import "src/styles/color";
+
+.Typo {
+	color: $blue110;
+
+	&.H1, &.h1 {
+		font-family: SpoqaB, sans-serif;
+		font-size: 36px;
+	}
+	&.H2, &.h2 {
+		font-family: SpoqaB, sans-serif;
+		font-size: 24px;
+	}
+	&.H3, &.h3 {
+		font-family: SpoqaB, sans-serif;
+		font-size: 20px;
+	}
+	&.H4, &.h4 {
+		font-family: SpoqaB, sans-serif;
+		font-size: 16px;
+	}
+	&.P1, &.p1 {
+		font-family: SpoqaM, sans-serif;
+		font-size: 14px;
+	}
+	&.P2, &.p2 {
+		font-family: SpoqaM, sans-serif;
+		font-size: 12px;
+		letter-spacing: -0.015em;
+	}
+	&.P3, &.p3 {
+		font-family: SpoqaR, sans-serif;
+		font-size: 11px;
+		letter-spacing: -0.02em;
+	}
+	&.P4, &.p4 {
+		font-family: SpoqaR, sans-serif;
+		font-size: 10px;
+		letter-spacing: -0.02em;
+	}
+	&.GnB, &.gnb {
+		font-family: SpoqaM, sans-serif;
+		font-size: 13px;
+	}
+}
+
+.Single, .S {
+	line-height: 1.25em;
+}
+
+.Multi, .M {
+	line-height: 1.5em;
+}

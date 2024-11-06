@@ -1,0 +1,31 @@
+@import '@src/styles/color.scss';
+
+.label-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  .label {
+    height: 36px;
+    line-height: 19px;
+    font-size: 16px;
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    .index {
+      color: $mono205;
+      font-family: SpoqaM;
+      margin-right: 4px;
+    }
+    .type {
+      margin-right: 4px;
+      display: flex;
+    }
+    .key {
+      color: $mono207;
+      font-family: SpoqaB;
+    }
+  }
+}

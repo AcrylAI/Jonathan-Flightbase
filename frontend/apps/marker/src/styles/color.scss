@@ -1,0 +1,70 @@
+/** ================================================================================================
+ * Color Code
+ ================================================================================================ */
+
+// Blue
+$blue100: #f5f7fb; // Background
+$blue100-1: #eaf1fe;
+$blue101: #dee9ff;
+$blue102: #c8dbfd;
+$blue103: #93baff;
+$blue104: #2d76f8; // Primary
+$blue105: #164abe;
+$blue106: #002f77;
+$blue107: #042659; // Darken Background
+$blue108: #3babff; // Point
+$blue109: #fbfcff;
+$blue110: #2a2d3e;
+
+// Mono
+$mono200: #ffffff; // White
+$mono201: #f9fafb;
+$mono202: #f0f0f0;
+$mono203: #dbdbdb; // D/D
+$mono204: #c1c1c1; // NS
+$mono205: #747474; // ST
+$mono206: #3e3e3e; // BT
+$mono207: #121619; // Black
+$mono208: #7e7e7f;
+
+// Yellow
+$yellow301: #fff8d9;
+$yellow302: #ffea53;
+$yellow303: #ffc500;
+$yellow304: #ffab0e;
+
+// Orange
+$orange401: #fff0e4;
+$orange402: #ffab31;
+$orange403: #ff7a00;
+
+// Red
+$red501: #ffe6e5;
+$red502: #fa4e57;
+$red503: #d91a0c;
+
+// Lime
+$lime601: #e3fcee;
+$lime602: #02e366;
+$lime603: #00c775;
+$lime604: #439f6e;
+
+// Frequently used color
+$primary-color: $blue104;
+$new-bg-color: $blue109;
+$background-color: $blue100;
+$title-color: $mono207;
+$normal-text-color: $mono207;
+$sub-text-color: $mono205;
+$placeholder-text-color: $mono203;
+$disable-color: $mono203;
+$error-color: $red502;
+$caution-color: $yellow303;
+$hover-bg-color: rgba($blue104, 0.08); // rgba(45, 118, 248, 0.08);
+
+$editor-bg-color: #f8f9fd;
+$editor-border-color: #E6EAF2;
+$editor-weak-color: #A3A3A4;
+$editor-weak-icon: #C8CCD4;
+$editor-selected-color: #E6EAF2;
+//$editor-selected-color: #C8CCD4;

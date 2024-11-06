@@ -1,0 +1,14 @@
+@import '~styles/screen.scss';
+
+.rp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .divider {
+    width: 36px;
+    height: 1px;
+    margin: 0px 7px 0px 8px;
+    background-color: #dbdcdd;
+  }
+}

@@ -1,0 +1,147 @@
+@import '../WorkerList.module.scss';
+
+@mixin worker-status-visible($background-color) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 3%;
+  background-color: $background-color;
+}
+
+.preview {
+  display: flex;
+  height: $worker-list-height;
+  .left {
+    width: 22%;
+    padding: $padding-small;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-right: 1px solid $card-border-color;
+    .worker-status {
+      @include sort-center();
+      & > label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        &.installing {
+          color: $mono205;
+          & > div {
+            @include worker-status-visible($yellow304);
+          }
+        }
+        &.running {
+          color: $mono206;
+          & > div {
+            @include worker-status-visible($blue104);
+          }
+        }
+        &.error {
+          color: $red502;
+          & > div {
+            @include worker-status-visible($red502);
+          }
+        }
+      }
+    }
+
+    &.installing {
+      height: 78px;
+    }
+    .btn-box {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 8px;
+      .worker-stop-btn {
+        margin-left: 8px;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 86% 14%;
+    padding: $padding-small;
+    .chart {
+      display: flex;
+      .chart-wrap {
+        width: 100%;
+        max-width: 360px;
+        .preview-chart {
+          display: flex;
+          justify-content: space-between;
+          & > label {
+            display: flex;
+            justify-content: center;
+            font-size: 13px;
+            color: $mono205;
+          }
+        }
+        .chart-area {
+          border-radius: 2px;
+          &:hover {
+            outline: 1px solid $blue104;
+          }
+        }
+        &:nth-child(1) {
+          padding-right: $padding-small;
+          padding-left: $padding-small;
+        }
+      }
+    }
+    .overview-append-btn {
+      display: flex;
+      align-items: center;
+      .installing-animation {
+        display: inline-block;
+        position: relative;
+        width: 4px;
+        height: 4px;
+        & > div {
+          @include install-animation();
+        }
+      }
+      & > label {
+        font-size: 16px;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .preview {
+    flex-direction: column;
+    height: auto;
+    .left {
+      width: auto;
+      padding: $padding-xsmall;
+      border-right: none;
+      border-bottom: 1px solid $card-border-color;
+    }
+    .right {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      grid-gap: 12px;
+      padding: $padding-xsmall;
+      .chart {
+        .chart-wrap {
+          padding: 0;
+        }
+      }
+      .overview-append-btn {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.tooltip-contents-box {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,108 @@
+@import '~styles/variables';
+
+.Modal-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(110, 111, 111, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.Modal-container {
+  position: fixed;
+  width: 520px;
+  min-height: 257px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 36px 48px;
+
+  border-radius: 4px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+
+  .title-box {
+    min-height: 41px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #121619;
+
+    margin-bottom: 12px;
+  }
+
+  .sub-title-box {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+
+    &.success {
+      color: #2c76f8;
+    }
+    &.fail {
+      color: #ff2211;
+    }
+  }
+
+  .text-box {
+    font-size: 16px;
+    color: #121619;
+    margin-bottom: 36px;
+  }
+
+  .btn-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    > div:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    button {
+      width: 96px;
+      height: 36px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+
+      &.success {
+        background-color: $btn-primary;
+        color: #ffffff;
+
+        &:hover {
+          background-color: $btn-primary--hover;
+        }
+      }
+
+      &.success-lg {
+        width: 91px;
+        background-color: $btn-primary;
+        color: #ffffff;
+
+        &:hover {
+          background-color: $btn-primary--hover;
+        }
+      }
+
+      &.basic {
+        background-color: #fff;
+        color: #595a5b;
+
+        &:hover {
+          background-color: #dedfe0;
+        }
+      }
+
+      &.fail {
+        background-color: #ff6158;
+        color: #ffffff;
+
+        &:hover {
+          background-color: #aa3027;
+        }
+      }
+    }
+  }
+}

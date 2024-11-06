@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <filter id="prefix__a" width="110.5%" height="107.3%" x="-5.3%" y="-3.4%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="7.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+        </filter>
+        <rect id="prefix__b" width="446" height="640" x="0" y="0" rx="4"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#F8F9FB" d="M0 0H1920V1501H0z" transform="translate(-1343 -371)"/>
+        <g transform="translate(-1343 -371) translate(1298 324)">
+            <use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/>
+            <use fill="#FFF" xlink:href="#prefix__b"/>
+            <g transform="translate(45 47)">
+                <rect width="60" height="60" fill="#3368FF" opacity=".08" rx="8"/>
+                <g>
+                    <path fill="#002BFF" d="M19.98 31.366c-8.54 0-15.99-4.582-19.98-11.386 0 11.035 8.946 19.98 19.98 19.98s19.98-8.945 19.98-19.98c-3.99 6.804-11.441 11.386-19.98 11.386" transform="translate(10 10)"/>
+                    <path fill="#B6D5FF" d="M8.594 19.98c0-6.284 5.09-11.378 11.372-11.385C11.432 8.599 3.988 13.179 0 19.98c3.988 6.8 11.432 11.38 19.966 11.385-6.282-.007-11.372-5.102-11.372-11.385M19.995 8.595c6.281.008 11.37 5.102 11.37 11.385 0 6.283-5.09 11.378-11.371 11.385 8.533-.005 15.978-4.584 19.966-11.385-3.988-6.8-11.432-11.38-19.965-11.385M19.98 8.594h.015H19.966h.014zM19.966 31.365h.028-.028" transform="translate(10 10)"/>
+                    <path fill="#0E4BFF" d="M19.98 8.594c8.539 0 15.99 4.581 19.98 11.385C39.96 8.945 31.013 0 19.98 0S0 8.945 0 19.98C3.99 13.174 11.44 8.593 19.98 8.593" transform="translate(10 10)"/>
+                    <path fill="#002BFF" d="M19.98 8.594V19.98H8.594c0 6.288 5.098 11.386 11.386 11.386 6.288 0 11.386-5.098 11.386-11.386 0-6.288-5.098-11.386-11.386-11.386" transform="translate(10 10)"/>
+                    <path fill="#779EFF" d="M19.98 8.594c-6.288 0-11.386 5.098-11.386 11.386H19.98V8.594z" transform="translate(10 10)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

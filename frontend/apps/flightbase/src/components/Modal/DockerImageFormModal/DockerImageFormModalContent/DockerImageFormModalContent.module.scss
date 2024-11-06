@@ -1,0 +1,21 @@
+@import '@src/components/Modal/modal.scss';
+
+.input-group {
+  padding: 20px 24px;
+  margin: 10px 0 48px;
+  border-radius: 4px;
+  background-color: rgba($blue104, 0.08);
+}
+
+.commit-box {
+  display: flex;
+}
+
+.highlight {
+  font-family: SpoqaM;
+}
+
+.notice {
+  color: $mono205;
+  font-size: 12px;
+}

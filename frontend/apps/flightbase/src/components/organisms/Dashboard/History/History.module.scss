@@ -1,0 +1,39 @@
+@import '@src/styles/color.scss';
+
+.history-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid $mono203;
+  &:last-child {
+    border-bottom: 0;
+  }
+  .message {
+    flex: 1;
+    font-family: SpoqaM;
+    font-size: 14px;
+    color: $mono207;
+    margin-right: 12px;
+    word-break: break-word;
+    strong {
+      font-family: SpoqaB;
+    }
+  }
+  .datetime {
+    &.admin {
+      width: 88px;
+    }
+    font-family: SpoqaR;
+    font-size: 14px;
+    color: $mono205;
+  }
+}
+
+@media (max-width: 1920px) and (min-width: 1200px) {
+  .history-row {
+    .datetime {
+      width: 150px !important;
+    }
+  }
+}

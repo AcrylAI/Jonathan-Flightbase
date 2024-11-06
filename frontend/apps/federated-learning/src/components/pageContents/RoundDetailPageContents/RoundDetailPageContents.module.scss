@@ -1,0 +1,54 @@
+@import 'src/styles/color.scss';
+
+@mixin arrow($size, $color, $rotate) {
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    content: '';
+    width: $size;
+    height: $size;
+    border-top: 3px solid $color;
+    border-right: 3px solid $color;
+    transform: rotate($rotate);
+  }
+}
+
+@mixin card() {
+  color: $dark-mono201;
+  background-color: $dark-mono207;
+  border-radius: 4px;
+}
+
+@mixin line($height) {
+  background-color: $dark-mono204;
+  height: $height;
+  width: 100%;
+}
+
+@mixin title() {
+  font-family: SpoqaM;
+  font-size: 14px;
+  color: $dark-mono201;
+  line-height: 32px;
+}
+
+.btn-contents {
+  font-size: 24px;
+  position: relative;
+  color: $dark-mono200;
+  width: max-content;
+  cursor: pointer;
+  & > label {
+    cursor: pointer;
+  }
+
+  .arrow {
+    @include arrow(12px, $dark-mono200, 225deg);
+  }
+
+  & > label {
+    margin-left: 24px;
+  }
+}

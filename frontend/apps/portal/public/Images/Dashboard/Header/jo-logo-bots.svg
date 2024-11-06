@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <path id="prefix__a" d="M0.155 0.04L10.145 0.04 10.145 9.986 0.155 9.986z"/>
+        <path id="prefix__c" d="M0 0.019L12.844 0.019 12.844 12.807 0 12.807z"/>
+        <path id="prefix__e" d="M0 0.038L39.96 0.038 39.96 12.826 0 12.826z"/>
+        <path id="prefix__g" d="M0 39.96L39.96 39.96 39.96 0.175 0 0.175z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="60" height="60" fill="#3368FF" opacity=".08" rx="8"/>
+        <g transform="translate(10 10)">
+            <path fill="#002BFF" d="M12.844 6.57c0 2.746-2.236 4.973-4.995 4.973-2.758 0-4.995-2.227-4.995-4.974 0-2.746 2.237-4.973 4.995-4.973 2.759 0 4.995 2.227 4.995 4.973"/>
+            <g transform="translate(26.96 .135)">
+                <mask id="prefix__b" fill="#fff">
+                    <use xlink:href="#prefix__a"/>
+                </mask>
+                <path fill="#3368FF" d="M10.145 5.013c0 2.747-2.236 4.973-4.995 4.973C2.392 9.986.155 7.76.155 5.013S2.392.04 5.15.04c2.759 0 4.995 2.226 4.995 4.973" mask="url(#prefix__b)"/>
+            </g>
+            <g transform="translate(0 27.153)">
+                <mask id="prefix__d" fill="#fff">
+                    <use xlink:href="#prefix__c"/>
+                </mask>
+                <path fill="#779EFF" d="M0 .02c0 7.062 5.75 12.787 12.844 12.787V.02H0z" mask="url(#prefix__d)"/>
+            </g>
+            <g transform="translate(0 14.346)">
+                <mask id="prefix__f" fill="#fff">
+                    <use xlink:href="#prefix__e"/>
+                </mask>
+                <path fill="#002BFF" d="M27.116.038H12.844C5.751.038 0 5.764 0 12.826h39.96C39.96 5.764 34.21.038 27.116.038" mask="url(#prefix__f)"/>
+            </g>
+            <mask id="prefix__h" fill="#fff">
+                <use xlink:href="#prefix__g"/>
+            </mask>
+            <path fill="#3368FF" d="M12.844 39.96L39.96 39.96 39.96 27.173 12.844 27.173z" mask="url(#prefix__h)"/>
+        </g>
+    </g>
+</svg>

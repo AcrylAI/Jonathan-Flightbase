@@ -1,0 +1,140 @@
+@import 'src/style/theme.scss';
+
+$sidenav_width: 184px;
+$header-height: 64px;
+$footer-height: 69px;
+
+.frame {
+  background-color: #fefefe;
+  padding-left: $sidenav_width;
+  transition: padding-left 0.7s;
+  box-sizing: border-box;
+  min-width: 480px;
+  overflow: hidden;
+  height: 100%;
+  &.jp-dark {
+    min-width: 1500px;
+  }
+  .sidenav-area {
+    width: $sidenav_width;
+  }
+  .content-area {
+    .header-area {
+      padding-left: $sidenav_width;
+      width: 100%;
+    }
+  }
+
+  &.no-nav {
+    padding-left: 0;
+    .content-area {
+      .header-area {
+        padding-left: 0;
+      }
+    }
+  }
+  .header-area {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: padding-left 0.7s;
+  }
+  .sidenav-area {
+    z-index: 3;
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    height: calc(100% - $header-height);
+    width: $sidenav_width;
+    transition: width 0.7s;
+    &.no-header {
+      top: 0;
+      height: 100%;
+    }
+  }
+  .content-area {
+    margin-top: $header-height;
+    overflow: auto;
+    height: calc(100vh - $header-height);
+    &.no-header {
+      margin-top: 0px !important;
+      height: 100vh !important;
+    }
+    .content {
+      padding: 40px 48px;
+      box-sizing: border-box;
+      min-height: calc(100vh - $header-height - $footer-height);
+      &.no-header {
+        // min-height: calc(100vh - $header-height) !important;
+        min-height: calc(100vh - $footer-height) !important;
+      }
+      &.no-footer {
+        min-height: calc(100vh - $header-height) !important;
+      }
+      &.no-header.no-footer {
+        min-height: 100vh !important;
+      }
+    }
+    &.no-nav {
+      .header-area {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .frame {
+    padding-left: 0;
+    &.open {
+      padding-left: 0;
+      .sidenav-area {
+        width: $sidenav_width;
+        left: 0;
+      }
+      .content-area {
+        .header-area {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .sidenav-area {
+      width: $sidenav_width;
+      left: #{'-'}#{$sidenav_width};
+      transition: left 0.7s;
+    }
+
+    .content-area {
+      .header-area {
+        left: 0;
+        padding-left: 0;
+      }
+      .content {
+        padding: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .frame {
+    .content-area {
+      .content {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+@mixin themable($theme-name) {
+  .frame.#{$theme-name} {
+    background-color: map-get($content_bg, $theme-name);
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

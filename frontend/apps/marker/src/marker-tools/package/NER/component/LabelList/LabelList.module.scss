@@ -1,0 +1,85 @@
+@import 'src/styles/common';
+
+.labelbox-container {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	padding: 12px;
+	width: 100%;
+	height: fit-content;
+	background-color: #fff;
+}
+
+.labelgroup-container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	gap: 0;
+	transition: gap 0.15s ease;
+
+	&.open {
+		gap: 12px;
+
+		.labelgroup-icon {
+			rotate: 90deg;
+		}
+	}
+
+	.labelgroup-header {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 8px;
+	}
+	.labelgroup-icon {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		transition: rotate 0.15s ease-in-out;
+
+		& > svg {
+			margin-top: 1px;
+		}
+	}
+
+	.labelgroup-item {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 12px;
+		margin-left: 12px;
+	}
+
+	.labelitem-wrap {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		flex-grow: 1;
+	}
+
+	.labelitem-button {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 20px;
+		height: 20px;
+		padding-left: 1.5px;
+		padding-top: 2.5px;
+		@include Cursor(pointer);
+	}
+}
+
+.labellist-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 16px;
+}
+
+.labelbox-container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	&:not(.no-cursor) {
+		@include Cursor(pointer);
+	}
+}
+

@@ -1,0 +1,145 @@
+@import '@src/styles/color.scss';
+
+.list-item-container {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  height: 52px;
+  background-color: $mono201;
+  align-items: center;
+  padding: 8px;
+  font-family: MarkerFont;
+  margin-left: auto;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1.5px solid transparent;
+  transition: border 0.3s ease-in-out;
+  &.active {
+    border: 1.5px solid $blue102;
+    background-color: $blue100;
+    .index {
+      color: $blue104;
+    }
+  }
+
+  .index {
+    min-width: 17px;
+    color: $mono205;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  margin-right: 8px;
+}
+.color {
+  .color-picker {
+    display: flex;
+    position: relative;
+
+    .pallet {
+      position: fixed;
+      box-shadow: 0px 3px 12px rgba(45, 118, 248, 0.1);
+      width: 303px;
+      height: 92px;
+      background-color: #fff;
+      display: grid;
+      column-gap: 4px;
+      row-gap: 4px;
+      padding: 12px;
+      z-index: 100;
+      grid-template-columns: repeat(7, 1fr);
+      visibility: visible;
+      transition: opacity 0.25s ease-in-out;
+      border-radius: 6px;
+      opacity: 1;
+
+      &.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .chip-wrapper {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .chip {
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 24px;
+          height: 24px;
+          border-radius: 7px;
+          cursor: pointer;
+          display: flex;
+        }
+      }
+    }
+    .btn {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      width: 63px;
+      height: 34px;
+      background-color: #fff;
+      border: 1px solid $mono204;
+      border-radius: 5px;
+      justify-content: space-between;
+
+      .color-chip {
+        transition: background-color 0.2s linear;
+        width: 16px;
+        height: 16px;
+        border-radius: 5px;
+      }
+      .arrow {
+        cursor: pointer;
+        .bar-container {
+          width: 100%;
+          width: 16px;
+          height: 16px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .bar {
+            position: absolute;
+            width: 100%;
+            border: 1px solid $mono204;
+            width: 8px;
+            background-color: $mono204;
+            transition: transform 0.3s ease-in-out;
+            &.left {
+              left: 15%;
+              transform: rotate(45deg);
+            }
+            &.right {
+              left: 45%;
+              transform: rotate(-45deg);
+            }
+
+            &.active {
+              &.left {
+                left: 15%;
+                transform: rotate(-45deg);
+              }
+              &.right {
+                left: 45%;
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

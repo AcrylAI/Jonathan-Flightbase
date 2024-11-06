@@ -1,0 +1,14 @@
+@import '../RoundDetailPageContents.module.scss';
+
+.round-summary {
+  @include card();
+
+  padding: 37px 32px;
+  .title {
+    @include title();
+    padding-left: 8px;
+  }
+  .chart-area {
+    height: 480px;
+  }
+}

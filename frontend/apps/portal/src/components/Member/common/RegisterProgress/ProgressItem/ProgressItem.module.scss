@@ -1,0 +1,30 @@
+@import '~styles/screen.scss';
+
+.progress-container {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #121619;
+
+  .progress-num {
+    width: 24px;
+    height: 24px;
+    background: #dbdcdd;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+  }
+
+  .isActive {
+    background: #2c76f8;
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}

@@ -1,0 +1,14 @@
+@import '~styles/screen.scss';
+
+.Logo-box {
+  display: inline-block;
+  margin-top: 60px;
+}
+.Logo-img {
+  height: 60px;
+  cursor: pointer;
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    height: 40px;
+  }
+}

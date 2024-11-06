@@ -1,0 +1,27 @@
+@import "src/styles/color";
+
+.Shortcut {
+	display: flex;
+	flex-flow: column nowrap;
+	border-top: 1px solid $editor-border-color;
+}
+
+.keylist {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0 16px 16px 12px;
+	gap:6px;
+}
+
+.keyitem {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.plaques {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 4px;
+}

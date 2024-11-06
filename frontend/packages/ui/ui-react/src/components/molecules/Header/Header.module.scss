@@ -1,0 +1,93 @@
+@import '../../../style/theme';
+$left-box-width: 100px;
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 64px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #2a2d3e;
+  font-size: 14px;
+  font-family: SpoqaM;
+  color: $mono203;
+  .left-box {
+    .logo {
+      margin: 0 50px 0 4px;
+      a {
+        display: flex;
+        align-items: center;
+        img {
+          height: 28px;
+        }
+      }
+      .logo-img {
+        height: 28px;
+      }
+    }
+  }
+  .center-box {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+  }
+  .right-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
+
+.menu-btn {
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  .line-wrapper {
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  /* 추가된 부분 */
+  .line {
+    background: $mono203;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    .left-box {
+      display: flex;
+      .logo {
+        margin: 0 4px;
+      }
+    }
+  }
+}
+
+// Theme
+@mixin themable($theme-name) {
+  .header.#{$theme-name} {
+    background: map-get($header_bg, $theme-name);
+    .menu-btn {
+      .line {
+        background-color: map-get($header_menu_line_bg, $theme-name);
+      }
+    }
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

@@ -1,0 +1,41 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.IssueViewer {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 12px;
+	max-width: 280px;
+	width: fit-content;
+	min-width: 200px;
+	height: fit-content;
+	max-height: 50vh;
+	padding: 16px 12px;
+}
+
+.container {
+	width: 100%;
+	height: fit-content;
+	max-height: calc(50vh - 32px);
+	overflow-y: scroll;
+	padding: 0;
+}
+
+.text {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	height: fit-content;
+	color: $blue110;
+	overflow: hidden;
+}
+
+.fold-button {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	width: fit-content;
+	height: fit-content;
+	@include Cursor(pointer);
+	color: $mono204;
+}

@@ -1,0 +1,6 @@
+@import './theme/jp.scss';
+$theme: true;
+
+@if $theme {
+  @include jp;
+}

@@ -1,0 +1,193 @@
+@import '@src/styles/color.scss';
+
+.group-contents {
+  display: flex;
+  flex-direction: column;
+  &.selected {
+    background-color: rgba($blue104, 0.08);
+  }
+  .list-item {
+    width: 100%;
+    padding: 20px 26px;
+    border-top: solid 1px $card-border-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    .left-column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .checkbox {
+        padding: 9px 6px 6px 8px;
+      }
+      .status {
+        padding: 0 4px 0 20px;
+      }
+      .job-stop-btn {
+        display: block;
+        width: 36px;
+        height: 36px;
+        padding-right: 8px;
+        opacity: 1;
+        cursor: pointer;
+        &.disabled {
+          opacity: 0;
+          cursor: default;
+        }
+      }
+      .job-index {
+        width: 60px;
+        min-width: 60px;
+        height: 18px;
+        font-family: SpoqaM;
+        font-size: 14px;
+        color: $mono207;
+      }
+      .parameters {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 0 20px;
+        max-height: 160px;
+        overflow: auto;
+        .hyper-param {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
+        .dataset-param {
+          margin-top: 8px;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
+        .param-label {
+          font-family: SpoqaM;
+          font-size: 14px;
+          color: $mono205;
+          padding-bottom: 2px;
+          white-space: nowrap;
+        }
+        .params {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .item {
+            margin-right: 12px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            .label {
+              height: 18px;
+              font-family: SpoqaB;
+              font-size: 14px;
+              color: $mono205;
+              margin-right: 8px;
+              white-space: nowrap;
+            }
+            .param {
+              margin-right: 4px;
+              font-family: SpoqaR;
+              font-size: 14px;
+              color: $mono205;
+              word-break: break-word;
+            }
+            .value {
+              font-family: SpoqaB;
+              font-size: 14px;
+              color: $mono207;
+              word-break: break-word;
+              color: $mono207;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-left: solid 1px $card-border-color;
+      @media (max-width: 1366px) {
+        flex-wrap: wrap;
+      }
+      .datetime {
+        padding: 6px 0 6px 20px;
+        font-family: SpoqaM;
+        font-size: 14px;
+        color: $mono207;
+        min-width: 184px;
+        width: 330px;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        @media (max-width: 1800px) {
+          max-width: 184px;
+        }
+      }
+      .duration {
+        font-family: SpoqaM;
+        font-size: 14px;
+        color: $mono207;
+        width: 90px;
+        padding: 6px 0px 6px 20px;
+      }
+      .btn-box {
+        display: flex;
+        flex-direction: row;
+        padding-left: 20px;
+        .log,
+        .deploy {
+          position: relative;
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          .btn {
+            width: 36px;
+            height: 36px;
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-sizing: border-box;
+            &:hover {
+              background-color: $mono202;
+            }
+            &.disabled {
+              filter: grayscale(100%);
+              opacity: 0.4;
+              cursor: default;
+              pointer-events: none;
+            }
+          }
+          &:hover::after {
+            content: attr(name);
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: max-content;
+            height: auto;
+            line-height: 1.5;
+            padding: 3px 6px;
+            background: $mono200;
+            font-size: 12px;
+            font-family: SpoqaR;
+            border-radius: 2px;
+            border: 1px solid $mono205;
+            color: $mono206;
+            text-align: center;
+            z-index: 100;
+          }
+        }
+        .deploy {
+          .btn {
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}

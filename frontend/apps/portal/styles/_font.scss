@@ -1,0 +1,59 @@
+/* 폰트 관련 */
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+@font-face {
+  font-family: SpoqaB;
+  font-style: normal;
+  src: local('Spoqa Han Sans Neo Bold'), local('SpoqaHanSansNeo-Bold'), local('SpoqaB'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.otf) format('opentype'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf) format('truetype'),
+    /* IE 호환성 보기 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.eot),
+    /* IE 6 ~ 8 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.eot?#iefix) format('embedded-opentype');
+}
+@font-face {
+  font-family: SpoqaM;
+  font-style: normal;
+  src: local('Spoqa Han Sans Neo Medium'), local('SpoqaHanSansNeo-Medium'), local('SpoqaM'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.otf) format('opentype'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf) format('truetype'),
+    /* IE 호환성 보기 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.eot),
+    /* IE 6 ~ 8 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.eot?#iefix) format('embedded-opentype');
+}
+@font-face {
+  font-family: SpoqaR;
+  font-style: normal;
+  src: local('Spoqa Han Sans Neo Regular'), local('SpoqaHanSansNeo-Regular'), local('SpoqaR'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.otf) format('opentype'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf) format('truetype'),
+    /* IE 호환성 보기 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.eot),
+    /* IE 6 ~ 8 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.eot?#iefix) format('embedded-opentype');
+}
+@font-face {
+  font-family: SpoqaL;
+  font-style: normal;
+  src: local('Spoqa Han Sans Neo Light'), local('SpoqaHanSansNeo-Light'), local('SpoqaL'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.otf) format('opentype'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.ttf) format('truetype'),
+    /* IE 호환성 보기 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.eot),
+    /* IE 6 ~ 8 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.eot?#iefix) format('embedded-opentype');
+}
+@font-face {
+  font-family: SpoqaT;
+  font-style: normal;
+  src: local('Spoqa Han Sans Neo Thin'), local('SpoqaHanSansNeo-Thin'), local('SpoqaT'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2) format('woff'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.otf) format('opentype'),
+    url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.ttf) format('truetype'),
+    /* IE 호환성 보기 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.eot),
+    /* IE 6 ~ 8 */ url(../public/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.eot?#iefix) format('embedded-opentype');
+}

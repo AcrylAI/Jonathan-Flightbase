@@ -1,0 +1,28 @@
+.scrollview-frame {
+  width: 100%;
+  height: 100%;
+
+  &.vertical {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &.horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.vertical {
+  .scrollview-contents {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+.horizontal {
+  .scrollview-contents {
+    width: fit-content;
+    height: 100%;
+  }
+}

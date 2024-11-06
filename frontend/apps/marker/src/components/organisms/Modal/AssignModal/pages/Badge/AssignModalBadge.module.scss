@@ -1,0 +1,16 @@
+@import '@src/styles/color.scss';
+.label {
+  padding: 3px 6px;
+  margin-right: 8px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  &.fb {
+    color: $blue104;
+    background-color: $blue101;
+  }
+  &.lb {
+    color: $yellow303;
+    background-color: $yellow301;
+  }
+}

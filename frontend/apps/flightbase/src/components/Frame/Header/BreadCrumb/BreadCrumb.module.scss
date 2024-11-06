@@ -1,0 +1,47 @@
+@import '@src/styles/color.scss';
+
+.path-wrap {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  color: $mono203;
+  font-size: 14px;
+  font-family: SpoqaR;
+  width: 100%;
+  .path-box {
+    display: flex;
+    align-items: center;
+    .separator {
+      margin: 0 4px;
+    }
+    .name {
+      &.path {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &.long {
+      .path-box {
+        .name {
+          display: flex;
+          align-items: center;
+          &.ws,
+          .var {
+            display: inline-block;
+            max-width: 64px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
+}

@@ -1,0 +1,53 @@
+@import '@src/styles/color.scss';
+
+.classes {
+  height: 100%;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: auto;
+    height: 100%;
+    overflow-y: scroll;
+    .row {
+      background-color: $mono201;
+      padding: 16px 8px;
+      display: flex;
+      gap: 10px;
+      border-radius: 2px;
+      .mark {
+        width: 16px;
+        display: grid;
+        aspect-ratio: 1;
+        place-content: center;
+        border-radius: 4px;
+      }
+      & > img {
+        filter: invert(56%) sepia(2%) saturate(130%) hue-rotate(314deg)
+          brightness(80%) contrast(87%);
+      }
+    }
+  }
+}
+
+.output-card {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-contents {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

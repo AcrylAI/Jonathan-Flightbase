@@ -1,0 +1,13 @@
+@import "src/styles/color";
+
+.Classes {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+	color: $blue110;
+	overflow: hidden;
+}
+
+.header {
+	padding: 16px 12px;
+}

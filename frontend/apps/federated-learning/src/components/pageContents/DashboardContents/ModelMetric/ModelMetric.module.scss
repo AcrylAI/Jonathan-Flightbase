@@ -1,0 +1,17 @@
+@import 'src/styles/color.scss';
+
+#chartdiv {
+  color: #ffffff;
+}
+
+.empty-metric {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .message {
+    margin-top: 30px;
+    font-size: 13px;
+    color: $dark-mono202;
+  }
+}

@@ -1,0 +1,113 @@
+@import 'src/style/color.scss';
+
+.guide {
+  padding: 30px 30px 30px 40px;
+  height: auto;
+  background-color: $mono200;
+
+  &.jp-dark {
+    background-color: $dark-background-color;
+  }
+
+  .option-box {
+    font-weight: bold;
+    width: 100%;
+    .option-line {
+      margin-top: 5px;
+      border-bottom: 1px solid $mono204;
+    }
+    .select-button {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      gap: 20px;
+    }
+  }
+  .menu-bar {
+    padding: 40px 20px;
+    display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: rgba($mono200, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid $mono204;
+    z-index: 1000;
+    margin-bottom: 20px;
+  }
+
+  .guide-box {
+    /* Guid Box Style */
+    .box {
+      border: 1px solid $mono203;
+      border-radius: 4px;
+      background-color: $mono200;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      &.jp-dark {
+        background-color: $dark-background-color;
+      }
+    }
+    .info-box > .title {
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      &.jp-dark {
+        color: $dark-mono200;
+      }
+    }
+    .info-box > .desc {
+      color: $mono205;
+      font-size: 12px;
+      &.jp-dark {
+        color: $dark-mono201;
+      }
+    }
+
+    .tab-controller {
+      display: flex;
+      border-bottom: 1px solid $mono204;
+      margin: 10px 0 10px 0;
+      padding-left: 0;
+    }
+    .tab-controller > .tab-btn {
+      padding: 2px 10px;
+      cursor: pointer;
+      &.jp-dark {
+        color: $dark-mono200;
+      }
+    }
+    .tab-controller > .tab-btn:hover,
+    .tab-controller > .tab-btn.active {
+      color: $blue104;
+    }
+    .tab-controller > .tab-btn.active {
+      border-bottom: 2px solid $blue104;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .view {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .code {
+      border: 1px solid $mono204;
+      margin: 0;
+      overflow-x: auto;
+      &.jp-dark {
+        & > p {
+          color: $dark-mono200;
+        }
+      }
+    }
+    .code > p {
+      margin: 0;
+    }
+  }
+}

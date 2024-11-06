@@ -1,0 +1,47 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.Logo {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: fit-content;
+	margin-right: 16px;
+	@include userSelect;
+	@include Cursor(pointer);
+}
+
+.icon {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	//width: 40px;
+	//height: 40px;
+	//min-width: 40px;
+	//min-height: 40px;
+	//background-color: #fff;
+	border-radius: 4px;
+
+	//&:hover {
+	//	background-color: $editor-border-color;
+	//}
+}
+
+.image {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 8px 12px;
+
+	& > img {
+		height: 24px;
+	}
+}
+
+.container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: 8px;
+}

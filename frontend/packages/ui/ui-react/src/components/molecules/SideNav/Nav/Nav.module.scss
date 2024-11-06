@@ -1,0 +1,60 @@
+@import 'src/style/theme.scss';
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 28px;
+
+  .nav-wrap {
+    padding-top: 16px;
+    &.main-group,
+    &.sub-group {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      background-color: #eef0f4;
+      margin-left: 18px;
+
+      &.first-group {
+        margin-top: 8px;
+        padding-top: 12px;
+        border-radius: 12px 0 0 0;
+      }
+      &.last-group {
+        padding-bottom: 12px;
+        border-radius: 0 0 0 12px;
+      }
+    }
+  }
+
+  &.open {
+    .nav-item > a {
+      .text {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin themable($theme-name) {
+  .nav-list.#{$theme-name} {
+    .nav-item > a {
+      background-color: map-get($sidenav_btn_bg, $theme-name);
+      color: map-get($sidenav_btn_txt_color, $theme-name);
+      border-color: map-get($sidenav_btn_border_color, $theme-name);
+      &:hover {
+        background-color: map-get($sidenav_btn_hover_bg, $theme-name);
+        color: map-get($sidenav_btn_txt_hover_color, $theme-name);
+        border-color: map-get($sidenav_btn_border_hover_color, $theme-name);
+      }
+      &.active,
+      &:active {
+        background-color: map-get($sidenav_btn_active_bg, $theme-name);
+        color: map-get($sidenav_btn_txt_active_color, $theme-name);
+        border-color: map-get($sidenav_btn_border_active_color, $theme-name);
+      }
+    }
+  }
+}
+
+@include themable(jp-primary);
+@include themable(jp-dark);

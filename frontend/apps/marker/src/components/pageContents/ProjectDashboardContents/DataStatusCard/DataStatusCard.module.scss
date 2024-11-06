@@ -1,0 +1,84 @@
+@import '@src/styles/color.scss';
+
+@mixin progress-bar($color) {
+  width: 100%;
+  height: 6px;
+  border-radius: 2px;
+  outline: 1px solid $mono203;
+  position: relative;
+  margin-top: 8px;
+  background-color: $mono200;
+  & > div {
+    width: 0%;
+    background-color: $color;
+    border-radius: 2px;
+    position: absolute;
+    height: 100%;
+    transition: width 1.5s;
+  }
+}
+
+.data-status {
+  height: 100%;
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 16px;
+    .progress-area {
+      width: 100%;
+      & > div {
+        background-color: $mono201;
+        border-radius: 6px;
+        padding: 18px 16px;
+      }
+      .autolabeling-total {
+        margin-bottom: 24px;
+        .bar {
+          @include progress-bar($blue105);
+        }
+      }
+      .autolabeling-info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .unworked {
+          .bar {
+            @include progress-bar($mono202);
+          }
+        }
+        .labeling {
+          .bar {
+            @include progress-bar($blue101);
+          }
+        }
+        .review {
+          .bar {
+            @include progress-bar($blue103);
+          }
+        }
+        .completed {
+          .bar {
+            @include progress-bar($blue104);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 958px) {
+  .data-status {
+    .contents {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

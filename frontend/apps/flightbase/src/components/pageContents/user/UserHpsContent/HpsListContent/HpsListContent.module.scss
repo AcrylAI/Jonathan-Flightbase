@@ -1,0 +1,304 @@
+@import '@src/styles/color.scss';
+
+.group-contents {
+  display: flex;
+  flex-direction: column;
+  &.selected {
+    background-color: rgba($blue104, 0.08);
+  }
+  .list-item {
+    width: 100%;
+    padding: 20px 26px;
+    border-top: solid 1px $card-border-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    .left-column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+      .checkbox {
+        padding: 9px 6px 6px 8px;
+      }
+      .status {
+        padding: 0 4px 0 20px;
+      }
+      .hps-stop-btn {
+        display: block;
+        width: 36px;
+        height: 36px;
+        padding-right: 8px;
+        opacity: 1;
+        cursor: pointer;
+        &.disabled {
+          opacity: 0;
+          cursor: default;
+        }
+      }
+      .hps-info {
+        min-width: 120px;
+        max-width: 180px;
+        .hps-index {
+          width: 60px;
+          min-width: 60px;
+          height: 18px;
+          font-family: SpoqaM;
+          font-size: 14px;
+          color: $mono207;
+          margin-bottom: 4px;
+        }
+        .gpu-count {
+          margin-bottom: 4px;
+          white-space: nowrap;
+          .label {
+            font-family: SpoqaM;
+            font-size: 14px;
+            color: $mono205;
+            margin-right: 4px;
+          }
+          .value {
+            width: 21px;
+            height: 18px;
+            font-family: SpoqaB;
+            font-size: 14px;
+            color: $mono207;
+            margin-right: 8px;
+          }
+        }
+        .features {
+          display: flex;
+          flex-direction: row;
+          .features-tag {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 54px;
+            height: 18px;
+            border-radius: 15px;
+            border: solid 2px $blue104;
+            background-color: $mono200;
+            color: $blue104;
+            font-family: SpoqaB;
+            font-size: 11px;
+            box-sizing: border-box;
+            margin-right: 2px;
+          }
+        }
+      }
+      .hps-result-box {
+        flex: 1;
+        position: relative;
+        padding: 0 20px;
+        box-sizing: border-box;
+        .hps-result {
+          min-width: 260px;
+          .method {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            padding-bottom: 3px;
+          }
+          .parameters {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            box-sizing: border-box;
+            font-family: SpoqaM;
+            font-size: 14px;
+            flex-wrap: nowrap;
+            max-height: 110px;
+            overflow: auto;
+            padding: 3px 0 6px 0;
+            .range-box {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              .range-param {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+              }
+            }
+          }
+          .score {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            padding-bottom: 3px;
+            .score-box {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              align-items: center;
+              line-height: 18px;
+              .score-value {
+                padding-right: 4px;
+                max-width: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 18px;
+                white-space: nowrap;
+              }
+              .score-param-list {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                .score-param {
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                }
+                .score-param-left {
+                  padding-right: 4px;
+                }
+              }
+            }
+          }
+          .label {
+            font-family: SpoqaM;
+            font-size: 14px;
+            line-height: 18px;
+            color: $mono205;
+            padding-right: 6px;
+            margin-right: 6px;
+            border-right: solid 1px $mono203;
+            white-space: nowrap;
+          }
+          .value {
+            font-family: SpoqaM;
+            font-size: 14px;
+            color: $mono207;
+            &.param {
+              padding-right: 4px;
+              max-width: 110px;
+              overflow: hidden;
+              height: 18px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+        .more-btn-box {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          margin-left: -6px;
+        }
+        .hps-result-more {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-width: 300px;
+          height: auto;
+          left: 0px;
+          background: $mono200;
+          padding: 12px 20px 6px 20px;
+          border-radius: 3px;
+          box-shadow: 0 5px 20px 0 rgba(18, 22, 25, 0.16), 0 6px 6px -3px rgba(18, 22, 25, 0.22);
+          z-index: 2;
+          box-sizing: border-box;
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 6px;
+            &.gpu-instance {
+              align-items: flex-start;
+            }
+            .label {
+              font-family: SpoqaM;
+              font-size: 14px;
+              line-height: 14px;
+              color: $mono205;
+              padding-right: 6px;
+              margin-right: 6px;
+              border-right: solid 1px $mono203;
+              white-space: nowrap;
+            }
+            .value {
+              font-family: SpoqaM;
+              font-size: 14px;
+              color: $mono207;
+              word-break: break-word;
+              &.pre {
+                white-space: pre-wrap;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-left: solid 1px $card-border-color;
+      @media (max-width: 1800px) {
+        flex-wrap: wrap;
+      }
+      .datetime {
+        padding: 6px 0 6px 20px;
+        font-family: SpoqaM;
+        font-size: 14px;
+        color: $mono207;
+        max-width: 184px;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+      }
+      .duration {
+        font-family: SpoqaM;
+        font-size: 14px;
+        color: $mono207;
+        width: 90px;
+        padding: 6px 20px 6px 20px;
+      }
+      .log {
+        position: relative;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        .log-btn {
+          width: 36px;
+          height: 36px;
+          padding: 5px;
+          border-radius: 50%;
+          cursor: pointer;
+          box-sizing: border-box;
+          &.disabled {
+            filter: grayscale(100%);
+            opacity: 0.4;
+            cursor: default;
+          }
+          &:hover {
+            background-color: $hover-bg-color;
+          }
+        }
+        &:hover::after {
+          content: attr(name);
+          position: absolute;
+          top: 40px;
+          right: 0;
+          width: max-content;
+          height: auto;
+          line-height: 1.5;
+          padding: 3px 6px;
+          background: $mono200;
+          font-size: 12px;
+          font-family: SpoqaR;
+          border-radius: 2px;
+          border: 1px solid $mono205;
+          color: $mono206;
+          text-align: center;
+          z-index: 100;
+        }
+      }
+    }
+  }
+}

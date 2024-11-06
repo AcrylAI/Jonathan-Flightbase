@@ -1,0 +1,22 @@
+@import 'src/style/color.scss';
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-family: SpoqaM;
+  color: $mono207;
+  &.box {
+    border-radius: 8px;
+    background: $mono202;
+    color: $mono205;
+  }
+  &.jp-primary {
+    color: $mono207;
+  }
+  &.jp-dark {
+    color: $dark-mono201;
+  }
+}

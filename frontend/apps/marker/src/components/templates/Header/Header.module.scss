@@ -1,0 +1,198 @@
+@import '@src/styles/color.scss';
+
+.header-bg {
+  height: 64px;
+  width: 100%;
+  background: linear-gradient(0deg, #2a2d3e, #2a2d3e),
+    linear-gradient(0deg, rgba(0, 102, 255, 0.3), rgba(0, 102, 255, 0.3)), #1b2029;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  position: fixed;
+  z-index: 104;
+  user-select: none;
+}
+
+.left-section {
+  width: max-content;
+  display: flex;
+  align-items: center;
+
+  > a {
+    text-decoration: none;
+  }
+
+  .home-button-wrapper {
+    // width: 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $mono200;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+
+    .arrow-icon {
+      transform: rotate(90deg);
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(95deg) brightness(105%) contrast(104%);
+    }
+  }
+
+  .marker-logo {
+    height: 30px;
+  }
+
+  .drone-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .side-nav-button {
+    margin-right: 24px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .header-bread-crumb {
+    width: max-content;
+    margin-left: 40px;
+    @media (max-width: 1200px) {
+      margin-left: 16px;
+    }
+
+    .bread-crumb-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      @media (max-width: 860px) {
+        :nth-child(3) {
+          span {
+            max-width: calc(100% - 4px);
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .workspace-name {
+        color: $mono204;
+        margin-right: 4px;
+        @media (max-width: 860px) {
+          max-width: calc(100% - 4px);
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .bread-crumb-content {
+        margin-right: 4px;
+        color: $mono204;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: $mono203;
+        }
+        div {
+          margin-left: 4px;
+          text-decoration: none;
+          color: $mono204;
+          display: inline-block;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+            color: $mono203;
+          }
+        }
+      }
+    }
+  }
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  .user-info-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    padding: 16px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    p {
+      color: #fff;
+      margin-right: 8px;
+      @media (min-width: 900px) and (max-width: 1200px) {
+        max-width: calc(100% - 4px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &.active {
+      cursor: default;
+    }
+
+    &.active,
+    &:hover {
+      background-color: $mono207;
+    }
+
+    .arrow {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(95deg) brightness(105%) contrast(104%);
+      transition: all 0.2s ease-in-out;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+
+    .id-thumbnail {
+      border-radius: 50%;
+      background-color: #fff;
+      width: 24px;
+      height: 24px;
+      color: #747474;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+    }
+  }
+
+  .lang-button {
+    position: relative;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 28px 30px;
+
+    &.active {
+      cursor: default;
+    }
+
+    &.active,
+    &:hover {
+      background-color: $mono207;
+    }
+
+    & > img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(95deg) brightness(105%) contrast(104%);
+    }
+  }
+}

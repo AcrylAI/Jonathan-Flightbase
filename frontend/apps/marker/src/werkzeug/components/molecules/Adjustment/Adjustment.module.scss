@@ -1,0 +1,28 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.Adjustment {
+	display: flex;
+	flex-flow: column nowrap;
+	border-top: 1px solid $editor-border-color;
+	color: $blue110;
+}
+
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+	.reset {
+		color: $editor-weak-icon;
+		@include Cursor(pointer);
+	}
+}
+
+.optslist {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 8px;
+	padding: 0 12px 16px;
+}

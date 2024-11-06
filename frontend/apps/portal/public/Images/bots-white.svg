@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M0 0H46V46H0z" opacity=".2" transform="translate(-1054 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(130) translate(68 46)"/>
+                                <path fill="#FFF" d="M31.115 16.376H14.739C6.599 16.376 0 22.975 0 31.114h45.853c0-8.14-6.598-14.738-14.738-14.738M14.738 7.369c0 3.165-2.565 5.732-5.73 5.732-3.167 0-5.733-2.567-5.733-5.732s2.566-5.731 5.732-5.731c3.166 0 5.731 2.566 5.731 5.731" opacity=".25" transform="translate(-1054 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(130) translate(68 46)"/>
+                                <path fill="#FFF" d="M14.738 45.853L45.853 45.853 45.853 31.115 14.738 31.115zM42.578 5.731c0 3.166-2.566 5.732-5.732 5.732-3.166 0-5.731-2.566-5.731-5.732C31.115 2.566 33.68 0 36.845 0c3.167 0 5.733 2.566 5.733 5.731" opacity=".5" transform="translate(-1054 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(130) translate(68 46)"/>
+                                <path fill="#FFF" d="M0 31.114c0 8.14 6.599 14.738 14.738 14.738V31.114H0z" opacity=".95" transform="translate(-1054 -11376) translate(856 11187) translate(0 36) translate(0 107) translate(130) translate(68 46)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

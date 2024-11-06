@@ -1,0 +1,46 @@
+@import '@src/styles/color.scss';
+
+.node-pie-chart {
+  .title {
+    font-family: SpoqaB;
+    font-size: 14px;
+    text-align: center;
+    color: $mono207;
+    margin: 0 0 28px 0;
+    white-space: nowrap;
+  }
+  .legend {
+    display: flex;
+    .item {
+      flex: 1 0 0;
+      display: flex;
+      flex-direction: column;
+      &:first-child {
+        border-right: 1px solid $card-border-color;
+      }
+      .val {
+        font-size: 20px;
+        color: $mono207;
+      }
+      .label {
+        font-size: 12px;
+        .bullet {
+          position: relative;
+          display: inline-block;
+          padding-left: 10px;
+          &:before {
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            display: block;
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

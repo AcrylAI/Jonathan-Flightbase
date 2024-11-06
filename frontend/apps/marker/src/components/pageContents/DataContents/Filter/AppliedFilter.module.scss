@@ -1,0 +1,79 @@
+.filterSection {
+  height: 50px;
+  align-items: center;
+  display: flex;
+  .filter-title {
+    width: auto;
+    height: 12px;
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    color: #3e3e3e;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 30px;
+  }
+  .filter-container {
+    display: flex;
+    align-items: center;
+    .filter-badge {
+      display: flex;
+      align-items: center;
+      padding: 6px 16px;
+      gap: 10px;
+      width: auto;
+      height: 30px;
+      background: #eaf1fe;
+      border-radius: 15px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      .filter-column {
+        width: auto;
+        font-family: 'Spoqa Han Sans Neo';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 100%;
+        color: #3e3e3e;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+      .filter-condition {
+        width: auto;
+        font-family: 'Spoqa Han Sans Neo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        color: #747474;
+      }
+      .filter-value {
+        width: auto;
+        font-family: 'Spoqa Han Sans Neo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        color: #002f77;
+      }
+      .close-icon {
+        height: 15px;
+        cursor: pointer;
+        width: 15px;
+      }
+    }
+  }
+}
+.selectbox-area {
+  width: 82px;
+  margin: 10px 10px;
+  z-index: 65;
+  font-family: 'MarkerFont';
+}
+.text-area {
+  width: auto;
+  margin: 10px 10px;
+}

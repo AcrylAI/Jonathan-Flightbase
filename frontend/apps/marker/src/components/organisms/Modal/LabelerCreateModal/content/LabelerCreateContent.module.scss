@@ -1,0 +1,15 @@
+@import '@src/styles/color.scss';
+
+.warn-label {
+  font-family: MarkerFont;
+  font-size: 12px;
+  margin-left: 4px;
+  margin-top: 8px;
+  font-weight: 500;
+  color: $red502;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  &.display {
+    opacity: 1;
+  }
+}

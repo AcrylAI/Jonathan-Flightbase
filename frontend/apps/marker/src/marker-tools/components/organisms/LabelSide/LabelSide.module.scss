@@ -1,0 +1,22 @@
+@import 'src/styles/color';
+
+.labelside-container {
+	display: flex;
+	flex-flow: column nowrap;
+	min-width: 240px;
+	max-width: 240px;
+	height: 100%;
+	//padding: 12px;
+	gap: 16px;
+	box-sizing: border-box;
+	border-left: 1px solid $editor-border-color;
+	border-bottom: 1px solid $editor-border-color;
+	background-color: #f5f7fa;
+	flex-grow: 1;
+	overflow: scroll;
+	flex-basis: 450px;
+}
+
+.labelside-header {
+	padding: 12px 12px 0;
+}

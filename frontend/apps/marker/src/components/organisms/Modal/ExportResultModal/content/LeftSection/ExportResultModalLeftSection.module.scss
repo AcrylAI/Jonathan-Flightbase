@@ -1,0 +1,131 @@
+@import '@src/styles/color.scss';
+.left-section-container {
+  height: 100%;
+  border-radius: 5px 0px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 24px 32px 48px;
+  font-family: MarkerFont;
+  .loader {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    color: $mono205;
+    .spinner {
+      margin-bottom: 24px;
+    }
+  }
+  &.load {
+    position: relative;
+    .loader {
+      visibility: visible;
+    }
+  }
+  .top-section {
+    visibility: visible;
+    &.hidden {
+      visibility: hidden;
+      .type-select {
+        .title {
+          visibility: visible;
+        }
+      }
+    }
+    .type-select {
+      .title {
+        margin-bottom: 24px;
+      }
+      .select {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+    }
+    .folder-opt {
+      display: flex;
+      gap: 8px;
+      .desc {
+      }
+      .switch {
+      }
+    }
+    .folder-info {
+      display: flex;
+      visibility: hidden;
+      margin-top: 16px;
+      flex-direction: column;
+      padding: 16px 12px;
+      background-color: $blue100;
+      gap: 32px;
+      border-radius: 2px;
+      opacity: 0;
+      transition: all 0.2s linear;
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .route {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .path {
+          margin-top: 4px;
+          color: $mono206;
+        }
+      }
+      .name {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .input {
+          display: flex;
+          align-items: flex-end;
+          gap: 8px;
+          .ext {
+            color: $blue110;
+            width: 80px;
+          }
+        }
+        .error {
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+          color: $red502;
+          font-size: 12px;
+          font-weight: 500;
+          &.visible {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .overwrite {
+      display: flex;
+      gap: 8px;
+    }
+  }
+  .bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    visibility: visible;
+    &.hidden {
+      visibility: hidden;
+    }
+    .right-side {
+      margin-top: auto;
+      display: flex;
+      gap: 16px;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import 'src/styles/color';
+@import 'src/styles/common';
+
+.Button {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	height: fit-content;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	background-color: transparent;
+	transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+	user-select: none;
+	border-radius: 4px;
+
+	&:not(:disabled) {
+		@include Cursor(pointer);
+	}
+
+	&:disabled {
+		@include Cursor(default);
+	}
+}
+
+.text {
+	padding: 8px;
+	background-color: transparent;
+	font-family: SpoqaR, sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+
+	&:not(:disabled) {
+		&:hover,
+		&:active {
+			background-color: $editor-selected-color;
+		}
+
+		&:hover {
+			@include Cursor(pointer);
+		}
+		&.blue {
+			color: $blue104;
+		}
+	}
+
+	&:disabled {
+		@include Cursor(default);
+		color: $mono204;
+	}
+}
+
+.contain {
+	padding: 8px 16px;
+
+	&:not(:disabled) {
+		@include rippleParent;
+		@include rippleInit;
+
+		&:hover {
+			@include Cursor(pointer);
+			@include rippleActive;
+		}
+
+		&:active {
+			@include Cursor(pointer);
+		}
+
+		&.blue {
+			color: $mono200;
+			border-color: $blue104;
+			background-color: $blue104;
+
+			&:hover,
+			&:active {
+				border-color: $blue105;
+				background-color: $blue105;
+			}
+		}
+
+		&.red {
+			color: $mono200;
+			border-color: $red502;
+			background-color: $red502;
+
+			&:hover,
+			&:active {
+				border-color: $red503;
+				background-color: $red503;
+			}
+		}
+	}
+
+	&:disabled {
+		border-color: $mono202;
+		background-color: $mono202;
+		color: $mono204;
+	}
+}
+
+.outline {
+	padding: 8px 16px;
+
+	&:not(:disabled) {
+		&.red {
+			color: $red502;
+			border-color: $red502;
+
+			&:hover {
+				background-color: $red501;
+			}
+			&:active {
+				color: $mono200;
+				background-color: $red502;
+			}
+		}
+
+		&.blue {
+			color: $blue104;
+			border-color: $blue104;
+
+			&:hover {
+				background-color: $blue101;
+			}
+			&:active {
+				color: $mono200;
+				background-color: $blue104;
+			}
+		}
+
+		&:hover,
+		&:active {
+			@include Cursor(pointer);
+		}
+	}
+
+	&:disabled {
+		border-color: $mono204;
+		background-color: $mono202;
+		color: $mono204;
+	}
+}

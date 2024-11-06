@@ -1,0 +1,31 @@
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 40px;
+
+  .input-area {
+    width: 100%;
+    .duplicated {
+      visibility: hidden;
+      margin-top: 2px;
+      margin-left: 2px;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+      &.visible {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .add-desc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: MarkerFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}

@@ -1,0 +1,28 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.Toggler {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: fit-content;
+	height: 16px;
+	min-height: 16px;
+	gap: 4px;
+	@include Cursor(pointer);
+
+	.switch-container {
+		padding-top: 4px;
+	}
+
+
+	.label {}
+}
+
+div.Toggler.blue > div.switch-container > div > label > input[type=checkbox]:checked + span {
+	background-color: $blue104 !important;
+}
+
+div.Toggler.red > div.switch-container > div > label > input[type=checkbox]:checked + span {
+	background-color: $red503 !important;
+}

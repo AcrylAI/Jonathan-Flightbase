@@ -1,0 +1,52 @@
+@import '../DateRangePicker.module.scss';
+
+@mixin date-range-picker-input($height, $font-size) {
+  width: 100%;
+  height: $height;
+  line-height: 1.2em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 2.5em 8px 0.94118em;
+  background-color: $mono200;
+  outline: none;
+  font-size: $font-size;
+  border: 1px solid $mono204;
+  font-family: SpoqaM;
+  vertical-align: middle;
+  &:active,
+  &:focus {
+    border: 1px solid $primary-color;
+  }
+
+  &::placeholder {
+    color: $placeholder-text-color;
+  }
+
+  &.error {
+    border: 1px solid $error-color;
+  }
+
+  &:read-only {
+    border: 1px solid $mono204 !important;
+    color: $mono205;
+    background-color: $mono202;
+  }
+  &:disabled {
+    border: 1px solid $mono202 !important;
+    color: $mono203;
+    background-color: $mono202;
+  }
+}
+
+.large {
+  @include date-range-picker-input($input-large, $font-size-large);
+}
+.medium {
+  @include date-range-picker-input($input-medium, $font-size-medium);
+}
+.small {
+  @include date-range-picker-input($input-small, $font-size-small);
+}
+.x-small {
+  @include date-range-picker-input($input-xsmall, $font-size-xsmall);
+}

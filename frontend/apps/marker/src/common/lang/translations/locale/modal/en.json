@@ -1,0 +1,130 @@
+{
+  "newProject": {
+    "setting": "Setting",
+    "projectName": "Description",
+    "description": "",
+    "dataType": "Data Type",
+    "image": "Image",
+    "text": "Text",
+    "annotationType": "Annotation Tool",
+    "boundingBox": "Bounding Box",
+    "polygon": "Polygon",
+    "workflow": "Workflow",
+    "mobileAvailability": "Mobile Availability",
+    "unavailability": "Unavailable",
+    "availability": "Available",
+    "guideline": "Guideline",
+    "maxByte": "Only PDF and PPT files with max size of 1GB",
+    "addMembers": "Add Members",
+    "textSelectedMembers": "members will be added.",
+    "memberType": "Member Type",
+    "id": "ID",
+    "participatingProject": "Participating Project",
+    "monitoringProject": "Monitoring Project",
+    "connectDataset": "Connect Dataset",
+    "textConnectDataset": "This project will be connected to dataset of Jonathan Flightbase.",
+    "textReadFile": "Files only located in selected folder will be written.",
+    "projectDataType": "Project Data Type",
+    "createClasses": "Create Classes",
+    "class": "Class",
+    "addClass": "Add Class",
+    "property": "Property",
+    "selectedClass": "Selected Class",
+    "singleSelective": "Single-Selective",
+    "multiSelective": "Multi-selective",
+    "option": "Option"
+  },
+  "inputBox": { "className": "Enter Class name" },
+  "selectBox": { "selectTool": "Select a Tool" },
+  "autolabeling": {
+    "selectAutolabelingModel": "Select Autolabeling Model",
+    "select": "Select",
+    "deployment": "Deployment",
+    "owner": "Owner",
+    "resource": "Resource"
+  },
+  "setAutolabeling": {
+    "header": "Set Auto-labeling",
+    "selectDataType": "Data Type",
+    "selectKeepData": "Keep Data",
+    "step1": "Step1. Select Model",
+    "step2": "Step2. Select Class in selected Model",
+    "step3": "Step3. Select Classes to match Model Class",
+    "classPreview": "Classes Preview",
+    "modelClass": "Model Class",
+    "class": "Class",
+    "deploymentName": "Deployment Name"
+  },
+  "stopAutolabeling": {
+    "mainText": "Do you really want to stop running autolabeler?",
+    "subText": "Only autoabeler results that have progressed so far are saved."
+  },
+  "editClasses": {
+    "editClasses": "Edit Classes",
+    "emptyClasses": "No Classes",
+    "emptyProperties": "No Properties"
+  },
+  "exportResults": {
+    "export": "Export",
+    "preview": "Preview",
+    "send": "Send to the connected folder",
+    "folderPath": "Select Extention",
+    "fileName": "File Name",
+    "overwrite": "Overwrite files with the same name"
+  },
+  "addMembers": {
+    "memberType": "Member Type",
+    "id": "ID",
+    "participatingProjects": "Participating Projects",
+    "monitoringProjects": "Monitoring Projects",
+    "selectMembers": "Please Select Members",
+    "noMembers": "No Remaining Members."
+  },
+  "deleteGuideline": {
+    "header": "Do you really want to delete this guideline?",
+    "text": "File Name : Guideline Name"
+  },
+  "editDescription": { "header": "Edit Description" },
+  "connectDataset": {
+    "header": "Connect Dataset",
+    "text": "This project will be connected to dataset of Jonathan Flightbase.\nFiles only located in selected folder will be written.",
+    "precaution": "Precautions for changing folders"
+  },
+  "deleteProject": {
+    "header": "Delete Project",
+    "text": "Deleting this project will lose all project work.\nIf you really want to delete this project, enter the project name below.",
+    "projectName": "Project Name : Project name"
+  },
+  "createMember": {
+    "header": "Create a Member",
+    "password": "Password",
+    "minCharacters": "Enter at least 8 characters",
+    "specialCharacters": "Include the following special characters (!, @, #, $, %, ^, &, *, ?)",
+    "confirmPassword": "Confirm Password",
+    "memo": "Memo"
+  },
+  "editMember": { "header": "Edit a Member", "newPassword": "New Password" },
+  "cancelAssign": {
+    "header": "Do you really want to cancel the assignment?",
+    "text": "When assignment is canceled, all the working history of the data will be deleted."
+  },
+  "assignNewWork": {
+    "number": "No.",
+    "worker": "Worker",
+    "labeling": "Labeling",
+    "review": "Review",
+    "willBeAssigned": "Will be Assigned",
+    "distribution": "Distribution",
+    "autoDistribution": "Auto Distribution",
+    "assigned": "Assigned"
+  },
+  "confirmAssign": {
+    "assignedWork": "of works will be Assigned.",
+    "labelingWork": "Labeling work",
+    "worker": "Worker",
+    "labelingInProgress": "Labeling in progress",
+    "reviewInProgress": "Review in progress",
+    "willBeAssigned": "Will be Assigned",
+    "reviewWork": "Review work"
+  }
+}

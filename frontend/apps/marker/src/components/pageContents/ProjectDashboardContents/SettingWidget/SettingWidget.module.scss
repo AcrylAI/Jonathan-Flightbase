@@ -1,0 +1,33 @@
+@import '@src/styles/color.scss';
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  .top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      color: $blue110;
+    }
+  }
+  .desc {
+    color: $mono205;
+  }
+}
+.widget-container {
+  display: flex;
+  flex-direction: column;
+  .line {
+    height: 1px;
+    background-color: $editor-border-color;
+    margin-bottom: 24px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
+    column-gap: 16px;
+    margin-bottom: 24px;
+  }
+}

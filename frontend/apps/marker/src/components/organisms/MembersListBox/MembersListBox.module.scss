@@ -1,0 +1,141 @@
+@import 'src/styles/color.scss';
+
+.container {
+  background: $mono200;
+  border: 1px solid $mono203;
+  border-radius: 2px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  .inner-container {
+    width: 100%;
+    height: 100%;
+    padding: 12px 8px;
+
+    .container-top-bar {
+      width: 100%;
+      display: flex;
+
+      .top-bar-button {
+        padding: 8px 16px;
+        background: $mono200;
+        border-style: solid;
+        border-color: $mono204;
+        color: $mono205;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        &.select-menu {
+          background: $blue101;
+          border-color: $blue104;
+          color: $blue104;
+          border-width: 1px;
+        }
+      }
+
+      .all-button {
+        border-width: 1px 0 1px 1px;
+        border-radius: 4px 0px 0px 4px;
+        &.select-all {
+          background: $blue101;
+          border-color: $blue104;
+          color: $blue104;
+        }
+      }
+      .left-border {
+        border-left: 1px solid $mono204;
+        &.select-all,
+        &.select-labeling {
+          border-color: $blue104;
+        }
+      }
+      .labeling-button {
+        border-width: 1px 0 1px 0;
+        &.select-labeling {
+          background: $blue101;
+          border-color: $blue104;
+          color: $blue104;
+        }
+        &.no-review-project {
+          border-width: 1px 1px 1px 0;
+          border-radius: 0 4px 4px 0;
+        }
+      }
+      .right-border {
+        border-right: 1px solid $mono204;
+        &.select-labeling,
+        &.select-review {
+          border-color: $blue104;
+        }
+      }
+      .review-button {
+        border-width: 1px 1px 1px 0;
+        border-radius: 0px 4px 4px 0px;
+        &.select-review {
+          background: $blue101;
+          border-color: $blue104;
+          color: $blue104;
+        }
+        &.no-review-project {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+.total-info-button,
+.member-item-box {
+  width: 100%;
+  height: 48px;
+  background: $mono201;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  margin: 8px 0;
+  color: $blue110;
+  margin-right: 8px;
+  cursor: pointer;
+  border: 1px solid $mono201;
+
+  &.active {
+    background: $blue100;
+    border-color: $blue102;
+    border-radius: 2px;
+    color: $blue104;
+    .member-name {
+      color: $blue104;
+    }
+  }
+
+  .member-name {
+    color: $blue110;
+    margin-right: 8px;
+    max-width: calc(100% - 8px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user-status-wrapper {
+    display: flex;
+    &.select-review {
+      flex-direction: row-reverse;
+    }
+
+    .user-status {
+      padding: 4px 8px;
+      border-radius: 2px;
+      margin-right: 4px;
+
+      &.status-labeling {
+        background: $blue101;
+        color: $blue104;
+      }
+      &.status-review {
+        background: $orange401;
+        color: $orange403;
+      }
+    }
+  }
+}

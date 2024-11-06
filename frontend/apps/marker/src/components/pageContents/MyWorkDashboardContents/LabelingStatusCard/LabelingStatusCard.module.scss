@@ -1,0 +1,63 @@
+@import '@src/styles/color.scss';
+
+.first {
+  .status-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .labeling-status {
+      .desc {
+        margin-bottom: 24px;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(48%, auto));
+        column-gap: 16px;
+        row-gap: 16px;
+      }
+    }
+    .review-status {
+      &.blind-contents {
+        position: relative;
+      }
+      .desc {
+        margin-bottom: 24px;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+        column-gap: 16px;
+        row-gap: 16px;
+      }
+    }
+  }
+
+  .blind-background {
+    width: 102%;
+    height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    opacity: 0.85;
+    border-radius: 4px;
+    position: absolute;
+    top: -8px;
+    right: -6px;
+  }
+
+  .blind-text {
+    position: absolute;
+    width: 102%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    top: 6px;
+    right: -6px;
+    p {
+      color: $blue110;
+    }
+  }
+}

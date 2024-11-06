@@ -1,0 +1,37 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.FoldView {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 16px 12px;
+	gap: 12px;
+
+	.head {
+		flex-grow: 1;
+	}
+
+	.foldicon {
+		width: fit-content;
+		min-width: fit-content;
+		max-width: fit-content;
+		height: fit-content;
+		min-height: fit-content;
+		max-height: fit-content;
+		@include Cursor(pointer);
+		color: $editor-weak-icon;
+		transition: rotate 0.2s ease-out;
+
+		&.show {
+			rotate: 180deg;
+		}
+	}
+}
+
+.contents {}

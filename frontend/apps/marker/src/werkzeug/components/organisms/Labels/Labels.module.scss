@@ -1,0 +1,28 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.Labels {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+	color: $blue110;
+	overflow: hidden;
+}
+
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 12px;
+
+	.show {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		@include Cursor(pointer);
+		color: $mono204;
+		margin-right: 12px;
+	}
+}

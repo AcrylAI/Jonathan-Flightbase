@@ -1,0 +1,26 @@
+@import '@src/styles/color.scss';
+.nodata-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow-y: hidden;
+
+  .sub-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .desc {
+      color: $mono205;
+      margin-bottom: 8px;
+    }
+    .btn {
+      color: $blue104;
+      padding: 10px 20px;
+      width: 92px;
+      height: 36px;
+      cursor: pointer;
+    }
+  }
+}

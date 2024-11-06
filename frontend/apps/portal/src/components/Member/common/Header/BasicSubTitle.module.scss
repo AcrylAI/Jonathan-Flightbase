@@ -1,0 +1,15 @@
+@import '~styles/screen.scss';
+
+.basic-sub-title {
+  font-weight: 500;
+  color: #121619;
+  text-align: center;
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    font-size: 14px;
+  }
+}

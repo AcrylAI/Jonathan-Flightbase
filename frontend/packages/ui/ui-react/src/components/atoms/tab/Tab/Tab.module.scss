@@ -1,0 +1,90 @@
+@import 'src/style/color.scss';
+
+.tab {
+  margin: 0;
+  position: relative;
+  .tab-controller {
+    background-color: $new-bg-color;
+    height: 100%;
+    &.jp-dark {
+      background-color: $dark-background-color !important;
+    }
+
+    .btn-area {
+      display: flex;
+      margin: 0;
+      & > li {
+        padding: 0px 13px 0px 13px;
+        display: flex;
+        justify-content: center;
+        height: 28px;
+        font-size: 14px;
+        color: $mono205;
+
+        &:hover {
+          color: $blue104;
+          cursor: pointer;
+        }
+        &.jp-dark {
+          color: $dark-mono201;
+          &:hover {
+            color: $dark-blue100 !important;
+            cursor: pointer;
+          }
+        }
+
+        &.selected-tab {
+          color: $blue104;
+          font-weight: bold;
+          border-bottom: 3px solid $blue104;
+          z-index: 1;
+          &.jp-dark {
+            color: $dark-blue100 !important;
+            border-bottom: 3px solid $dark-blue100 !important;
+            &:hover {
+              color: $dark-blue100 !important;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    position: absolute;
+    background-color: $mono204;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-1px);
+    &.jp-dark {
+      background-color: $dark-mono204 !important;
+    }
+  }
+
+  .child {
+    max-height: 100vh;
+    &.scroll {
+      overflow-y: scroll;
+      overflow-x: scroll;
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-corner {
+        background-color: $new-bg-color;
+        width: 4px;
+        border-radius: 2px;
+      }
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
+    }
+
+    &.jp-dark {
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-corner {
+        background-color: $dark-background-color !important;
+      }
+    }
+  }
+}

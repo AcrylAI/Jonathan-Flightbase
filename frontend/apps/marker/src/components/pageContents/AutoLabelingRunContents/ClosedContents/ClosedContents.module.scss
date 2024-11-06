@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .columns {
+    &.contents,
+    &.data-count {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+    &.data-count {
+      white-space: nowrap;
+    }
+    &.toggle {
+      user-select: none;
+      width: 16px;
+      aspect-ratio: 1;
+      place-content: center;
+      transform: rotate(180deg);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &.active {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .container {
+    justify-content: center;
+    column-gap: 36px;
+  }
+}

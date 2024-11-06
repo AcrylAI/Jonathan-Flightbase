@@ -1,0 +1,11 @@
+@import '@src/styles/color.scss';
+.content-container {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  .title {
+    margin-bottom: 16px;
+  }
+  .desc {
+    color: $mono204;
+  }
+}

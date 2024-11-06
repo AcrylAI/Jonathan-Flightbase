@@ -1,0 +1,41 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=1018
+END=4441
+title=Connectors .each() - iterate over an array of elements
+[CHAPTER]
+TIMEBASE=1/1000
+START=7361
+END=7873
+title=Connectors .its() - get properties on the current subject
+[CHAPTER]
+TIMEBASE=1/1000
+START=7988
+END=8386
+title=Connectors .invoke() - invoke a function on the current subject
+[CHAPTER]
+TIMEBASE=1/1000
+START=8570
+END=8786
+title=Connectors .spread() - spread an array as individual args to callback function
+[CHAPTER]
+TIMEBASE=1/1000
+START=7555
+END=9011
+title=Connectors .then() invokes a callback function with the current subject
+[CHAPTER]
+TIMEBASE=1/1000
+START=10099
+END=10487
+title=Connectors .then() yields the returned value to the next command
+[CHAPTER]
+TIMEBASE=1/1000
+START=10382
+END=10877
+title=Connectors .then() yields the original subject without return
+[CHAPTER]
+TIMEBASE=1/1000
+START=10857
+END=11373
+title=Connectors .then() yields the value yielded by the last Cypress command inside

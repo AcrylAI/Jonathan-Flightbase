@@ -1,0 +1,111 @@
+@import 'src/style/color.scss';
+
+@mixin textarea($height, $font-size) {
+  & > textarea {
+    width: 100%;
+    height: $height;
+    padding: 11px 2.5em 11px 0.94118em;
+    box-sizing: border-box;
+    font-size: $font-size;
+    transition-property: border-color, height, padding-right, color;
+    transition-duration: 0.2s, 0s;
+    outline: none;
+    background: $mono200;
+    color: $normal-text-color;
+    font-family: SpoqaM;
+    border-radius: 4px;
+    border: 1px solid $mono204;
+    resize: none;
+
+    &::placeholder {
+      color: $placeholder-text-color;
+    }
+
+    &:active,
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+    &:read-only {
+      border: 1px solid $mono204 !important;
+      background-color: $mono202;
+      color: $mono205;
+    }
+    &:disabled {
+      border: 1px solid $mono202 !important;
+      color: $mono203;
+      background-color: $mono202;
+    }
+  }
+  &.error {
+    & > textarea {
+      border: 1px solid $red502;
+    }
+  }
+
+  &.jp-dark > textarea {
+    background: $dark-mono208;
+    color: $dark-mono200;
+    font-family: SpoqaR;
+    border: 1px solid $dark-mono203;
+
+    &::placeholder {
+      color: $dark-mono202;
+    }
+
+    &:active,
+    &:focus {
+      border: 1px solid $dark-blue101;
+    }
+    &:read-only {
+      border: 1px solid $dark-mono203 !important;
+      background-color: $dark-mono207;
+      color: $dark-mono201;
+    }
+    &:disabled {
+      border: 1px solid $dark-mono205 !important;
+      background-color: $dark-mono207;
+      color: $dark-mono202;
+    }
+  }
+  &.error {
+    & > textarea {
+      border: 1px solid $dark-red502;
+    }
+  }
+
+  .text-length-box {
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    font-family: SpoqaM;
+    font-size: 12px;
+    color: $mono207;
+    .text-length {
+      color: $primary-color;
+    }
+
+    &.jp-dark {
+      color: $dark-mono201;
+      .text-length {
+        color: $dark-mono200;
+      }
+    }
+  }
+}
+
+.jp {
+  &.textarea {
+    &.large {
+      @include textarea(94px, 16px);
+    }
+    &.medium {
+      @include textarea(84px, 14px);
+    }
+    &.small {
+      @include textarea(64px, 14px);
+    }
+    &.x-small {
+      @include textarea(44px, 12px);
+    }
+  }
+}

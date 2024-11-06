@@ -1,0 +1,108 @@
+@import '~styles/screen';
+@import '~styles/mixins';
+
+// 회원가입 컨테이너
+.register {
+  width: 100%;
+  max-width: 400px;
+  height: fit-content;
+
+  @media (min-width: $desktop) {
+    margin: 6px;
+  }
+
+  @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+    margin: 20px;
+  }
+
+  // 회원가입 해더 박스
+  &__header {
+    &--main {
+      width: 100%;
+
+      @include flexbox(center, center);
+      margin-bottom: 12px;
+    }
+
+    &--sub {
+      width: 100%;
+
+      @include flexbox(center, center);
+      flex-direction: column;
+    }
+
+    margin-bottom: 36px;
+  }
+
+  // 사용자 기본정보
+  &__user-info-box {
+    margin-top: 36px;
+    margin-bottom: 36px;
+
+    .name-box,
+    .username-box,
+    .user-email,
+    .user-password,
+    .security-code-box {
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .notice {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #697077;
+      margin-bottom: 4px;
+    }
+  }
+
+  // 프로필 박스
+  &__profile-box {
+    .profile-title {
+      margin-bottom: 24px;
+    }
+
+    .description {
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: -0.2px;
+      color: #979899;
+      margin-top: 2px;
+
+      @media (min-width: $desktop) {
+        font-size: 12px;
+      }
+
+      @media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__submit-box {
+    margin-bottom: 50px;
+  }
+
+  &__chkbox {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    top: 15px;
+    right: 15px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #b7b8b9;
+
+    margin-bottom: 50px;
+  }
+}
+
+// 각 콘텐츠에서 사용하는 타이틀
+.contentTitle {
+  margin-bottom: 16px;
+}

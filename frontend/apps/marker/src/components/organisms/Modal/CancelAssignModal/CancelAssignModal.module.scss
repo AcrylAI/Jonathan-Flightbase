@@ -1,0 +1,21 @@
+@import '@src/styles/color.scss';
+.cancel-container {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .label {
+    color: $mono206;
+    margin-bottom: 16px;
+  }
+  .desc {
+    color: $mono204;
+    margin-bottom: 32px;
+  }
+  .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+  }
+}

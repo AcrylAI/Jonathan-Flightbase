@@ -1,0 +1,116 @@
+@import 'src/style/color.scss';
+
+.jp.checkbox {
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  .check-container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .combining {
+      font-size: 14px;
+      width: 100%;
+      &.disabled {
+        cursor: default;
+        opacity: 0.2;
+      }
+    }
+
+    /* Hide the browser's default checkbox */
+    & > input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: calc(50%);
+      left: 0;
+      transform: translateY(-50%);
+      height: 18px;
+      width: 18px;
+      background-color: $mono200;
+      border-radius: 2px;
+      border: solid 2px $mono205;
+      box-sizing: border-box;
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 4px;
+        top: 1px;
+        width: 4px;
+        height: 7px;
+        border: solid $mono200;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    .checkmark.jp-dark {
+      background-color: $dark-mono208;
+      border: solid 2px $dark-mono202;
+      &:after {
+        border: solid $dark-mono208;
+        border-width: 0 2px 2px 0;
+      }
+    }
+
+    /* When the checkbox is checked */
+    input:checked ~ .checkmark {
+      background-color: $primary-color;
+      border: solid 2px $primary-color;
+    }
+    input:checked ~ .checkmark.jp-dark {
+      background-color: $dark-blue101;
+      border: solid 2px $dark-blue101 !important;
+    }
+
+    /* When the checkbox is disabled */
+    input:disabled ~ .checkmark {
+      background-color: $mono201;
+      border: solid 2px rgba($mono205, 0.2);
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 4px;
+        top: 1px;
+        width: 4px;
+        height: 7px;
+        border: solid rgba($mono205, 0.2);
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    input:disabled ~ .checkmark.jp-dark {
+      background-color: $dark-mono205;
+      border: solid 2px $dark-mono202 !important;
+      &:after {
+        border: solid $dark-mono202;
+        border-width: 0 2px 2px 0;
+      }
+    }
+
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+}

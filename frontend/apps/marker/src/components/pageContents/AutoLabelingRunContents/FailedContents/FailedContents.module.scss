@@ -1,0 +1,18 @@
+@import '@src/styles/color.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 8px;
+  background-color: $red501;
+  border-radius: 2px;
+  height: 28px;
+  flex-wrap: nowrap;
+  & > img {
+    width: 16px;
+    height: 16px;
+    filter: invert(36%) sepia(78%) saturate(2356%) hue-rotate(332deg)
+      brightness(104%) contrast(94%);
+  }
+}

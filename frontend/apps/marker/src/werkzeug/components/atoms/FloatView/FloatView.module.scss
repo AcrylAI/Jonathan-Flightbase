@@ -1,0 +1,25 @@
+@import "src/styles/color";
+
+.FloatView {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	border-radius: 12px;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+	background-color: $mono200;
+	//padding: 8px;
+}
+
+.animation {
+	transition: opacity ease-out .2s, visibility ease-out .2s;
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+	&.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

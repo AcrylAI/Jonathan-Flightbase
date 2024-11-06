@@ -1,0 +1,10 @@
+@import "src/styles/color";
+
+.FileNavi {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	border-bottom: 1px solid $editor-border-color;
+	justify-content: space-between;
+	padding: 12px 24px;
+}

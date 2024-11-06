@@ -1,0 +1,90 @@
+@use 'sass:math';
+@import 'src/style/color.scss';
+
+@mixin switch-style(
+  $width,
+  $height,
+  $slider-size,
+  $font-size,
+  $start-point,
+  $end-point
+) {
+  display: flex !important;
+  align-items: flex-end;
+  .switch-container {
+    display: flex;
+    cursor: pointer;
+    vertical-align: middle;
+    align-items: center;
+    & > input[type='checkbox'] {
+      display: none;
+      & + span {
+        position: relative;
+        display: inline-block;
+        width: $width;
+        height: $height;
+        border-radius: math.div($height, 2);
+        background-color: $mono204;
+        box-sizing: border-box;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        &:before {
+          display: inline-block;
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 4px;
+          bottom: 4px;
+          width: $slider-size;
+          height: $slider-size;
+          border-radius: 50%;
+          background-color: $mono200;
+          box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+          transform: translateX($start-point) translateY(calc(-50%));
+          transition: left 0.3s;
+        }
+      }
+      &:checked + span {
+        background-color: $primary-color;
+        &:before {
+          transform: translateX($end-point) translateY(-50%);
+        }
+      }
+
+      &:disabled + span {
+        background-color: $mono202;
+        cursor: not-allowed;
+      }
+
+      &:disabled:checked + span {
+        background-color: $blue101 !important;
+      }
+    }
+    .combining {
+      margin-left: 10px;
+      font-size: $font-size;
+    }
+    .combining-left {
+      margin-right: 10px;
+      font-size: $font-size;
+    }
+  }
+}
+
+.jp {
+  &.switch {
+    @include switch-style(36px, 18px, 11px, 14px, 0px, 17px);
+    &.x-large {
+      @include switch-style(64px, 32px, 24px, 24px, 0px, 32px);
+    }
+    &.large {
+      @include switch-style(44px, 22px, 16px, 18px, 0px, 20px);
+    }
+    &.medium {
+      @include switch-style(36px, 18px, 11px, 14px, 0px, 17px);
+    }
+    &.small {
+      @include switch-style(28px, 14px, 8px, 12px, -1px, 13px);
+    }
+  }
+}

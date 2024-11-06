@@ -1,0 +1,90 @@
+@import '@src/styles/color.scss';
+
+.detail {
+  padding: 40px;
+  .header {
+    margin: 0 40px 24px;
+    .title {
+      margin: 0;
+      height: 31px;
+      font-family: SpoqaR;
+      font-size: 24px;
+      color: $mono207;
+    }
+  }
+  .block {
+    background-color: $mono200;
+    padding: 24px 40px 30px;
+    display: flex;
+    flex-direction: row;
+    .more-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      white-space: nowrap;
+      margin-right: 12px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      .label {
+        position: relative;
+        display: flex;
+        width: max-content;
+        flex-direction: row;
+        align-items: center;
+        margin: 6px 4px 6px 0;
+        font-family: SpoqaM;
+        font-size: 16px;
+        color: $blue104;
+        cursor: pointer;
+        .more {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 4px;
+          width: 24px;
+          height: 24px;
+          border: none;
+          border-radius: 50%;
+          box-sizing: border-box;
+          background-color: transparent;
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-bg-color;
+          }
+        }
+        &:hover::after {
+          content: attr(name);
+          position: absolute;
+          top: 0;
+          left: calc(100% + 4px);
+          width: max-content;
+          height: auto;
+          line-height: 1.5;
+          padding: 3px 6px;
+          background: $mono200;
+          font-size: 12px;
+          font-family: SpoqaR;
+          border-radius: 2px;
+          border: 1px solid $mono205;
+          color: $mono206;
+          text-align: center;
+          z-index: 100;
+        }
+      }
+      .count {
+        font-family: SpoqaM;
+        font-size: 16px;
+        height: 21px;
+        color: $mono207;
+        display: flex;
+        flex-direction: column;
+        label {
+          font-family: SpoqaM;
+          padding-right: 4px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

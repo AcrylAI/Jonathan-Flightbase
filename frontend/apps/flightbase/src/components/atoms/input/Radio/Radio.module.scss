@@ -1,0 +1,72 @@
+@import '@src/styles/color.scss';
+
+.radio-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &.margin-item {
+    margin-top: 8px;
+  }
+  .radio-btn {
+    margin-right: 24px;
+    & > input[type='radio'],
+    & > input[type='radio']:checked {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      margin: 0px;
+      margin-right: 8px;
+      vertical-align: bottom;
+    }
+    & > input[type='radio'] {
+      position: relative;
+      border: 2px solid $mono204;
+    }
+    & > input[type='radio']:checked {
+      border: 2px solid $primary-color;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 9px;
+        height: 9px;
+        transform: translate(-50%, -50%);
+        background-color: $primary-color;
+        border-radius: 100%;
+      }
+    }
+    & > input[type='radio']:disabled {
+      background: $mono202 !important;
+      border-color: $mono203 !important;
+    }
+    &.disabled {
+      & > input {
+        background: $mono202 !important;
+        border-color: $mono203 !important;
+      }
+      & > span {
+        color: $mono203;
+      }
+    }
+    & > span {
+      display: inline-block;
+      font-size: 16px;
+      font-family: SpoqaM;
+      color: $mono207;
+      line-height: 1.2;
+      vertical-align: middle;
+      & > img {
+        vertical-align: middle;
+      }
+    }
+
+    .label-icon {
+      vertical-align: middle;
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import '@src/styles/color.scss';
+
+$selectionBorder: 1px solid $blue104 !important;
+$normalBorder: 1px solid $mono204;
+
+.toggle-btn {
+  .btn {
+    display: flex;
+    & > div {
+      &:not(:nth-child(2)) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 12px;
+      }
+    }
+    .line {
+      &::after {
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: $mono204;
+        content: '';
+      }
+      &.select {
+        &::after {
+          background-color: $blue104;
+        }
+      }
+    }
+    .left,
+    .right {
+      cursor: pointer;
+      border-top: $normalBorder;
+      border-bottom: $normalBorder;
+      &.select {
+        color: $blue104;
+        background-color: $blue101;
+        border-top: $selectionBorder;
+        border-bottom: $selectionBorder;
+      }
+    }
+    .left {
+      border-radius: 4px 0 0 4px;
+      border-left: $normalBorder;
+      &.select {
+        border-left: $selectionBorder;
+      }
+    }
+    .right {
+      border-radius: 0 4px 4px 0;
+      border-right: $normalBorder;
+      &.select {
+        border-right: $selectionBorder;
+      }
+    }
+  }
+}

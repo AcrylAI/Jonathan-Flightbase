@@ -1,0 +1,2 @@
+SERVER_PORT=9000
+VITE_REACT_APP_MARKER_API=http://dev.marker.acryl.ai/api/

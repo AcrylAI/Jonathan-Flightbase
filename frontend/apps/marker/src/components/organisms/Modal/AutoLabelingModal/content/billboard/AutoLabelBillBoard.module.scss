@@ -1,0 +1,11 @@
+@import '@src/styles/color.scss';
+.billboard-container {
+  background-color: $blue100;
+  padding: 12px;
+  .value {
+    color: $blue104;
+  }
+  .desc {
+    margin-left: 4px;
+  }
+}

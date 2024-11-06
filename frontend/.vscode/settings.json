@@ -1,0 +1,9 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "scssFormatter.singleQuote": true
+  // "eslint.workingDirectories": ["packages/ui/ui-react"]
+}

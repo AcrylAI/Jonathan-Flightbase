@@ -1,0 +1,31 @@
+.title {
+  margin: 0;
+}
+
+.message {
+  margin: 10px 0 20px;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 24px;
+  margin-top: auto;
+  .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > button {
+      margin-left: 12px;
+    }
+  }
+  .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > button {
+      margin-right: 12px;
+    }
+  }
+}

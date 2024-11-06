@@ -1,0 +1,123 @@
+@import '@src/styles/color.scss';
+
+.info-box {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 36px;
+  border-radius: 8px;
+  border: 1px solid $card-border-color;
+  background-color: $mono200;
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 1px solid $card-border-color;
+    .type {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 13px;
+      .type-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
+      }
+      .type-label {
+        height: 18px;
+        font-size: 14px;
+        color: $mono207;
+      }
+    }
+    .service-title {
+      font-family: SpoqaB;
+      font-size: 24px;
+      color: $mono207;
+    }
+    .service-description {
+      display: inline-block;
+      font-family: SpoqaM;
+      font-size: 16px;
+      color: $mono205;
+      margin: 12px 30px 21px 0;
+      word-break: break-word;
+      min-height: 57px;
+      box-sizing: border-box;
+    }
+    .meta {
+      display: flex;
+      flex-direction: row;
+      font-size: 16px;
+      align-items: center;
+      label {
+        font-family: SpoqaM;
+        color: $mono205;
+        margin-right: 12px;
+        height: 19px;
+      }
+      span {
+        color: $mono207;
+        height: 19px;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    padding-left: 30px;
+    .service-info {
+      display: flex;
+      flex-direction: column;
+      .meta {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        label {
+          font-family: SpoqaM;
+          color: $mono205;
+          margin-bottom: 1px;
+        }
+        span {
+          color: $mono207;
+          margin-bottom: 10px;
+          height: 19px;
+        }
+      }
+    }
+    .copyright-box {
+      display: flex;
+      flex-direction: column;
+      font-size: 11px;
+      font-family: SpoqaM;
+      color: $mono205;
+      word-break: break-word;
+      margin-top: 4px;
+      .copyright-element {
+        margin-top: 6px;
+        .highlight {
+          display: block;
+          font-family: SpoqaB;
+          color: $mono205;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .info-box {
+    flex-direction: column;
+    .left {
+      border-right: none;
+      border-bottom: 1px solid $card-border-color;
+      padding-bottom: 24px;
+    }
+    .right {
+      padding-left: 0;
+      padding-top: 24px;
+      .workspace-info .meta:last-child > span {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

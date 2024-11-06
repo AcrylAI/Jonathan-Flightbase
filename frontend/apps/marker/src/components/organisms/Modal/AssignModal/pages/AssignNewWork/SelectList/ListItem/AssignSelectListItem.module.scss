@@ -1,0 +1,189 @@
+@import '@src/styles/color.scss';
+.list-item-container {
+  display: flex;
+  height: 52px;
+  background-color: $mono201;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 100%;
+  .no {
+    width: 36px;
+    color: $mono205;
+    margin-left: 8px;
+  }
+  .select-item {
+    border: 1px solid $mono203;
+    width: 434px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px;
+    border-radius: 2px;
+    color: $mono206;
+    background-color: rgba(255, 255, 255, 0.881);
+    position: relative;
+
+    cursor: pointer;
+    .worker {
+      display: flex;
+      width: 214px;
+    }
+    .labeling {
+      color: $mono205;
+      width: 80px;
+    }
+    .review {
+      color: $mono205;
+      width: 80px;
+    }
+    .arrow {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      transition: all 0.3s ease-in-out;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+    .select-list-container {
+      display: flex;
+      position: fixed;
+      top: -500;
+      flex-direction: column;
+      background-color: #fff;
+      width: calc(100% + 4px);
+      height: 192px;
+      visibility: hidden;
+      opacity: 0;
+      padding-bottom: 16px;
+      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+      z-index: 104;
+      overflow-y: scroll;
+      transition: opacity 0.15s ease-in-out;
+      &.visible {
+        visibility: visible;
+        opacity: 1;
+      }
+      .header {
+        display: flex;
+        padding: 8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        color: $mono204;
+        .worker {
+        }
+        .labeling {
+          color: $mono204;
+        }
+        .review {
+          color: $mono204;
+        }
+      }
+      .list::-webkit-scrollbar {
+        width: 3px;
+      }
+      .list {
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .select-list-item-container {
+          display: flex;
+          padding: 8px;
+
+          .worker {
+            display: flex;
+            margin-right: 2px;
+            align-items: center;
+          }
+
+          &.clear {
+            &:hover {
+              background-color: $mono203;
+              cursor: pointer;
+            }
+            .worker {
+              color: $mono206;
+            }
+            .labeling {
+              color: $mono205;
+            }
+            .review {
+              color: $mono205;
+            }
+          }
+
+          &.dimmed {
+            color: $mono201;
+            .worker {
+              color: $mono203;
+            }
+            .labeling {
+              color: $mono203;
+            }
+            .review {
+              color: $mono203;
+            }
+          }
+        }
+      }
+    }
+  }
+  .assign-input {
+    background-color: #fff;
+    border: 1px solid $mono203;
+    width: 96px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 2px;
+    padding: 8px;
+    .arrow {
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      margin-bottom: 1px;
+      img {
+        width: 10px;
+        height: 7px;
+      }
+      .up {
+        cursor: pointer;
+      }
+      .down {
+        cursor: pointer;
+      }
+    }
+    .assigned {
+      display: flex;
+      overflow-x: hidden;
+      input {
+        border: none;
+        font-family: MarkerFont;
+        color: $mono206;
+        font-size: 14px;
+        font-weight: 500;
+        height: 21px;
+        line-height: 21px;
+      }
+    }
+  }
+  .delete {
+    cursor: pointer;
+    user-select: none;
+
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+}

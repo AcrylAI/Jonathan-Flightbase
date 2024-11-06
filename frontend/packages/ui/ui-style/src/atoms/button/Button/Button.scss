@@ -1,0 +1,628 @@
+@import 'src/style/color.scss';
+
+@mixin button-style($height, $border-radius, $font-size, $icon-size) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: $height;
+  border: 1px solid $mono200;
+  padding: 0 1.41176em;
+  border-radius: $border-radius;
+  background-color: $mono200;
+  height: $height;
+  vertical-align: middle;
+  text-decoration: none;
+  // line-height: $height;
+  color: $mono205;
+  font-size: $font-size;
+  font-family: SpoqaM;
+  box-sizing: border-box !important;
+  overflow: hidden;
+  -webkit-appearance: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 0.2s;
+  &.icon-left {
+    padding: 0 1.41176em 0 0.9em;
+    .icon {
+      margin-right: 6px;
+    }
+  }
+  &.icon-right {
+    padding: 0 0.9em 0 1.41176em;
+    .icon {
+      margin-left: 6px;
+    }
+  }
+  &.padding-none {
+    padding: 0 0.75em 0 0.75em;
+  }
+  .icon {
+    vertical-align: middle;
+    width: $icon-size;
+    height: $icon-size;
+  }
+  &:hover,
+  &:focus,
+  &.active:not(.loading) {
+    background-color: $mono202;
+    border: 1px solid $mono202;
+    text-decoration: none;
+    color: $mono205;
+  }
+
+  &.primary {
+    position: relative;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: $mono200;
+    &:hover {
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
+      color: $mono200;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $blue107;
+    }
+    &.loading {
+      // color: transparent;
+      color: rgba($mono200, 0.4);
+      &:after {
+        border-top-color: rgba($mono200, 0.4);
+        border-left-color: $mono200;
+        border-right-color: rgba($mono200, 0.4);
+        border-bottom-color: rgba($mono200, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono202;
+      border: 1px solid $mono202;
+      color: $mono200;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+      }
+    }
+
+    &.jp-dark {
+      background-color: $dark-blue101;
+      border: 1px solid $dark-blue101;
+      color: $dark-mono200;
+      // font-family: SpoqaT;
+      &:hover {
+        background-color: $dark-blue100;
+        border: 1px solid $dark-blue100;
+        color: $dark-mono200;
+      }
+      &.disabled,
+      &:disabled {
+        background-color: $dark-mono204;
+        border: 1px solid $dark-mono204;
+        color: $dark-mono202;
+        cursor: default;
+        pointer-events: none;
+        .icon {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  &.primary-reverse {
+    position: relative;
+    background-color: $mono200;
+    color: $primary-color;
+    &:hover:not(.loading) {
+      background-color: rgba($blue104, 0.08);
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $blue107;
+    }
+    &.loading {
+      color: rgba($primary-color, 0.4);
+      &::after {
+        border-top-color: rgba($blue104, 0.4);
+        border-left-color: $blue104;
+        border-right-color: rgba($blue104, 0.4);
+        border-bottom-color: rgba($blue104, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+        filter: grayscale(1);
+      }
+    }
+    &.jp-dark {
+      background-color: $dark-mono208 !important;
+      border: 1px solid $dark-mono208 !important;
+      color: $dark-blue101 !important;
+
+      &:hover {
+        background-color: $dark-mono208 !important;
+        border: 1px solid $dark-mono208 !important;
+        color: $dark-blue100 !important;
+      }
+      &.disabled,
+      &:disabled {
+        background-color: $dark-mono204 !important;
+        border: 1px solid $dark-mono204 !important;
+        color: $dark-mono202 !important;
+        cursor: default;
+        pointer-events: none;
+        .icon {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  &.primary-light {
+    position: relative;
+    background-color: $blue101;
+    border: 1px solid $blue101;
+    color: $primary-color;
+    &:hover {
+      background-color: $blue102;
+      border: 1px solid $blue102;
+      color: $primary-color;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $blue107;
+    }
+    &.loading {
+      color: rgba($primary-color, 0.4);
+      &:after {
+        border-top-color: rgba($blue104, 0.4);
+        border-left-color: $blue104;
+        border-right-color: rgba($blue104, 0.4);
+        border-bottom-color: rgba($blue104, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+        filter: grayscale(1);
+      }
+      &:hover {
+        background-color: $mono201 !important;
+        border: 1px solid $mono201 !important;
+        color: $mono203 !important;
+      }
+    }
+  }
+
+  &.red {
+    position: relative;
+    background-color: $red503;
+    border: 1px solid $red503;
+    color: $mono200;
+    &:hover {
+      background-color: $red503;
+      border: 1px solid $red503;
+      color: $mono200;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $red503;
+    }
+    &.loading {
+      // color: transparent;
+      color: rgba($mono200, 0.4);
+      &:after {
+        border-top-color: rgba($mono200, 0.4);
+        border-left-color: $mono200;
+        border-right-color: rgba($mono200, 0.4);
+        border-bottom-color: rgba($mono200, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono202;
+      border: 1px solid $mono202;
+      color: $mono200;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+      }
+    }
+    &.jp-dark {
+      background-color: $dark-red502;
+      border: 1px solid $dark-red502;
+      color: $dark-mono200;
+      &.disabled,
+      &:disabled {
+        background-color: $dark-mono204;
+        border: 1px solid $dark-mono204;
+        color: $dark-mono202;
+        cursor: default;
+        pointer-events: none;
+        .icon {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  &.red-reverse {
+    position: relative;
+    background-color: $mono200;
+    color: $red503;
+    &:hover:not(.loading) {
+      background-color: rgba($red503, 0.08);
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $red503;
+    }
+    &.loading {
+      color: rgba($red503, 0.4);
+      &::after {
+        border-top-color: rgba($red503, 0.4);
+        border-left-color: $red503;
+        border-right-color: rgba($red503, 0.4);
+        border-bottom-color: rgba($red503, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+        filter: grayscale(1);
+      }
+      &:hover {
+        background-color: $mono201 !important;
+        border: 1px solid $mono201 !important;
+        color: $mono203 !important;
+      }
+    }
+  }
+
+  &.red-light {
+    position: relative;
+    background-color: $red501;
+    border: 1px solid $red501;
+    color: $red503;
+    &:hover {
+      background-color: rgba($red503, 0.3);
+      border: 1px solid transparent;
+      color: $red503;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $red503;
+    }
+    &.loading {
+      color: rgba($red503, 0.4);
+      &:after {
+        border-top-color: rgba($red503, 0.4);
+        border-left-color: $red503;
+        border-right-color: rgba($red503, 0.4);
+        border-bottom-color: rgba($red503, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+        filter: grayscale(1);
+      }
+      &:hover {
+        background-color: $mono201 !important;
+        border: 1px solid $mono201 !important;
+        color: $mono203 !important;
+      }
+    }
+  }
+
+  &.secondary {
+    position: relative;
+    background-color: $mono205;
+    border: 1px solid $mono205;
+    color: $mono200;
+    &:hover:not(.loading) {
+      background-color: $mono204;
+      border: 1px solid $mono204;
+      color: $mono200;
+    }
+    &.loading {
+      color: rgba($mono200, 0.4);
+      &::after {
+        border-top-color: rgba($mono200, 0.4);
+        border-left-color: $mono200;
+        border-right-color: rgba($mono200, 0.4);
+        border-bottom-color: rgba($mono200, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono202;
+      border: 1px solid $mono202;
+      color: $mono200;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+      }
+      &:hover {
+        background-color: $mono202 !important;
+        border: 1px solid $mono202 !important;
+        color: $mono200 !important;
+      }
+    }
+  }
+
+  &.gray {
+    position: relative;
+    background-color: $mono203;
+    border: 1px solid $mono203;
+    color: $mono205;
+
+    &:hover {
+      background-color: $mono203;
+      border: 1px solid $mono203;
+      color: $mono205;
+    }
+    &.loading {
+      color: rgba($mono205, 0.4);
+      &::after {
+        border-top-color: rgba($mono200, 0.4);
+        border-left-color: $mono200;
+        border-right-color: rgba($mono200, 0.4);
+        border-bottom-color: rgba($mono200, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+      }
+      &:hover {
+        background-color: $mono201 !important;
+        border: 1px solid $mono201 !important;
+        color: $mono203 !important;
+      }
+    }
+  }
+
+  &.none-border {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: $mono205;
+    &:hover:not(.loading) {
+      background-color: $mono203;
+      border: none;
+      color: $mono205;
+    }
+    &.loading {
+      color: rgba($mono205, 0.4);
+      &::after {
+        border-top-color: rgba($mono205, 0.4);
+        border-left-color: $mono205;
+        border-right-color: rgba($mono205, 0.4);
+        border-bottom-color: rgba($mono205, 0.4);
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: $mono201;
+      border: 1px solid $mono201;
+      color: $mono203;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        opacity: 0.3;
+      }
+      &:hover {
+        background-color: $mono201 !important;
+        border: 1px solid $mono201 !important;
+        color: $mono203 !important;
+      }
+    }
+    &.jp-dark {
+      color: $dark-mono200;
+      &:hover:not(.loading) {
+        background-color: $dark-mono205;
+        border: none;
+        color: $dark-mono201;
+      }
+      &.disabled,
+      &:disabled {
+        background-color: transparent;
+        border: none;
+        color: $dark-mono200;
+        cursor: default;
+        pointer-events: none;
+        .icon {
+          opacity: 0.3;
+        }
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.text-underline {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: $dark-blue100;
+    &:hover:not(.loading) {
+      text-decoration-line: underline;
+      text-underline-position: under;
+    }
+    &.loading {
+      color: rgba($dark-blue100, 0.4);
+      &::after {
+        border-top-color: rgba($dark-mono202, 0.4);
+        border-left-color: $dark-mono202;
+        border-right-color: rgba($dark-mono202, 0.4);
+        border-bottom-color: rgba($dark-mono202, 0.4);
+      }
+      cursor: default;
+      .icon {
+        opacity: 0.3;
+      }
+    }
+    &.disabled,
+    &:disabled {
+      background-color: transparent;
+      border: none;
+      color: $dark-mono202;
+      cursor: default;
+      pointer-events: none;
+      .icon {
+        filter: grayscale(1);
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.loading::after {
+    content: '';
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    left: calc(50% - 0.75em);
+    top: calc(50% - 0.75em);
+    border: 0.15em solid transparent;
+    border-top-color: $mono202;
+    border-left-color: $mono200;
+    border-right-color: $mono202;
+    border-bottom-color: $mono202;
+    border-radius: 50%;
+    animation: button-anim 0.7s linear infinite;
+    opacity: 1;
+  }
+
+  img {
+    height: $height;
+  }
+}
+
+.jp {
+  position: relative;
+  &.btn {
+    @include button-style(36px, 4px, 14px, 20px);
+    &.large {
+      @include button-style(44px, 4px, 16px, 20px);
+    }
+    &.medium {
+      @include button-style(36px, 4px, 14px, 20px);
+    }
+    &.small {
+      @include button-style(30px, 4px, 13px, 18px);
+    }
+    &.x-small {
+      @include button-style(24px, 4px, 12px, 16px);
+    }
+
+    &:not(.loading)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    &:hover:not(:disabled):not(.loading):not(.text-underline)::after,
+    &:focus:not(:active):not(.loading):not(.text-underline)::after {
+      animation: ripple 1s ease-out;
+    }
+  }
+}
+
+@keyframes button-anim {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}

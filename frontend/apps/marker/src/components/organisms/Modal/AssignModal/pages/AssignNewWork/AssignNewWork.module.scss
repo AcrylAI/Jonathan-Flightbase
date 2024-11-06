@@ -1,0 +1,13 @@
+.new-work-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .reviewer-warning {
+    display: none;
+    &.visible {
+      display: flex;
+    }
+    margin-left: 4px;
+  }
+}

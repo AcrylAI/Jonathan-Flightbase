@@ -1,0 +1,83 @@
+@import "src/styles/color";
+@import "src/styles/common";
+
+.IssueMaker {
+	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 8px;
+	min-width: 280px;
+	max-width: 280px;
+	width: 280px;
+	height: fit-content;
+	padding: 16px;
+}
+
+.exit {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	@include Cursor(pointer);
+}
+
+.inputs {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: 100%;
+
+	.comment {
+		width: 100%;
+		max-height: 64px;
+		min-height: 64px;
+		height: 64px;
+		padding: 0;
+		border: none;
+		resize: none;
+		font-family: SpoqaR, sans-serif;
+		color: $mono206;
+		font-size: 14px;
+		line-height: 1.5em;
+		margin-top: 6px;
+
+		&::placeholder {
+			color: $mono204;
+		}
+	}
+}
+
+.actions {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+	height: 24px;
+	min-height: 24px;
+
+	.actions-box {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		gap: 8px;
+	}
+}
+
+.resolve-button {
+	color: $mono205;
+	@include Cursor(pointer);
+	padding: 4px 8px;
+
+	&:hover {
+		background-color: rgba(45, 118, 248, 0.08);
+	}
+}
+
+.setup-button {
+	color: $blue104;
+	@include Cursor(pointer);
+
+	&.deactive {
+		color: $mono204;
+		@include Cursor(default);
+	}
+}

@@ -1,0 +1,76 @@
+@import '../modal.scss';
+
+.sub-title {
+  height: 22px;
+  font-family: SpoqaB;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $mono207;
+  margin: 0 0 8px 0;
+}
+
+.parameter-box {
+  padding-bottom: 24px;
+  border-bottom: solid 1px $mono205;
+  .parameter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .label {
+      height: 18px;
+      font-family: SpoqaM;
+      font-size: 14px;
+      color: $mono205;
+      margin-right: 8px;
+    }
+    .value {
+      height: 18px;
+      font-family: SpoqaB;
+      font-size: 14px;
+      color: $mono207;
+      margin-right: 12px;
+    }
+  }
+}
+
+.chart {
+  padding: 24px 0 48px;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.log {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  .download {
+    margin-bottom: 8px;
+  }
+}
+
+.row {
+  padding: 10px 32px 12px 16px;
+  font-size: 14px;
+  font-family: SpoqaM;
+  color: $mono207;
+  line-height: 1.38;
+  border-radius: 8px;
+  border: solid 1px $mono202;
+  background-color: $mono202;
+  word-break: break-word;
+  white-space: pre-wrap;
+  p {
+    margin: 0;
+  }
+}
+
+.ellipsis {
+  text-align: left;
+  padding: 25px;
+  line-height: 1;
+  font-weight: bold;
+}

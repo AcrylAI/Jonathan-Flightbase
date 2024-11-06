@@ -1,0 +1,18 @@
+@import '~styles/screen';
+
+.text-box {
+	width: 100%;
+
+	.text {
+		font-weight: bold;
+		color: #242424;
+
+		@media (min-width: $desktop) {
+			font-size: 16px;
+		}
+
+		@media (min-width: $phone) and (max-width: calc(#{$desktop} - 1px)) {
+			font-size: 14px;
+		}
+	}
+}

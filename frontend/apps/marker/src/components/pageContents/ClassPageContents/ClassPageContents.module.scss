@@ -1,0 +1,19 @@
+.class-page-container {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+  overflow-y: scroll;
+  .loading-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .class-card-container {
+    min-width: 280px;
+    width: 35%;
+  }
+  .prop-card-container {
+    width: 65%;
+  }
+}

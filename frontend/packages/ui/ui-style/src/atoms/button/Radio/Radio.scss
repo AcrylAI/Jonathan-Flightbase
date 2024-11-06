@@ -1,0 +1,100 @@
+@import 'src/style/color.scss';
+
+.jp.radio {
+  & > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    & > li {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0px;
+      }
+      & > input[type='radio'],
+      & > input[type='radio']:checked {
+        cursor: pointer;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+      }
+      & > input[type='radio'] {
+        position: relative;
+        border: 2px solid $mono204;
+        &.jp-dark {
+          border: 2px solid $dark-mono202;
+          background-color: $dark-mono208;
+        }
+      }
+      & > input[type='radio']:checked {
+        border: 2px solid $primary-color;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 9px;
+          height: 9px;
+          transform: translate(-50%, -50%);
+          background-color: $primary-color;
+          border-radius: 100%;
+        }
+      }
+      & > input[type='radio']:checked.jp-dark {
+        border: 2px solid $dark-blue101;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 9px;
+          height: 9px;
+          transform: translate(-50%, -50%);
+          background-color: $dark-blue101;
+          border-radius: 100%;
+        }
+      }
+      & > input[type='radio']:disabled {
+        cursor: auto;
+        background: $mono202 !important;
+        border-color: $mono203 !important;
+        &::after {
+          background-color: $mono203 !important;
+        }
+      }
+      & > input[type='radio']:disabled.jp-dark {
+        cursor: auto;
+        background: $dark-mono205 !important;
+        border-color: $dark-mono202 !important;
+        &::after {
+          background-color: $dark-mono202 !important;
+        }
+      }
+      & > label {
+        cursor: pointer;
+        font-family: SpoqaR;
+        font-size: 16px;
+        margin-left: 4px;
+        color: $mono207;
+        .label-icon {
+          transform: translateY(4px);
+          width: 17px;
+          height: 17px;
+        }
+        &.disabled {
+          color: $mono203;
+        }
+        &.jp-dark {
+          color: $dark-mono200;
+          &.disabled {
+            color: $dark-mono202;
+          }
+        }
+      }
+    }
+  }
+}

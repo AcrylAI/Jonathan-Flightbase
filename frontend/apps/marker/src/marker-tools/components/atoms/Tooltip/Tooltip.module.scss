@@ -1,0 +1,63 @@
+.tooltip-eventbinder {
+  width: fit-content;
+  height: fit-content;
+}
+
+.tooltip-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+
+  z-index: 100;
+  pointer-events: auto;
+  transform-origin: center top;
+  margin-top: 0;
+  border-radius: 8px;
+
+  padding: 10px 12px;
+  background-color: #32363e;
+  color: #fafbfc;
+
+  &.n {
+    transform: translate(0, 0);
+    .tooltip-pointer {
+      left: 50%;
+      bottom: -9px;
+      transform: translateX(-50%);
+    }
+  }
+  &.s {
+    transform: translate(0, 0);
+    .tooltip-pointer {
+      left: 50%;
+      top: -9px;
+      transform: translateX(-50%);
+    }
+  }
+  &.w {
+    transform: translate(0, 0);
+    .tooltip-pointer {
+      right: -7px;
+    }
+  }
+  &.e {
+    transform: translate(0, 0);
+    .tooltip-pointer {
+      top: 50%;
+      transform: translateY(-50%);
+      left: -7px;
+    }
+  }
+}
+
+.tooltip-pointer {
+  color: #32363e;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 14px;
+  height: 13px;
+  position: absolute;
+}

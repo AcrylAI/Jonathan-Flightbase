@@ -1,0 +1,238 @@
+@import '@src/styles/color.scss';
+.dataset-container {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 8px 16px;
+  color: $mono205;
+
+  width: 100%;
+  border-bottom: 1px solid $mono203;
+  cursor: pointer;
+  position: relative;
+
+  &.loading {
+    background: linear-gradient(
+      110deg,
+      $blue100 30%,
+      #fff 38%,
+      #fff 40%,
+      $blue100 48%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: loading 1.5s infinite;
+  }
+  &.selected {
+    background-color: $blue100;
+    color: $blue104;
+    border-bottom: 1px solid $blue102;
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 32px;
+
+    .path {
+      color: $blue110;
+      margin-left: 8px;
+    }
+    .permission {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 24px;
+      border-radius: 16px;
+      background-color: $blue101;
+      padding: 6px 8px;
+      color: $blue104;
+      margin-left: 16px;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: $mono204;
+    .folder-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        user-select: none;
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+      }
+    }
+    .file-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      .icon {
+        user-select: none;
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+      }
+    }
+    .arrow {
+      width: 20px;
+      height: 20px;
+      user-select: none;
+      //margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease-in-out;
+
+      cursor: pointer;
+      &.expendable {
+        transform: rotate(0deg);
+      }
+      &.active {
+        transform: rotate(180deg);
+      }
+      &.inactive {
+        cursor: none;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.sub-path-container::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+.sub-path-container {
+  margin-top: 8px;
+  //margin-bottom: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  overflow-y: auto;
+
+  &.active {
+    border-bottom: 0.5px solid $mono203;
+    display: table;
+  }
+}
+
+.sub-path-wrapper {
+  &.selected {
+    .req-container {
+      border: 1px solid $blue102;
+      background-color: $blue100;
+      color: $blue104;
+    }
+  }
+
+  &.loading {
+    .req-container {
+      background: linear-gradient(
+        110deg,
+        $blue100 30%,
+        #fff 38%,
+        #fff 40%,
+        $blue100 48%
+      );
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      animation: loading 1.5s infinite;
+    }
+  }
+
+  cursor: pointer;
+  .req-container {
+    transition: all 0.15s ease-in-out;
+    border: 1px solid transparent;
+    min-width: 500px;
+    border-radius: 2px;
+    color: $mono205;
+    display: flex;
+    justify-content: space-between;
+    background-color: $mono201;
+    flex-direction: row;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    height: 32px;
+    .right-side {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: $blue110;
+      .arrow-container {
+        .arrow {
+          transition: transform 0.2s ease-in-out;
+          user-select: none;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transform: rotate(-90deg);
+          &.no-child {
+            visibility: hidden;
+          }
+          &.active {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+    .left-side {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .folder-count {
+        display: flex;
+        .icon {
+          display: flex;
+          user-select: none;
+          align-items: center;
+          margin-right: 4px;
+        }
+        .count {
+          color: $mono204;
+        }
+      }
+      .file-count {
+        align-items: center;
+        display: flex;
+        .icon {
+          display: flex;
+          user-select: none;
+          align-items: center;
+          margin-right: 4px;
+        }
+        .count {
+          color: $mono204;
+        }
+      }
+    }
+  }
+}
+.path-list {
+  display: none;
+  &.active {
+    display: flex;
+  }
+}
+
+.sub-path-list-container {
+  width: 100%;
+}
+
+@keyframes loading {
+  100% {
+    background-position: -100% 0;
+  }
+}

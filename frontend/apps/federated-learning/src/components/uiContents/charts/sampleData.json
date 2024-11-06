@@ -1,0 +1,395 @@
+{
+  "stackedColumnChart": [
+    {
+      "label": "person",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "bicycle",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "car",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "motorcycle",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "airplane",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "bus",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "train",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "truck",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "boat",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "traffic light",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "fire hydrant",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "stop sign",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "parking meter",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "bench",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "bird",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "cat",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "dog",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "horse",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "sheep",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "cow",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "elephant",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "bear",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    },
+    {
+      "label": "zebra",
+      "client_name1": 2.8,
+      "client_name2": 2.9,
+      "client_name3": 2.4,
+      "client_name4": 0.3,
+      "client_name5": 0.9,
+      "client_name6": 0.5
+    },
+    {
+      "label": "giraffe",
+      "client_name1": 2.5,
+      "client_name2": 2.5,
+      "client_name3": 2.1,
+      "client_name4": 1,
+      "client_name5": 0.8,
+      "client_name6": 0.4
+    },
+    {
+      "label": "backpack",
+      "client_name1": 2.6,
+      "client_name2": 2.7,
+      "client_name3": 2.2,
+      "client_name4": 0.5,
+      "client_name5": 0.4,
+      "client_name6": 0.3
+    }
+  ],
+  "columnChart": [
+    { "label": "person", "count": 1034 },
+    { "label": "bicycle", "count": 19 },
+    { "label": "car", "count": 200 },
+    { "label": "motorcycle", "count": 28 },
+    { "label": "airplane", "count": 11 },
+    { "label": "bus", "count": 27 },
+    { "label": "train", "count": 18 },
+    { "label": "truck", "count": 39 },
+    { "label": "boat", "count": 26 },
+    { "label": "traffic light", "count": 57 },
+    { "label": "fire hydrant", "count": 5 },
+    { "label": "stop sign", "count": 6 },
+    { "label": "parking meter", "count": 6 },
+    { "label": "bench", "count": 36 },
+    { "label": "bird", "count": 38 },
+    { "label": "cat", "count": 20 },
+    { "label": "dog", "count": 17 },
+    { "label": "horse", "count": 35 },
+    { "label": "sheep", "count": 29 },
+    { "label": "cow", "count": 44 },
+    { "label": "elephant", "count": 41 },
+    { "label": "bear", "count": 6 },
+    { "label": "zebra", "count": 30 },
+    { "label": "giraffe", "count": 25 },
+    { "label": "backpack", "count": 32 },
+    { "label": "umbrella", "count": 31 },
+    { "label": "handbag", "count": 54 },
+    { "label": "tie", "count": 19 },
+    { "label": "suitcase", "count": 25 },
+    { "label": "frisbee", "count": 32 },
+    { "label": "skis", "count": 31 },
+    { "label": "snowboard", "count": 54 },
+    { "label": "sports ball", "count": 19 },
+    { "label": "kite", "count": 53 },
+    { "label": "baseball bat", "count": 6 },
+    { "label": "baseball glove", "count": 13 },
+    { "label": "skateboard", "count": 19 },
+    { "label": "surfboard", "count": 21 },
+    { "label": "tennis racket", "count": 23 },
+    { "label": "bottle", "count": 90 },
+    { "label": "wine glass", "count": 45 },
+    { "label": "cup", "count": 79 },
+    { "label": "fork", "count": 9 },
+    { "label": "knife", "count": 34 },
+    { "label": "spoon", "count": 18 },
+    { "label": "bowl", "count": 77 },
+    { "label": "banana", "count": 25 },
+    { "label": "apple", "count": 9 },
+    { "label": "sandwich", "count": 19 },
+    { "label": "orange", "count": 19 },
+    { "label": "broccoli", "count": 51 },
+    { "label": "carrot", "count": 81 },
+    { "label": "hot dog", "count": 6 },
+    { "label": "pizza", "count": 24 },
+    { "label": "donut", "count": 45 },
+    { "label": "cake", "count": 27 },
+    { "label": "chair", "count": 152 },
+    { "label": "couch", "count": 26 },
+    { "label": "potted plant", "count": 32 },
+    { "label": "bed", "count": 6 },
+    { "label": "dining table", "count": 62 },
+    { "label": "toilet", "count": 20 },
+    { "label": "tv", "count": 39 },
+    { "label": "laptop", "count": 18 },
+    { "label": "mouse", "count": 11 },
+    { "label": "remote", "count": 23 },
+    { "label": "keyboard", "count": 18 },
+    { "label": "cell phone", "count": 36 },
+    { "label": "microwave", "count": 6 },
+    { "label": "oven", "count": 13 },
+    { "label": "toaster", "count": 0 },
+    { "label": "sink", "count": 21 },
+    { "label": "refrigerator", "count": 16 },
+    { "label": "book", "count": 72 },
+    { "label": "clock", "count": 32 },
+    { "label": "vase", "count": 16 },
+    { "label": "scissors", "count": 5 },
+    { "label": "teddy bear", "count": 8 },
+    { "label": "hair drier", "count": 3 },
+    { "label": "toothbrush", "count": 7 }
+  ],
+  "pieChart": [
+    {
+      "label": "client_name1",
+      "ratio": 0.1
+    },
+    {
+      "label": "client_name2",
+      "ratio": 0.2
+    },
+    {
+      "label": "client_name3",
+      "ratio": 0.3
+    },
+    {
+      "label": "client_name4",
+      "ratio": 0.1
+    },
+    {
+      "label": "client_name5",
+      "ratio": 0.3
+    }
+  ],
+  "donutChart": [
+    {
+      "label": "client_name1",
+      "count": 100
+    },
+    {
+      "label": "client_name2",
+      "count": 200
+    },
+    {
+      "label": "client_name3",
+      "count": 300
+    },
+    {
+      "label": "client_name4",
+      "count": 100
+    },
+    {
+      "label": "client_name5",
+      "count": 200
+    },
+    {
+      "label": "client_name6",
+      "count": 300
+    },
+    {
+      "label": "client_name7",
+      "count": 100
+    },
+    {
+      "label": "client_name8",
+      "count": 200
+    },
+    {
+      "label": "client_name9",
+      "count": 300
+    },
+    {
+      "label": "client_name10",
+      "count": 100
+    },
+    {
+      "label": "client_name11",
+      "count": 200
+    },
+    {
+      "label": "client_name12",
+      "count": 300
+    },
+    {
+      "label": "client_name13",
+      "count": 100
+    },
+    {
+      "label": "client_name14",
+      "count": 200
+    },
+    {
+      "label": "client_name15",
+      "count": 300
+    }
+  ]
+}

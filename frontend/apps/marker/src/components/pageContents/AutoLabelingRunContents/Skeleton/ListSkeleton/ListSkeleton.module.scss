@@ -1,0 +1,114 @@
+@import '../Skeleton.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  overflow: hidden;
+  .list {
+    display: flex;
+    align-items: center;
+    border: 1px solid $mono203;
+    height: 88px;
+    .list-left {
+      height: 100%;
+      width: 104px;
+      border-right: 1px solid $mono203;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > div {
+        position: relative;
+        width: 24px;
+        aspect-ratio: 1;
+        place-content: center;
+        @include animation();
+        @include expression-box();
+      }
+    }
+
+    .list-center {
+      height: 100%;
+      border-right: 1px solid $mono203;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      justify-content: center;
+      width: 352px;
+      padding: 24px 46px 28px 46px;
+      & > div {
+        height: 12px;
+        @include expression-box();
+        &:nth-child(1) {
+          position: relative;
+          width: 72px;
+          @include animation();
+        }
+        &:nth-child(2) {
+          position: relative;
+          width: 242px;
+          @include animation();
+        }
+      }
+    }
+
+    .list-right {
+      display: grid;
+      grid-template-columns: 14fr 1fr;
+      column-gap: 16px;
+      padding: 24px 40px 28px 40px;
+      .column {
+        width: 100%;
+        &.left {
+          display: flex;
+          flex-direction: column;
+          row-gap: 16px;
+          .top {
+            display: flex;
+            justify-content: space-between;
+            & > div {
+              height: 12px;
+              width: 72px;
+              position: relative;
+              @include expression-box();
+              @include animation();
+            }
+          }
+          .bottom {
+            height: 12px;
+            position: relative;
+            @include expression-box();
+            @include animation();
+          }
+        }
+        &.right {
+          height: 12px;
+          width: 72px;
+          height: 40px;
+          position: relative;
+          @include expression-box();
+          @include animation();
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .container {
+    .list {
+      position: relative;
+      .list-left {
+        position: absolute;
+        padding: 4px 8px;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: auto;
+        align-items: flex-start;
+        border-right: 1px solid $mono203;
+        border-bottom: 1px solid $mono203;
+      }
+    }
+  }
+}

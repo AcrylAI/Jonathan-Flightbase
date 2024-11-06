@@ -1,0 +1,58 @@
+/** ================================================================================================
+ * Color Code
+ ================================================================================================ */
+
+// Blue
+$blue100: #f5f7fb;
+$blue101: #dee9ff;
+$blue102: #c8dbfd;
+$blue103: #93baff;
+$blue104: #2d76f8;
+$blue105: #164abe;
+$blue106: #002f77;
+$blue107: #042659;
+$blue108: #3babff;
+
+// Mono
+$mono200: #ffffff;
+$mono201: #f9fafb;
+$mono202: #f0f0f0;
+$mono203: #dbdbdb;
+$mono204: #c1c1c1;
+$mono205: #747474;
+$mono206: #3e3e3e;
+$mono207: #121619;
+
+// Yellow
+$yellow301: #fff8d9;
+$yellow302: #ffea53;
+$yellow303: #ffc500;
+$yellow304: #ffab0e;
+
+// Orange
+$orange401: #fff0e4;
+$orange402: #ffab31;
+$orange403: #ff7a00;
+
+// Red
+$red501: #ffe6e5;
+$red502: #fa4e57;
+$red503: #d91a0c;
+
+// Lime
+$lime601: #e3fcee;
+$lime602: #02e366;
+$lime603: #00c775;
+$lime604: #439f6e;
+
+// Frequently used color
+$primary-color: $blue104;
+$background-color: $blue100;
+$title-color: $mono207;
+$normal-text-color: $mono207;
+$sub-text-color: $mono205;
+$placeholder-text-color: $mono203;
+$disable-color: $mono203;
+$error-color: $red502;
+$caution-color: $yellow303;
+$hover-bg-color: rgba($blue104, 0.08);

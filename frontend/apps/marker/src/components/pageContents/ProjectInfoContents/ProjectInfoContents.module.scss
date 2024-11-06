@@ -1,0 +1,42 @@
+@import 'src/styles/color.scss';
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-contents-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contents-left-section {
+    height: 700px;
+    @media (max-width: 1200px) {
+      height: fit-content;
+    }
+  }
+
+  .contents-right-section {
+    width: 100%;
+    height: 700px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.guide-container-header {
+  display: flex;
+  align-items: center;
+
+  .guide-type-desc {
+    margin-left: 12px;
+    color: $mono204;
+  }
+}

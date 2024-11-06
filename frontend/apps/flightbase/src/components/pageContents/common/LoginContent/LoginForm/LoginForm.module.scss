@@ -1,0 +1,228 @@
+@import '@src/styles/color.scss';
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 7.5vw;
+  .login-inner-box {
+    box-sizing: border-box;
+    .welcome {
+      color: $primary-color;
+      font-size: 2.6vw;
+      font-family: SpoqaM;
+      margin-bottom: 6px;
+      text-align: center;
+      height: 44px;
+    }
+
+    .margin-box {
+      width: 100%;
+      height: 36px;
+    }
+
+    .notice-box {
+      width: 100%;
+      margin-bottom: 6px;
+      min-height: 48px;
+      .notice {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        background-color: rgba($yellow302, 0.4);
+        padding: 6px;
+        box-sizing: border-box;
+        text-align: center;
+        pre {
+          margin: 0;
+          font-family: SpoqaM;
+          font-size: 14px;
+          color: $mono207;
+        }
+      }
+    }
+
+    .login-input {
+      width: 100%;
+      margin-bottom: 12px;
+
+      &[name='otp'],
+      &[name='user_name'],
+      &[name='password'] {
+        position: relative;
+        height: 56px;
+        padding: 8px 16px 8px 56px;
+        font-size: 16px;
+        font-weight: 500;
+        color: $mono207;
+        border: 1px solid $mono204;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        &[name='user_name'] {
+          text-transform: lowercase;
+          &::placeholder {
+            text-transform: none;
+          }
+
+          &:focus:not(:read-only) {
+            padding-left: 55px !important;
+            border: solid 2px $primary-color;
+          }
+          &:read-only {
+            background-color: $mono202 !important;
+          }
+        }
+
+        &[name='otp'],
+        &[name='password'] {
+          letter-spacing: 3px;
+          margin-bottom: 12px;
+          padding-right: 50px;
+
+          &:focus {
+            padding-left: 55px !important;
+            border: solid 2px $primary-color;
+          }
+        }
+      }
+    }
+
+    .user-input {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      .user-ico {
+        position: absolute;
+        background: url(@src/static/images/icon/ic-users.svg);
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        z-index: 1;
+        background-size: 22px;
+        top: 18px;
+        left: 18px;
+      }
+    }
+
+    .password-input {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      .password-ico {
+        position: absolute;
+        background: url(@src/static/images/icon/ic-lock.svg);
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+        background-size: 26px;
+        top: 14px;
+        left: 16px;
+      }
+      .show-hide-btn {
+        position: absolute;
+        top: 16px;
+        left: calc(100% - 48px);
+        width: 36px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        > img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .message {
+      min-height: 29px;
+      color: $error-color;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .btn-row-box {
+      display: flex;
+      gap: 10px;
+      .login-btn {
+        color: $mono200;
+        background-color: $primary-color;
+        height: 56px;
+        font-size: 24px;
+        border-radius: 4px;
+        border: none;
+        width: 100%;
+        font-family: SpoqaM;
+        padding: 0 24px;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+      .half-btn {
+        font-size: 18px;
+        word-break: keep-all;
+        &.datascope {
+          background-color: $blue108;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login-inner-box {
+      padding: 0;
+      .welcome {
+        display: none;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .login-inner-box {
+      padding: 0;
+      max-width: unset;
+      width: 100%;
+      .welcome {
+        display: none;
+      }
+      .notice-box {
+        min-height: unset;
+        &.show {
+          min-height: 48px;
+        }
+        .notice {
+          pre {
+            font-size: 10px;
+          }
+        }
+      }
+      .message {
+        font-size: 14px;
+      }
+      .login-btn {
+        height: 48px;
+      }
+
+      .login-input {
+        &[name='otp'],
+        &[name='user_name'],
+        &[name='password'] {
+          margin-bottom: 10px;
+          font-size: 14px;
+          padding: 4px 16px 4px 56px;
+          height: 48px;
+        }
+      }
+      .password-input {
+        .show-hide-btn {
+          top: 12px !important;
+        }
+      }
+    }
+  }
+}

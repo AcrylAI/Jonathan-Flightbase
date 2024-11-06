@@ -1,0 +1,212 @@
+server {
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+	server_name flightbase.replaceIp;
+        client_max_body_size 10000M;
+
+	root /var/www/html;
+
+        ssl_certificate /jfbcore/jf-bin/https-ssl.crt;
+        ssl_certificate_key /jfbcore/jf-bin/https-ssl.key;
+
+
+	location / {
+		proxy_pass http://replaceIp:8000;
+		proxy_http_version  1.1;
+		proxy_cache_bypass  $http_upgrade;
+		proxy_set_header 	Upgrade           $http_upgrade;
+		proxy_set_header 	Connection        "upgrade";
+		proxy_set_header 	Host              replaceIp;
+		proxy_set_header 	X-Real-IP         $remote_addr;
+		proxy_set_header 	X-Forwarded-For   $proxy_add_x_forwarded_for;
+		proxy_set_header 	X-Forwarded-Proto $scheme;
+		proxy_set_header 	X-Forwarded-Host  $host;
+		proxy_set_header 	X-Forwarded-Port  $server_port;
+                proxy_hide_header Access-Control-Allow-Origin;
+                add_header 				'Access-Control-Allow-Origin' '*';
+	}
+
+        location /jupyter {
+                proxy_pass http://replaceIp:30000;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+        }
+
+	location /marker-api/ {
+		proxy_pass http://replaceIp:9191/;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+	}
+
+	location /marker-image/ {
+		proxy_pass http://replaceIp:9090/image/;
+                proxy_http_version  1.1;
+		proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+	}
+
+	location /marker-thumbnail/ {
+                proxy_pass http://replaceIp:9090/thumb/;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+        }
+
+	location ^~/marker {
+                proxy_pass http://replaceIp:20000/;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+        }
+}
+
+server {
+        listen 80;
+        listen [::]:80;
+        server_name flightbase.replaceIp;
+
+        return 301 https://flightbase.replaceIp;
+}
+
+
+
+server {
+        listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+        server_name marker.replaceIp;
+        client_max_body_size 10000M;
+
+        ssl_certificate /jfbcore/jf-bin/https-ssl.crt;
+        ssl_certificate_key /jfbcore/jf-bin/https-ssl.key;
+
+        root /var/www/html;
+
+        location / {
+                proxy_pass http://replaceIp:25007;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+                proxy_hide_header Access-Control-Allow-Origin;
+                add_header 'Access-Control-Allow-Origin' '*';
+        }
+
+	location /api/ {
+		proxy_pass http://replaceIp:9191/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade	$http_upgrade;
+		proxy_set_header Connection	"upgrade";
+		proxy_set_header Host		replaceIp;
+	}
+	
+	location /image/ {
+		proxy_pass http://replaceIp:9091/image/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade	$http_upgrade;
+		proxy_set_header Connection	"upgrade";
+		proxy_set_header Host		replaceIp;
+		
+                proxy_hide_header Access-Control-Allow-Origin;
+                add_header 'Access-Control-Allow-Origin' '*';
+	}
+
+	location /thumb/ {
+		proxy_pass http://replaceIp:9091/thumb/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade	$http_upgrade;
+		proxy_set_header Connection	"upgrade";
+		proxy_set_header Host		replaceIp;
+		
+                proxy_hide_header Access-Control-Allow-Origin;
+                add_header 'Access-Control-Allow-Origin' '*';
+
+
+	}
+}
+
+server {
+        listen 80;
+        listen [::]:80;
+        server_name marker.replaceIp;
+
+        return 301 https://marker.replaceIp;
+}
+
+server {
+        listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+        server_name federated.replaceIp;
+        client_max_body_size 10000M;
+
+        root /var/www/html;
+
+        ssl_certificate /jfbcore/jf-bin/https-ssl.crt;
+        ssl_certificate_key /jfbcore/jf-bin/https-ssl.key;
+
+        location / {
+                proxy_pass http://replaceIp:10000;
+                proxy_http_version  1.1;
+                proxy_cache_bypass  $http_upgrade;
+                proxy_set_header Upgrade           $http_upgrade;
+                proxy_set_header Connection        "upgrade";
+                proxy_set_header Host              replaceIp;
+                proxy_set_header X-Real-IP         $remote_addr;
+                proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Host  $host;
+                proxy_set_header X-Forwarded-Port  $server_port;
+                proxy_hide_header Access-Control-Allow-Origin;
+                add_header 'Access-Control-Allow-Origin' '*';
+        }
+}
+
+server {
+        listen 80;
+        listen [::]:80;
+        server_name federated.replaceIp;
+
+        return 301 https://federated.replaceIp;
+}

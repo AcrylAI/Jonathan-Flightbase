@@ -1,0 +1,31 @@
+@import '@src/styles/color.scss';
+
+.detail {
+  padding: 48px;
+  .header {
+    margin: 0 40px 24px;
+    .title {
+      margin: 0;
+      height: 31px;
+      font-family: SpoqaR;
+      font-size: 24px;
+      color: $mono207;
+    }
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    background-color: $mono200;
+    padding: 24px 40px 30px;
+    .block-title {
+      font-family: SpoqaR;
+      font-size: 18px;
+      color: $mono207;
+    }
+    .user-list {
+      font-family: SpoqaM;
+      font-size: 16px;
+      color: $mono207;
+    }
+  }
+}

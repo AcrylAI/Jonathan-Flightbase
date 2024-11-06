@@ -1,0 +1,45 @@
+@import '@src/styles/color.scss';
+
+.training-auth {
+  margin: 0 0 32px 0;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      color: $mono207;
+      font-size: 16px;
+      font-family: SpoqaB;
+    }
+    .btn-wrap {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0;
+    // border-bottom: 1px solid $mono203;
+    .item {
+      display: flex;
+      align-items: center;
+      .label {
+        width: 150px;
+        color: $mono207;
+        font-family: SpoqaM;
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      .value {
+        flex: 1;
+        color: $mono206;
+        font-family: SpoqaR;
+        font-size: 14px;
+        display: block;
+        min-height: 20px;
+      }
+    }
+  }
+}

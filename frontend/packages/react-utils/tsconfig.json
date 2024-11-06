@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "./build/types",
+    "jsx": "react-jsx",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
+    "typeRoots": ["./typings"]
+  },
+  "include": [".", "src/**/*", "./typings", "declaration.d.ts"]
+}

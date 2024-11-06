@@ -1,0 +1,129 @@
+@import 'src/styles/color.scss';
+
+.container {
+  background-color: $blue100;
+  width: 100%;
+}
+
+.filter-search-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.filter-button-container {
+  .filter-button-wrapper {
+    width: 100%;
+    display: flex;
+
+    .button-title {
+      color: $mono205;
+    }
+
+    .triple-button {
+      display: flex;
+      margin: 8px 12px 0 0;
+      cursor: pointer;
+      .left-border,
+      .right-border {
+        width: 0px;
+        border: 1px solid $mono204;
+        border-width: 0 0.5px 0 0;
+      }
+      .left-border {
+        &.active,
+        &.hover {
+          border-color: $blue104;
+        }
+      }
+      .right-border {
+        &.active,
+        &.hover {
+          border-color: $blue104;
+        }
+      }
+      .filter-button {
+        &.hover {
+          background: $blue101;
+          color: $blue104;
+          border-color: $blue104;
+        }
+      }
+      .all-button {
+        background: $mono200;
+        color: $mono205;
+        border: 1px solid $mono204;
+        border-radius: 4px 0 0 4px;
+        border-width: 1px 0 1px 1px;
+        padding: 8px 14px;
+        // &.hover {
+        //   background: $blue101;
+        //   color: $blue104;
+        //   border-color: $blue104;
+        // }
+        &.activation {
+          &.selected {
+            background: $blue104;
+            color: $mono200;
+            border-color: $blue104;
+          }
+        }
+        &.authority {
+          &.selected {
+            background: $blue104;
+            color: $mono200;
+            border-color: $blue104;
+          }
+        }
+      }
+
+      .active-button,
+      .owner-button {
+        background: $mono200;
+        border: 1px solid $mono204;
+        border-width: 1px 0 1px 0;
+        padding: 8px 14px;
+        color: $mono205;
+        &.selected {
+          background: $blue104;
+          color: $mono200;
+          border-color: $blue104;
+        }
+      }
+
+      .inactive-button,
+      .invited-button {
+        background: $mono200;
+        border: 1px solid $mono204;
+        border-radius: 0 4px 4px 0;
+        border-width: 1px 1px 1px 0;
+        padding: 8px 14px;
+        color: $mono205;
+        &.selected {
+          background: $blue104;
+          color: $mono200;
+          border-color: $blue104;
+        }
+      }
+    }
+  }
+}
+
+.no-project-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .no-project-text-wrapper {
+    margin-top: 14px;
+    > p {
+      line-height: 150%;
+      color: $mono205;
+      text-align: center;
+    }
+  }
+}

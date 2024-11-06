@@ -1,0 +1,23 @@
+@import '@src/styles/color.scss';
+.loadingContainer {
+  width: 100%;
+  height: calc(100% - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noModelSection {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  & > img {
+    margin-bottom: 20px;
+  }
+  & > span {
+    margin-bottom: 10px;
+    color: $mono205;
+  }
+}

@@ -1,0 +1,98 @@
+@import '@src/styles/color.scss';
+
+@mixin delete-badge() {
+  margin-left: 4px;
+  border-radius: 16px;
+  background-color: $mono202;
+  padding: 3px 6px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  overflow: hidden;
+  background-color: $mono200;
+  .list-container {
+    .list {
+      position: relative;
+      height: 88px;
+      border: 1px solid $mono203;
+      width: 100%;
+
+      .red-mark {
+        position: absolute;
+        background-color: $red502;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: calc(100% + 1px);
+        transform: translate(-1px, -0.5px);
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        z-index: 1;
+      }
+
+      .item-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .count {
+          height: 100%;
+          width: 88px;
+          border-right: 1px solid $mono203;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .subjects {
+          height: 100%;
+          border-right: 1px solid $mono203;
+          display: flex;
+          justify-content: center;
+          width: 352px;
+        }
+        .information {
+          display: grid;
+          padding: 26px 40px;
+          &.closed,
+          &.progress {
+            width: calc(100% - (352px + 80px));
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .contents {
+    position: relative;
+    .list-container {
+      .list {
+        .item-container {
+          .count {
+            position: absolute;
+            padding: 4px 8px;
+            top: 0;
+            left: 0;
+            width: 36px;
+            height: auto;
+            align-items: flex-start;
+            border-right: 1px solid $mono203;
+            border-bottom: 1px solid $mono203;
+          }
+          .subjects {
+            width: 272px;
+          }
+          .information {
+            &.closed,
+            &.progress {
+              width: calc(100% - 272px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

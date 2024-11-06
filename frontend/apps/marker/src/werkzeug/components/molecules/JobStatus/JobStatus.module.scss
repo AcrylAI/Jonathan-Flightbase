@@ -1,0 +1,29 @@
+@import "src/styles/color";
+
+.JobStatus {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 12px;
+	padding: 16px 12px;
+	border-bottom: 1px solid $editor-border-color;
+	width: 100%;
+	height: fit-content;
+	min-height: fit-content;
+	max-height: fit-content;
+}
+
+.box {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	overflow: hidden;
+	gap: 4px;
+	flex-grow: 1;
+	color: $editor-weak-color;
+}
+
+.file, .project {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 4px;
+}

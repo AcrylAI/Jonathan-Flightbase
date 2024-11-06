@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <path d="M0 0H24V24H0z" transform="translate(-770 -306) translate(770 306)"/>
+                <g transform="translate(-770 -306) translate(770 306)">
+                    <rect width="24" height="24" fill="#2c76f8" rx="12"/>
+                    <text fill="#FFF" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold">
+                        <tspan x="9" y="17">1</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

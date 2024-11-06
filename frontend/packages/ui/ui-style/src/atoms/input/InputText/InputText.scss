@@ -1,0 +1,142 @@
+@import 'src/style/color.scss';
+
+// Text Input Style
+@mixin left-icon($display) {
+  display: $display;
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+}
+
+@mixin text-input($height, $fontSize, $borderRadius) {
+  display: block;
+  position: relative;
+
+  .close-btn {
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 34px);
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    padding: 0px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &.exist-right-icon {
+      left: calc(100% - 52px);
+    }
+  }
+
+  .disabled-left-icon {
+    @include left-icon(none);
+  }
+
+  .visible-left-icon {
+    @include left-icon(block);
+  }
+
+  .right-icon {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  & > input {
+    width: 100%;
+    height: $height;
+    box-sizing: border-box;
+    line-height: 1.2em;
+    font-size: $fontSize;
+    outline: none;
+    background: $mono200;
+    transition-property: border-color, height, padding-right, color;
+    transition-duration: 0.2s, 0s;
+    vertical-align: middle;
+    color: $normal-text-color;
+    font-family: SpoqaM;
+    border-radius: $borderRadius;
+    border: 1px solid $mono204;
+    &.normal-padding {
+      padding: 8px 0.94118em 8px 0.94118em;
+    }
+    &.left-padding {
+      padding: 8px 0.94118em 8px 2.3em;
+    }
+    &.right-padding {
+      padding: 8px 2.4em 8px 0.94118em;
+    }
+    &.left-right-padding {
+      padding: 8px 2.4em 8px 2.3em;
+    }
+    &.right-double-padding {
+      padding: 8px 4.8em 8px 0.94118em;
+    }
+    &.left-padding-right-double-padding {
+      padding: 8px 4.8em 8px 2.3em;
+    }
+    &.lowercase {
+      &::placeholder {
+        text-transform: none;
+      }
+      text-transform: lowercase;
+    }
+    &:active,
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+    &::placeholder {
+      color: $placeholder-text-color;
+    }
+    &:read-only {
+      border: 1px solid $mono204 !important;
+      color: $mono205;
+      background-color: $mono202;
+    }
+    &:disabled {
+      border: 1px solid $mono202 !important;
+      color: $mono203;
+      background-color: $mono202;
+    }
+  }
+  &.error > input {
+    border: 1px solid $red502;
+  }
+  &.jp-dark > input {
+    border: 1px solid $dark-mono202 !important;
+    color: $dark-mono200 !important;
+    background-color: $dark-mono208 !important;
+    &::placeholder {
+      color: $dark-mono202;
+    }
+    &:read-only {
+      border: 1px solid $mono204;
+      color: $dark-mono201 !important;
+      background-color: $dark-mono207 !important;
+    }
+  }
+}
+
+.jp {
+  &.input {
+    @include text-input(44px, 16px, 4px);
+    &.large {
+      @include text-input(44px, 16px, 4px);
+    }
+    &.medium {
+      @include text-input(36px, 14px, 4px);
+    }
+    &.small {
+      @include text-input(30px, 14px, 4px);
+    }
+    &.x-small {
+      @include text-input(24px, 12px, 4px);
+    }
+  }
+}

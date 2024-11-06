@@ -1,0 +1,229 @@
+@import '@src/styles/color.scss';
+
+.content {
+  .title-box {
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $mono204;
+  }
+  .hps-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $mono200;
+    border: 1px solid $card-border-color;
+    border-radius: 12px;
+    .name-box {
+      padding: 28px 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        background-color: #fff1dc;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .label {
+        font-family: SpoqaB;
+        font-size: 24px;
+        color: $mono207;
+      }
+    }
+    .info-box {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-left: 1px solid $card-border-color;
+      padding: 24px 40px;
+      grid-gap: 14px;
+      .info-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px 0 0;
+        min-width: 240px;
+        box-sizing: border-box;
+        li {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          line-height: 1;
+          margin-bottom: 14px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .label {
+            font-size: 14px;
+            font-family: SpoqaM;
+            color: $mono205;
+            width: 88px;
+            margin-right: 24px;
+            white-space: nowrap;
+          }
+          .value {
+            flex: 1;
+            font-size: 14px;
+            font-family: SpoqaM;
+            color: $mono206;
+          }
+        }
+      }
+      .btn-box {
+        display: flex;
+        flex-direction: row;
+        button:not(last-child) {
+          margin-right: 12px;
+        }
+      }
+    }
+
+    @media (max-width: 573px) {
+      .info-box {
+        border-left: 0;
+        border-top: 1px solid $card-border-color;
+      }
+    }
+  }
+  .hps-container {
+    margin-top: 20px;
+    .tab-container {
+      margin-top: 48px;
+      margin-bottom: 36px;
+    }
+    .search-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      min-height: 36px;
+      max-width: 100%;
+      flex-wrap: wrap;
+      .filter-search {
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        margin-bottom: 20px;
+        .search {
+          display: flex;
+          flex-direction: row;
+          .job-menu-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .job-menu-left {
+              display: flex;
+            }
+            .job-menu-right {
+              display: flex;
+              & > div:first-child {
+                width: 178px;
+              }
+              & > div:last-child {
+                margin-left: 8px;
+              }
+            }
+            @media (max-width: 768px) {
+              justify-content: center;
+              align-items: flex-end;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+    .contents-container {
+      .list-container {
+        min-width: 1000px;
+        @media (max-width: 1366px) {
+          min-width: 820px;
+        }
+      }
+      .loading-box {
+        display: flex;
+        justify-content: center;
+      }
+      .empty-box {
+        display: flex;
+        flex-direction: row;
+        padding: 36px 88px 0;
+        .left-box {
+          max-width: 480px;
+          display: flex;
+          flex-direction: column;
+          margin-right: 32px;
+          .title {
+            font-size: 36px;
+            font-family: SpoqaB;
+            color: $mono207;
+            margin-bottom: 30px;
+          }
+          .description {
+            font-size: 13px;
+            font-family: SpoqaR;
+            color: $mono206;
+            word-break: keep-all;
+          }
+          .img {
+            width: 400px;
+            height: 400px;
+            margin-top: -44px;
+            margin-left: -53px;
+          }
+        }
+        .right-box {
+          flex: 1;
+        }
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 24px 0;
+          .left-box {
+            text-align: center;
+            margin-right: 0;
+            .description {
+              margin-bottom: 24px;
+            }
+            .img {
+              display: none;
+            }
+          }
+          .right-box {
+            flex: 1;
+            > div {
+              align-items: center;
+            }
+          }
+        }
+      }
+      .no-result {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        > div {
+          color: $mono204 !important;
+        }
+      }
+    }
+    .btn-box {
+      margin: 0 12px 12px 0;
+      display: flex;
+      button {
+        margin-right: 12px;
+      }
+    }
+  }
+}

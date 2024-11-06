@@ -1,0 +1,6 @@
+.footer-button-container {
+  display: flex;
+  & > button {
+    margin-left: 5px;
+  }
+}

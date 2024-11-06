@@ -1,0 +1,326 @@
+@import 'src/styles/color.scss';
+
+.dataTable {
+  overflow-x: visible !important;
+  min-width: 840px;
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  .rdt_TableHeader {
+    display: none !important;
+  }
+
+  &.active {
+    .rdt_Table {
+      .rdt_TableHead {
+        height: 148px;
+      }
+    }
+  }
+
+  .rdt_Table {
+    .rdt_TableHead {
+      display: grid;
+      height: 48px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      transition: height 0.2s linear;
+      z-index: 60;
+      .rdt_TableHeadRow {
+        font-family: MarkerFont;
+        background-color: $blue100;
+        min-height: 48px;
+        border-bottom: 1px solid $mono202;
+        word-break: keep-all;
+      }
+      .rdt_TableCol {
+        padding-right: 10px;
+        padding-left: 10px;
+        .rdt_TableCol_Sortable {
+          overflow: unset !important;
+          width: auto;
+          height: auto;
+          & > * {
+            font-size: 14px;
+            font-weight: bold;
+            color: $mono206;
+          }
+        }
+      }
+    }
+    .rdt_TableBody {
+      .rdt_TableRow {
+        height: 48px;
+        min-height: 48px;
+        border-bottom: 1px solid $mono202 !important;
+        .rdt_TableCell {
+          padding: 13px 10px;
+          font-family: MarkerFont;
+          font-size: 14px;
+          user-select: none;
+          font-weight: 500;
+          color: $mono207;
+          .preview-link {
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            white-space: normal;
+            &:hover {
+              text-decoration: underline;
+              color: $primary-color;
+              cursor: pointer;
+            }
+          }
+          & > div {
+            font-family: MarkerFont;
+            font-size: 14px;
+            font-weight: 500;
+            color: $mono207;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            white-space: normal;
+            &.disabled {
+              color: $mono205;
+            }
+          }
+        }
+        //&:hover,
+        //&:active,
+        //&:focus,
+        &.bthuyP {
+          background-color: $hover-bg-color;
+          outline: 1px solid $hover-bg-color !important;
+        }
+      }
+      .rdt_TableCol {
+        .rdt_TableCol_Sortable {
+          div {
+            font-weight: bold;
+            line-height: 1.57;
+            color: $mono205;
+          }
+        }
+      }
+      .rdt_ExpanderRow {
+        background-color: $mono201;
+      }
+    }
+  }
+}
+
+.rdt_Pagination {
+  border-top: none;
+  font-size: 14px;
+  font-family: MarkerFont;
+  background-color: transparent !important;
+  select {
+    font-family: MarkerFont;
+  }
+}
+
+.btn-box {
+  display: inline-flex;
+  position: relative;
+  bottom: 44px;
+  > button {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .btn-box {
+    bottom: 0;
+  }
+}
+
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 18px;
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+.table-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+}
+
+.table-icon-marker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $blue101;
+  border-radius: 4px;
+  border: none;
+  width: 96px;
+  height: 30px;
+  cursor: pointer;
+  box-sizing: border-box;
+  .marker-logo {
+    width: auto;
+    height: 14px;
+  }
+  .right {
+    width: 10px;
+    height: 10px;
+  }
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+.headerExpand-container {
+  margin: 20px 15px;
+  .first-content {
+    margin-bottom: 20px;
+    .selectCancel {
+      border: 0;
+      height: 14px;
+      left: 2532px;
+      top: 478px;
+      font-family: MarkerFont;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+      align-items: center;
+      color: $blue104;
+      background-color: transparent;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @mixin buttonStyle() {
+    width: 158px;
+    height: 32px;
+    box-shadow: none;
+    border-style: solid;
+    font-weight: 500;
+    font-family: MarkerFont;
+    font-style: normal;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .clicked-left-button {
+    @include buttonStyle();
+    background: $blue101;
+    color: $blue104;
+    border: 1px solid $blue104;
+    border-radius: 4px 0px 0px 4px;
+  }
+  .no-clicked-left-button {
+    @include buttonStyle();
+    background: $mono200;
+    border-color: $mono204;
+    color: $mono204;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  .clicked-right-button {
+    @include buttonStyle();
+    background: $blue101;
+    color: $blue104;
+    border: 1px solid $blue104;
+    border-radius: 0px 4px 4px 0px;
+  }
+  .no-clicked-right-button {
+    @include buttonStyle();
+    color: $mono204;
+    background: $mono200;
+    border-color: $mono204;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  .clicked-center-button {
+    @include buttonStyle();
+    background: $blue101;
+    color: $blue104;
+    border: 1px solid $blue104;
+    border-radius: 0;
+  }
+  .no-clicked-center-button {
+    @include buttonStyle();
+    color: $mono204;
+    background: $mono200;
+    border-color: $mono204;
+    border-width: 1px;
+    border-radius: 0;
+  }
+  .text-label {
+    width: 26px;
+    height: 16px;
+    left: 413px;
+    top: 54px;
+    font-family: MarkerFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $mono205;
+    margin-right: 8px;
+  }
+  .status-label {
+    margin-left: 30px;
+  }
+  .info-text {
+    width: 393px;
+    height: 14px;
+    font-family: MarkerFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    align-items: center;
+    color: $mono206;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}
+.spinnerArea {
+  height: 480px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//._mk_datatable-view .rdt_Table .rdt_TableBody .rdt_TableRow {
+//  .rdt_TableCell:nth-of-type(3) > div:hover {
+//    cursor: pointer;
+//    text-decoration: underline;
+//  }
+//}

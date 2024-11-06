@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/packages/**/node_modules
+/apps/**/node_modules
+/utils/**/node_modules
+/apps/**/build
+/packages/**/dist
+/packages/**/dev
+/packages/**/build
+/packages/**/storybook-static
+/.pnp
+.pnp.js
+packages-lock.json
+
+# testing
+/coverage
+/testing.config.js
+
+# production
+/build
+/packages/**/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*npm-debug.log*
+*yarn-debug.log*
+*yarn-error.log*
+
+.env
+/configs/app-config/config-local
+.idea
+
+# yarn 3 ignore
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+install-state.gz

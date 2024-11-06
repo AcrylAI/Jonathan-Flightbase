@@ -1,0 +1,11 @@
+.content-container {
+  overflow-y: auto;
+  padding: 0px 44px;
+
+  .content-item {
+    margin-top: 10px;
+    .label {
+      margin-bottom: 5px;
+    }
+  }
+}

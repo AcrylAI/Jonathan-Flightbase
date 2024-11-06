@@ -1,0 +1,11 @@
+.sort-icon {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  align-items: center;
+  cursor: pointer;
+  & > img {
+    width: 16px;
+    height: 14px;
+  }
+}
