@@ -32,17 +32,26 @@ function RadioBtnMenu({ options, onChange, clearAll }) {
         <div className={cx('group')} key={groupIndex}>
           <p className={cx('group-name')}>{t(name)}</p>
           <div className={cx('options')}>
-            {opts.map(({ label }, optionIndex) => (
-              <button
-                className={cx('radio-btn', checked === optionIndex && 'active')}
-                key={optionIndex}
-                onClick={() => {
-                  onChange(groupIndex, optionIndex);
-                }}
-              >
-                {t(label)}
-              </button>
-            ))}
+            {opts.map(({ label }, optionIndex) => {
+              return (
+                <button
+                  className={cx(
+                    'radio-btn',
+                    checked === optionIndex && 'active',
+                    label === 'Built-in' && 'disabled',
+                  )}
+                  key={optionIndex}
+                  onClick={() => {
+                    if (label !== 'Built-in') {
+                      onChange(groupIndex, optionIndex);
+                    }
+                  }}
+                  disabled={label === 'Built-in'}
+                >
+                  {t(label)}
+                </button>
+              );
+            })}
           </div>
         </div>
       ))}
