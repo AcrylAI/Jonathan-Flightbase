@@ -51,4 +51,9 @@ mv /Jonathan-flightbase/frontend /jonathan-platform-fromt
 
 2. Run script
 cd /jonathan-platform-front/install/flight-base   
-python3 jf_installer_front.py --master_ip MASTER_IP  
+python3 jf_installer_front.py --master_ip MASTER_IP --enc_key [enc_key] --iv [iv]  
+
+   ```
+   enc_key: acryldistribute@acryldistribute@
+   iv: acryldistribute@
+   ```

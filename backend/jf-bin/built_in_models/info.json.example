@@ -1,0 +1,282 @@
+{
+  "id": 1003, # 20xx (json_id)
+  "name": "Simple Forecasting", # 모델 영문 이름  (필수)
+  "name_kr":"시계열 예측 엔진", # 모델 한글 이름 (선택)
+  "model": "RNN LSTM", # 실제 사용 알고리즘 이름 (선택)
+  "kind": "텍스트 분류 (시계열 예측)", # JI는 시각 지능, 공감 지능, 자연어 이해 지능 (필수)
+  "description": "LSTM을 사용한 시계열 예측 모델. 아마존 주가 데이터의 주가 시계열을 학습하고 다음 값을 예측하는 엔진", # 모델에 대한 설명 (선택)
+  "train_data": "아마존 주가 데이터 (공개)", # 사용하는 학습 데이터 간단 설명 (선택)
+  "evaluation_index": "Loss", # 학습 시 사용하는 평가 값들 (필수 x)  (선택)
+  "parameters":{ # 학습 시 default 파라미터 값 이면서 변경 가능한 것들
+    "epoch": 20,
+    "batch_size": 128,
+    "learning_rate": 0.001
+  },
+  "parameters_description": {
+      "num_epoch": "num_epoch 설명",
+      "batch_size": "batch_size 설명",
+      "learning_rate": "learning_rate 설명"
+  },
+  "run_docker_name" :  "empathy-img-temp" #Docker image.json에 명시한 name과 일치 하는 docker name
+  # dataset 올릴 때, 학습할 때 필요 없을 수 있음...
+  "training_input_data_form_list" :  [
+    # key 종류
+    {
+      "type": "dir", # dir/file (필수) + dirs / files (여러개 선택 할 수 있게)
+      "name" : "video", #실제 폴더 명 ("/" 입력 시 가장 최상위 폴더), 파일 명 (필수)
+      "category" : "비디오", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름) (선택)
+      "category_description":"확장자명은 (mp4, avi)", #type 추가 설명 부분 (확장자 정보, 용량 제한 등등..) (선택)
+      "argparse": "csv_image_dir"  (선택, 없으면 argparse 안보냄)
+    },
+    # CASE 1 : 최상위 폴더를 설명하는 부분
+    {
+      "type": "dir", # dir/file
+      "name" : "/", #실제 폴더 명 ("/" 입력 시 가장 최상위 폴더), 파일 명
+      "category": ""
+    },
+    # CASE 2 : 하위 폴더를 설명하는 부분 (argparse가 있으면 입력한 'name' 이외에 선택 가능, argparse 없으면 'name'과 일치하는 폴더가 반드시 존재해야함)
+    {
+      "type": "dir",
+      "name" : "video", #실제 폴더 명
+      "category" : "비디오", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"확장자명은 (mp4, avi", #type 추가 설명 부분 (확장자 정보, 용량 제한 등등..),
+    },
+    # CASE 3 : 하위 파일를 설명하는 부분
+     {
+      "type": "file",
+      "name" : ".csv", # 입력한 이름에 해당하는 부분을 찾아서 리스트에 보여줌
+      "category" : "CSV",
+      "category_description":"확장자명은 (mp4, avi", #type 추가 설명 부분 (확장자 정보, 용량 제한 등등..)
+      "argparse" : "csv_annotation_path"
+    }
+    # CASE 4 : argparse 추가하면 해당 부분은 입력한 parser key로 입력한 value를 전달
+    {
+      "type": "dir",
+      "name" : "video", #실제 폴더 명
+      "category" : "비디오", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"확장자명은 (mp4, avi) 만 가능하며, 20MB 이하 및 2분 이하인 데이터만 가능", #type 추가 설명 부분 (확장자 정보, 용량 제한 등등..),
+      "argparse": "csv_image_dir"
+    }
+    # CASE 5 - 1 : File 이름을 지정 with argparse 
+    # name 은 input이라 지정했지만, argparse가 있고 확장자가 없기 때문에(. 이하가 없음) 때문에 어떠한 파일 상관없이 "/" 경로 위에 있는 파일 찾음 (하위 폴더는 x)  
+    {
+      "type": "file",
+      "name" : "input", #파일 명.확장자 명
+      "category" : "비디오", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_image_dir"
+    },
+    # CASE 5 - 2 : File 이름을 지정 without argparse 
+    # name 은 input이라 지정했고 argparse가 없기 때문에 input 이라는 이름으로 반드시 올라가거나, input이라는 이름의 파일만 찾음(input을 포함한 파일을 찾임) 
+    # input이라는 파일이 반드시 있어야 한다는 약속된 모델의 경우 다음과 같이 사용
+    {
+      "type": "file",
+      "name" : "input", #파일 명.확장자 명
+      "category" : "비디오", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명"
+    },
+    # CASE 5 - 3 : File 확장자를 지정 with argparse ( name에 .으로 확장자를 구분하며 .csv 를 가지는 파일들을 찾아서 보여줌)
+    {
+      "type": "file",
+      "name" : ".csv", #파일 명.확장자 명
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_image_dir"
+    },
+    # CASE 5 - 4 : File 확장자를 지정 without argparse ( name에 .으로 확장자를 구분하며 .csv 를 포함하는 파일만 찾음, 5-4와 같지만)
+    # 학습하는 쪽에서는 ".csv" 라는 파일을 사용하는 것과 같은 개념
+    # 사용하지 않는 케이스
+    {
+      "type": "file",
+      "name" : ".csv", #파일 명.확장자 명
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명"
+    },
+    # CASE 5 - 5 : File 이름과 확장자를 지정 with argparse 
+    # train.csv를 argparse 에 담아서 보내줌
+    # 사용을 권장하지 않는 케이스
+    {
+      "type": "file",
+      "name" : "train.csv", #파일 명.확장자 명
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_image_dir"
+    },
+    # CASE 5 - 6 : File 이름과 확장자를 지정 without argparse
+    # train.csv 가 있어야 학습 가능
+    # 사용을 권장하지 않는 케이스
+    {
+      "type": "file",
+      "name" : "train.csv", #파일 명.확장자 명
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명"
+    },
+    # CASE 5 - 7 : File or Dir 경로에 depth가 있는 경우 
+    # 해당 path(image/jpg/cat/) 위에서 
+    # name 에 지정한 파일or 폴더를 찾음 (depth가 없으면 최상위 ("/") 위에서만, 하위 폴더는 서치 x )
+    # argparse 유무에 상관 없이 path는 지정한 값에 고정,
+    # argparse 유무에 따라 name을 찾는 규칙은 5-@ case에서 설명한 규칙과 동일
+    # 이슈 
+    # * image (dir)
+    # * image/.csv (file) 가 있을 때 image 라는 폴더를 argparse 선택가능하면 폴더 이름이 image일 필요가 없어짐 (a라는 폴더 이름으로 사용 할 수 있음)
+    # 하지만 .csv는 image 밑에서 탐색하게 됨. a 밑에는 .csv가 없음. 탬플릿으로 올리면 image/ 밑에 csv가 올라가기 때문
+    # 이를 해결하기 위한 case가 5-8 부터 설명 
+    # Job 생성 시 적합한 데이터 탐색에는 효과적이나 데이터를 올리는 시점에는 표현이 어려움
+    {
+      "type": "file", or "dir"
+      "name" : "image/jpg/cat/train.csv", or "image/jpg/cat/Munchkin"
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_annotation_path"
+    },
+    # CASE 5 - 8 : File or Dir 경로에 depth가 있는 경우 depth에서 이름 상관없이 탐색하고 싶다면, (미지원(2020-11-05), 구현 할지 말지 결정 필요)
+    # depth를 표현 할 때 */*/*/ , */image/*/ 와 같은 조합이 가능하며 특정 depth level에 *가 있으면 해당 depth 에서는 이름 상관없이 경로를 탐색
+    # argparse를 사용하지 않는 경우 * 옵션을 사용권장하지 않는 케이스
+    # */*/*/ path 위의 파일or 폴더를 찾음
+    {
+      "type": "file",
+      "name" : "*/*/train.csv", # "*/*/train.csv", "*/image/train.csv" , "*/*/image/*/train.csv"
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_annotation_path"
+    },
+    # CASE 5 - 9 : File or Dir 경로에 depth는 모르겠고 전부 탐색하고 싶다면, (미지원(2020-11-05), 구현 할지 말지 결정 필요)
+    # depth를 표현 할 때 **/ 를 사용
+    {
+      "type": "file",
+      "name" : "*/*/train.csv", # "*/*/train.csv", "*/image/train.csv" , "*/*/image/*/train.csv"
+      "category" : "CSV", #해당 폴더에 데이터 업로드 시 사용자한테 보이는 영역(이름)
+      "category_description":"input 파일 설명",
+      "argparse": "csv_annotation_path"
+    },
+  ],
+  "deployment_input_data_form_list": [
+    {
+      "location" : "body=json, args, file" #필수 api 쏠 때 데이터가 담길 위치
+      "method": GET, POST ... # 1개만 지정
+      "api_key" : "text", # api 상에 날아갈 key 값 #필수
+      "value_type" : list, str, int, float etc... #필수
+      "category" : "텍스트" #필수 텍스트, 음성, 비디오, UI상에서 표현
+      "category_description" : "음성 파일 .wav or mp3" #선택
+    },
+    {
+      "location" : body=json, args, file
+      "method": GET, POST ...
+      "api_key" : "text", # api 상에 날아갈 key 값
+      "category" : "텍스트", # 텍스트, 음성, 비디오
+      "value_type" : "str",
+      "category_description" : "음성 파일 .wav or mp3" #
+    },
+    {
+      "location" : body,
+      "method": GET, POST ...
+      "api_key" : "coordinate", # api 상에 날아갈 key 값
+      "category" : "image_burn" # 텍스트, 음성, 비디오
+      "value_type" : "list",
+      "category_description" : "화상좌표" #
+    }
+  ],
+  "training_py_command" : "train.py --mode test --gpu 1", # 학습 코드 실행에 필요한 최소한의 정보
+  "deployment_py_command" : "train.py --mode deploy", # 배포 실행에 필요한 최소한의 정보
+  "exist_default_checkpoint" : true, # default(테스트용) image 존재 여부 true / false
+  "deployment_output_types": ["image","piechart","text"], # json은  default, api 에서는 return {"piechart":[[chartdata1], [chartdata2] ... ], "text":[textdata1, textdata2], "image":[b'imagedata'..]}
+  "training_data_dir_path_parser" : "train_data", # 학습 코드에서 parser로 받을 train_data 경로. --train_data user_dataset_path # training_input_data_form_list 에서 "/"에 대한 parser로 받기 때문에 사용안하는 중
+  "checkpoint_save_path_parser" : "weight_save_dir", #학습 코드에서 checkpoint 저장할 폴더 경로 입력 받을 시 --weight_save_dir save_path
+  "checkpoint_load_dir_path_parser" : "label_path", #배포 코드에서 checkpoint_save_path_parser 에서 저장 한 checkpoint 폴더 넘겨받기용 --label_path /checkpoint_root_dir
+  "checkpoint_load_file_path_parser" : "weight_path", #배포 코드에서 특정 ckpt를 지정한 경로를 넘겨받기용 --weight_path /checkpoint_root_dir/ckpt/0.h5
+
+--text_dir /user_dataset/A 
+
+  "created_by":"JF", # JI
+
+  "training_num_of_gpu_parser" : "gpu", #입력한 값으로 parser에 학습에 사용할 총 gpu 개수를 넘겨 줌 ex) 4개로 학습 시 @@@.py --gpu 4 .., cpu 사용 시 @@.py --gpu 0
+  "horovod_training_multi_gpu_mode" : true,  # Horovod가 적용되어 multi gpu 학습 가능한지 여부 true / false (false 시 gpu 사용은 1개가 최대)
+  "nonhorovod_training_multi_gpu_mode": true,  # Horovod가 아닌, 내장 기능으로 노드 내 multi gpu 학습이 가능한지 여부
+  "enable_to_train_with_gpu": true,  # GPU로 학습 가능 여부 true / false
+  "enable_to_train_with_cpu": false, # CPU로 학습 가능 여부 true / false
+
+  "deployment_num_of_gpu_parser" : "gpu" #입력한 값으로 parser에 배포에 사용할 총 gpu 개수를 넘겨 줌 ex) 1개로 배포 시 @@@.py --gpu 1 .., cpu 사용 시 @@.py --gpu 0
+  "deployment_multi_gpu_mode" : true, # 배포 시 multi gpu 로 가능한지 여부 true / false
+  "enable_to_deploy_with_gpu": true,  # GPU로 배포 가능 여부 true / false
+  "enable_to_deploy_with_cpu": false, # CPU로 배포 가능 여부 true / false
+
+  "auto_labeling":" false, # Auto labeling 사용 가능 여부 true / false
+  "marker_labeling": false, # Marker 사용 가능 여부 true / false
+
+}
+## 지원 가능 Deployment Category
+## text, video, image, audio, canvas-image, canvas-coordinate, barchart, columnchart, piechart, table
+
+## api output form example,
+## deployment_output_types 과 연동 되도록
+## text, image, ["piechart", "barchart", "columechart"] ,,,,
+
+
+deployment_output_types = ["piechart", "barchart", "columechart", "table"]
+
+
+{
+  "piechart" : [{
+    "@TITLE" : [{"감동": 0.0},{"설렘": 0.0},{"고마움": 0.0}]
+  }],
+  "image":[{
+    "@TITLE": b'124124'
+  }],
+  "text":[{
+    "@TITLE": "qwrqwr"
+  }],
+  "table" : [
+  {
+    "@TITLE" : [{"sentence": "오늘 밥 먹자","entities":[{"word":"오늘","main":"시각/시간","detail": "시각/시간 - 일반"},{"word":"밥","main":"음식/음료","detail": "음식"}]}]
+  }]
+}
+
+####
+{
+  "@OUTPUT_TYPE1@" : [
+    {
+      "@TITLE@" : [{key: value}, ... {key: value} ], or "TEXT"
+    }
+  ],
+  "@OUTPUT_TYPE2@" : [
+    {
+      "@TITLE@" : [{key: value}, ... {key: value} ], or "TEXT"
+    }
+  ]
+}
+
+##### multi modal case example
+{
+  OTHERS
+  ...
+  "columnchart" : [
+    {
+      "uni_text_emotion" : [{"감동": 0.0},{"설렘": 0.0},{"고마움": 0.0}]
+    },
+    {
+      "uni_audio_emotion" :[{"감동": 0.0},{"설렘": 0.0},{"고마움": 0.0}]
+    },
+    {
+      "uni_image" : [{"감동": 0.0},{"설렘": 0.0},{"고마움": 0.0}]
+    },
+    {
+      "multi" : [{"감동": 0.0},{"설렘": 0.0},{"고마움": 0.0}]
+    }
+  ]
+}
+
+##### NER case example
+{
+  OTHERS
+  ...
+  "table" : [
+    {
+      "@TITLE" : [{"sentence": "오늘 밥 먹자","entities":[{"word":"오늘","main":"시각/시간","detail": "시각/시간 - 일반"},{"word":"밥","main":"음식/음료","detail": "음식"}]}]
+    },
+    {
+      "@TITLE" : [{"sentence": "오늘 밥 먹자","entities":[{"word":"오늘","main":"시각/시간","detail": "시각/시간 - 일반"},{"word":"밥","main":"음식/음료","detail": "음식"}]}]
+    }
+  ]
+}
+
+2020-11-09
